@@ -1,0 +1,44 @@
+# Demo walkthrough
+
+## Recorded evidence: no credits
+
+Run `python -m app.demo` in the activated repository terminal, then open
+http://127.0.0.1:8765. Leave the terminal running. The page should show one-shot 55/60,
+iterative 57/60, and controlled recovery on 6/6. Explain that planning used 60 versus 114
+reported requests. The eight planning failures remain visible in the episode filter.
+Saved exports lack action traces, so this panel shows metrics rather than invented decisions.
+If evidence is unavailable, install the final report bundle first.
+
+## First live check: at most two calls
+
+Choose **Type the requested text and submit**, seed 61, then click **Run live** once.
+Watch observe → decide → validate → execute → verify, followed by the next decision and
+submission. Full credit requires verified benchmark completion, not merely executed actions.
+Chromium is headless: the interface shows a workflow trace, not live video or screenshots.
+Filled text and synthetic login credentials are omitted from events. The instruction selects
+one supported scenario; the benchmark supplies exact synthetic text and labels.
+
+## Optional demonstrations: additional credits
+
+- **Find the requested link inside the sections**: at most six calls; show fresh observations
+  after revealing targets. Do not promise success.
+- **Complete text entry with a controlled timeout**: at most three calls; the first fill is
+  deliberately made to time out, then one recovery is allowed within the budget.
+- **Complete the synthetic login form**: at most three calls; generated values stay out of
+  the displayed instruction and trace.
+
+A failure is a valid demo outcome. Use development seeds 61/67 only. Live events stay in
+memory and reset for a new run; they never replace frozen evidence. Closing the browser tab
+alone does not cancel the worker. Use Stop or Ctrl-C in the server terminal. Stop kills the
+worker process group, may prevent graceful cleanup, and flags incomplete usage. The deadline
+also stops an overlong worker. Do not expose this single-user development server externally.
+
+## User smoke checks still pending
+
+- Page opens, shows 132 saved episodes and eight planning failures.
+- First live run shows actual stages and action-verification entries, then its real outcome.
+- Only one run can be active; Stop ends it and flags incomplete usage.
+- Ctrl-C returns the terminal prompt. Restart still loads the original frozen evidence.
+
+Offline tests do not establish these interface results. Record the first live result before
+claiming an end-to-end UI test or recording a portfolio video.
