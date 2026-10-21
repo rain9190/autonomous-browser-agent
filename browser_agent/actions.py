@@ -13,7 +13,7 @@ class ClickAction(BaseModel):
 
 class Action(BaseModel):
     model_config = ConfigDict(extra="forbid", strict=True)
-    action: Literal["click", "fill", "set_checked", "check_radio", "select_option"]
+    action: Literal["click", "fill", "set_checked", "check_radio", "select_option", "activate_tab"]
     bid: str = Field(pattern=r"^[A-Za-z0-9_-]{1,64}$")
     text: str | None = Field(default=None, max_length=256)
     checked: bool | None = None
@@ -48,6 +48,12 @@ def button_ids(tree: str) -> set[str]:
 
 def textbox_ids(tree: str) -> set[str]:
     return set(re.findall(r"(?m)^\s*\[([A-Za-z0-9_-]{1,64})\] textbox\b", tree))
+
+
+def tab_ids(tree: str) -> set[str]:
+    # Require an observed controlled panel. The benchmark can assign a spurious
+    # tab role to a Submit wrapper that has no panel; exclude that wrapper.
+    return set(re.findall(r"(?m)^\s*\[([A-Za-z0-9_-]{1,64})\] tab\b[^\n]*\bcontrols=", tree))
 
 
 def selection_targets(tree: str) -> dict:
@@ -89,22 +95,23 @@ def action_catalog(tree: str) -> dict:
     options = {bid: [label for label in labels if labels.count(label) == 1]
                for bid, labels in selection["select_options"].items()}
     return {"click": sorted(button_ids(tree)), "fill": sorted(textbox_ids(tree)),
+            "activate_tab": sorted(tab_ids(tree)),
             "set_checked": sorted(selection["checkbox"]),
             "check_radio": sorted(selection["radio"]),
             "select_option": {bid: labels for bid, labels in options.items() if labels}}
 
 
 def validate_action(raw: object, allowed: set[str], editable: set[str] | None = None,
-                    selection: dict | None = None) -> Action:
+                    selection: dict | None = None, tabs: set[str] | None = None) -> Action:
     action = Action.model_validate(raw)
     selection = selection or {"checkbox": set(), "radio": set(), "select_options": {}}
     targets = {"click": allowed, "fill": editable or set(),
                "set_checked": selection["checkbox"], "check_radio": selection["radio"],
-               "select_option": set(selection["select_options"])}[action.action]
+               "select_option": set(selection["select_options"]), "activate_tab": tabs or set()}[action.action]
     if action.bid not in targets:
         roles = {"button": allowed, "textbox": editable or set(),
                  "checkbox": selection["checkbox"], "radio": selection["radio"],
-                 "combobox": set(selection["select_options"])}
+                 "combobox": set(selection["select_options"]), "tab": tabs or set()}
         raise ObservedRoleMismatch(action.action, action.bid,
                                    [role for role, ids in roles.items() if action.bid in ids])
     if action.action == "select_option" and selection["select_options"][action.bid].count(action.text) != 1:
@@ -118,6 +125,23 @@ def action_mapping(payload: str) -> str:
     action = Action.model_validate_json(payload)
     if action.action == "fill":
         return f"page.get_by_test_id({action.bid!r}).fill({action.text!r}, timeout=5000)"
+    if action.action == "activate_tab":
+        return (
+            f"_tab_target = page.get_by_test_id({action.bid!r})\n"
+            "if not _tab_target.evaluate(\"(el) => el.getAttribute('role') === 'tab' && "
+            "!!el.closest('[role=tablist]') && !!el.getAttribute('aria-controls') && "
+            "!!document.getElementById(el.getAttribute('aria-controls'))\"):\n"
+            "    raise ValueError('Tab target lacks an associated panel')\n"
+            "_tab_anchor = _tab_target.locator('a.ui-tabs-anchor')\n"
+            "if _tab_anchor.count() == 1:\n"
+            "    if _tab_anchor.get_attribute('href') != '#' + _tab_target.get_attribute('aria-controls'):\n"
+            "        raise ValueError('Tab anchor does not match controlled panel')\n"
+            "    _tab_anchor.click(timeout=5000)\n"
+            "elif _tab_anchor.count() == 0:\n"
+            "    _tab_target.click(timeout=5000)\n"
+            "else:\n"
+            "    raise ValueError('Ambiguous tab anchor')"
+        )
     if action.action in ("set_checked", "check_radio", "select_option"):
         native = {"set_checked": "el.tagName === 'INPUT' && el.type === 'checkbox'",
                   "check_radio": "el.tagName === 'INPUT' && el.type === 'radio'",

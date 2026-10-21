@@ -45,11 +45,16 @@ class ModelAdapter:
             model=self.model,
             instructions=(
                 "Choose the next action: click a button, fill a textbox, set_checked on a "
-                "checkbox, check_radio on a radio, or select_option on a combobox. "
+                "checkbox, check_radio on a radio, select_option on a combobox, "
+                "or activate_tab on a panel-controlling tab/accordion header. "
                 "set_checked needs checked=true/false and null text. check_radio has "
                 "null text and checked. select_option needs the exact observed option "
                 "label in text, and null checked. Other actions have null checked. "
                 "Selection is idempotent; use current checked/selected state. "
+                "activate_tab opens an observed panel-controlling tab or accordion "
+                "header; use its activate_tab ID, with null text/checked. "
+                "Use selected/expanded state to avoid unnecessary toggling. "
+                "Submit must use the actual button with click. "
                 "allowed_targets lists legal IDs for each action. Choose the bid from "
                 "the corresponding entry; never click a radio/checkbox or its LabelText "
                 "parent. A radio requires check_radio with its own ID. An empty list "

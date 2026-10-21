@@ -4,7 +4,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from browsergym.utils.obs import flatten_axtree_to_str
 
-from .actions import Action, button_ids, textbox_ids, selection_targets, action_catalog, validate_action
+from .actions import Action, button_ids, textbox_ids, tab_ids, selection_targets, action_catalog, validate_action
 from .budget import Budget
 from .model import ModelAdapter
 from .metrics import COMPLETION_METRIC, full_credit_success, positive_reward_terminal
@@ -35,6 +35,8 @@ class OneShotAdapter(ModelAdapter):
                 "check_radio for observed radios; select_option with text equal to an "
                 "exact observed option label for a combobox. Selection is idempotent. "
                 "Set checked=null for all other actions. "
+                "activate_tab targets only listed panel-controlling tab/accordion IDs; "
+                "text and checked are null. Submit uses the actual button via click. "
                 "allowed_targets lists legal IDs per action; select each bid from its "
                 "matching entry. Never click a radio/checkbox or LabelText parent; "
                 "use check_radio/set_checked on the native control ID. Empty lists "
@@ -78,7 +80,7 @@ def execute_plan(env, observation, raw_plan, max_steps=2):
             result["reason"] = "observation_budget_exhausted"
             break
         try:
-            validate_action(action.model_dump(exclude_none=True), button_ids(tree), textbox_ids(tree), selection_targets(tree))
+            validate_action(action.model_dump(exclude_none=True), button_ids(tree), textbox_ids(tree), selection_targets(tree), tab_ids(tree))
         except ValueError:
             result["reason"] = "planned_target_invalid"
             break
