@@ -150,7 +150,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--task", choices=("enter-text", "login-user"), default="enter-text")
     parser.add_argument("--seeds", type=int, nargs="+", default=[7, 42, 123])
-    parser.add_argument("--max-steps", type=int, choices=range(3, 7), default=3)
+    parser.add_argument("--max-steps", type=int, choices=range(3, 8), default=3)
     parser.add_argument("--scenario", choices=("python_exception", "disabled_textbox_timeout", "changed_textbox_id"), default="python_exception")
     args = parser.parse_args()
     if len(args.seeds) != len(set(args.seeds)):

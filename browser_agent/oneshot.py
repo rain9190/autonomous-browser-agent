@@ -13,7 +13,7 @@ from .metrics import COMPLETION_METRIC, full_credit_success, positive_reward_ter
 
 class ActionPlan(BaseModel):
     model_config = ConfigDict(extra="forbid", strict=True)
-    actions: list[Action] = Field(min_length=1, max_length=6)
+    actions: list[Action] = Field(min_length=1, max_length=7)
 
 
 class OneShotAdapter(ModelAdapter):

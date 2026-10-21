@@ -84,7 +84,7 @@ def test_early_success_does_not_execute_remaining_actions(observation):
     assert result["success"] and env.calls == 1
 
 
-@pytest.mark.parametrize("raw", [{"actions": []}, {"actions": [{"action": "click", "bid": "x"}] * 7}])
+@pytest.mark.parametrize("raw", [{"actions": []}, {"actions": [{"action": "click", "bid": "x"}] * 8}])
 def test_plan_schema_bounds(raw):
     with pytest.raises(ValidationError):
         ActionPlan.model_validate(raw)

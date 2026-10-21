@@ -118,7 +118,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--task", choices=("enter-text", "login-user"), default="enter-text")
     parser.add_argument("--seeds", type=int, nargs="+", default=[31, 47])
-    parser.add_argument("--max-steps", type=int, choices=range(3, 7), default=3)
+    parser.add_argument("--max-steps", type=int, choices=range(3, 8), default=3)
     parser.add_argument("--scenario", choices=SCENARIOS, default="disabled_textbox_timeout")
     args = parser.parse_args()
     if len(args.seeds) != len(set(args.seeds)) or len(args.seeds) * 2 * args.max_steps > 24:

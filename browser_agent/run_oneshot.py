@@ -33,7 +33,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--task", choices=TASKS, default="enter-text")
     parser.add_argument("--seed", type=int, default=11)
-    parser.add_argument("--max-steps", type=int, choices=range(1, 7), default=2)
+    parser.add_argument("--max-steps", type=int, choices=range(1, 8), default=2)
     args = parser.parse_args()
     budget = Budget(args.max_steps)
     load_dotenv(ROOT / ".env.local", override=False)

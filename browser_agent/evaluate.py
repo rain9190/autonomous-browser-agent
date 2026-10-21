@@ -13,7 +13,7 @@ from uuid import uuid4
 from .budget import Budget
 from .metrics import COMPLETION_METRIC, full_credit_success, positive_reward_terminal, valid_reward
 
-TASKS = ("click-test", "click-button", "click-button-sequence", "enter-text", "login-user", "click-checkboxes-soft", "click-option", "choose-list", "click-tab", "click-collapsible", "click-link", "click-collapsible-2", "click-tab-2-easy", "click-tab-2-medium", "enter-text-2", "click-test-2", "click-test-transfer", "click-dialog", "click-dialog-2")
+TASKS = ("click-test", "click-button", "click-button-sequence", "enter-text", "login-user", "click-checkboxes", "click-checkboxes-soft", "click-option", "choose-list", "click-tab", "click-collapsible", "click-link", "click-collapsible-2", "click-tab-2-easy", "click-tab-2-medium", "enter-text-2", "click-test-2", "click-test-transfer", "click-dialog", "click-dialog-2")
 ROOT = Path(__file__).resolve().parents[1]
 MAX_EPISODES = 12
 
@@ -168,7 +168,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--tasks", nargs="+", choices=TASKS, default=list(TASKS[:3]))
     parser.add_argument("--seeds", nargs="+", type=int, default=[7, 123])
-    parser.add_argument("--max-steps", type=int, choices=range(1, 7), default=2)
+    parser.add_argument("--max-steps", type=int, choices=range(1, 8), default=2)
     args = parser.parse_args()
     if len(args.tasks) * len(args.seeds) * args.max_steps > 24:
         parser.error("Evaluation exceeds the 24-call ceiling")

@@ -205,7 +205,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--tasks", choices=TASKS, nargs="+", default=["enter-text", "click-button-sequence"])
     parser.add_argument("--seeds", type=int, nargs="+", default=[11, 29])
-    parser.add_argument("--max-steps", type=int, choices=range(1, 7), default=2)
+    parser.add_argument("--max-steps", type=int, choices=range(1, 8), default=2)
     args = parser.parse_args()
     if len(set(args.tasks)) != len(args.tasks) or len(set(args.seeds)) != len(args.seeds):
         parser.error("Tasks and seeds must be unique")

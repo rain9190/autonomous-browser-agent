@@ -60,7 +60,7 @@ def main():
     parser.add_argument("--arm", choices=("oneshot", "iterative", "recovery_off", "recovery_on"), required=True)
     parser.add_argument("--task", choices=TASKS, required=True)
     parser.add_argument("--seed", type=int, required=True)
-    parser.add_argument("--max-steps", type=int, choices=range(1, 7), default=2)
+    parser.add_argument("--max-steps", type=int, choices=range(1, 8), default=2)
     parser.add_argument("--scenario", choices=("none", "disabled_textbox_timeout", "changed_textbox_id"), default="none")
     args = parser.parse_args()
     ablation = args.arm in ("recovery_off", "recovery_on")

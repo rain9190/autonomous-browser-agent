@@ -6,8 +6,8 @@ class Budget:
     max_steps: int = 2
 
     def __post_init__(self):
-        if type(self.max_steps) is not int or not 1 <= self.max_steps <= 6:
-            raise ValueError("Action budget must be an integer from 1 to 6")
+        if type(self.max_steps) is not int or not 1 <= self.max_steps <= 7:
+            raise ValueError("Action budget must be an integer from 1 to 7")
 
     @property
     def run_timeout(self):

@@ -9,7 +9,7 @@ from browser_agent.model import ModelAdapter
 from browser_agent.workflow import build_workflow
 
 
-@pytest.mark.parametrize("value", [0, 7, -1, True, 2.5])
+@pytest.mark.parametrize("value", [0, 8, -1, True, 2.5])
 def test_invalid_budget(value):
     with pytest.raises(ValueError):
         Budget(value)
