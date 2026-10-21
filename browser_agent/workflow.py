@@ -74,6 +74,13 @@ def build_workflow(env, model, max_steps=2, max_recoveries=0):
 
     def verify(s):
         error = bool(s["observation"].get("last_action_error"))
+        diagnostic = str(s["observation"].get("last_action_error", ""))
+        # Store only a category, never the locator diagnostic or page content.
+        error_kind = ("playwright_fill_timeout" if error
+                      and diagnostic.startswith("TimeoutError:")
+                      and "Locator.fill" in diagnostic
+                      and "exceeded" in diagnostic else
+                      "browser_action_error" if error else None)
         success = s["reward"] > 0 and s["terminated"] and not error and not s["truncated"]
         if success:
             reason = "benchmark_success"
@@ -97,6 +104,7 @@ def build_workflow(env, model, max_steps=2, max_recoveries=0):
         progress = s.get("progress", []) + [{
             "step": s["steps"], "action": action["action"], "bid": action["bid"],
             "execution_ok": not error, "benchmark_success": success,
+            "error_kind": error_kind,
         }]
         recovery_context = ({"action": action["action"], "bid": action["bid"],
                              "status": "previous_fill_failed"} if reason == "recover" else None)

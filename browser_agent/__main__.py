@@ -12,7 +12,7 @@ from openai import APIConnectionError, APIStatusError
 from .actions import action_mapping
 from .budget import Budget
 from .model import ModelAdapter
-from .recovery import FillFailureOnce
+from .recovery import FillFailureOnce, DisabledTextboxOnce
 from .workflow import build_workflow
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,9 +28,14 @@ def main():
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--max-steps", type=int, choices=range(1, 7), default=2)
     parser.add_argument("--max-recoveries", type=int, choices=range(0, 3), default=0)
-    parser.add_argument("--simulate-fill-error-once", action="store_true")
+    scenarios = parser.add_mutually_exclusive_group()
+    scenarios.add_argument("--simulate-fill-error-once", action="store_true")
+    scenarios.add_argument("--disabled-textbox-timeout-once", action="store_true")
     args = parser.parse_args()
-    if args.simulate_fill_error_once and args.task not in ("enter-text", "login-user"):
+    failure_requested = args.simulate_fill_error_once or args.disabled_textbox_timeout_once
+    scenario = ("disabled_textbox_timeout" if args.disabled_textbox_timeout_once else
+                "python_exception" if args.simulate_fill_error_once else "none")
+    if failure_requested and args.task not in ("enter-text", "login-user"):
         parser.error("Fill-error simulation requires enter-text or login-user")
     budget = Budget(args.max_steps)
     load_dotenv(ROOT / ".env.local", override=False)
@@ -49,7 +54,8 @@ def main():
     signal.alarm(budget.run_timeout)
     try:
         model = ModelAdapter(key, max_steps=budget.max_steps)
-        mapping = FillFailureOnce() if args.simulate_fill_error_once else action_mapping
+        mapping = (DisabledTextboxOnce() if args.disabled_textbox_timeout_once else
+                   FillFailureOnce() if args.simulate_fill_error_once else action_mapping)
         env = gym.make(
             f"browsergym/miniwob.{args.task}", headless=True,
             action_mapping=mapping,
@@ -61,13 +67,16 @@ def main():
         )
         report = {k: state[k] for k in ["success", "reason", "steps", "reward", "terminated", "truncated", "trace", "history", "progress", "remaining_steps", "recoveries_used", "failed_actions"]}
         report.update(max_recoveries=args.max_recoveries,
-                      simulated_failure_requested=args.simulate_fill_error_once,
-                      simulated_failure_injected=bool(args.simulate_fill_error_once and mapping.injected),
+                      simulated_failure_requested=failure_requested,
+                      controlled_failure_scenario=scenario,
+                      controlled_timeout_confirmed=bool(args.disabled_textbox_timeout_once and any(
+                          row["error_kind"] == "playwright_fill_timeout" for row in state["progress"])),
+                      simulated_failure_injected=bool(failure_requested and mapping.injected),
                       max_steps=budget.max_steps, task=args.task, seed=args.seed, model=model.model, api_calls=model.calls,
                       input_tokens=model.input_tokens, output_tokens=model.output_tokens)
         print(json.dumps(report, indent=2))
         (ROOT / "results").mkdir(exist_ok=True)
-        (ROOT / f"results/day2-{args.task}-seed{args.seed}-budget{budget.max_steps}-recovery{args.max_recoveries}-sim{int(args.simulate_fill_error_once)}.json").write_text(json.dumps(report, indent=2) + "\n")
+        (ROOT / f"results/day2-{args.task}-seed{args.seed}-budget{budget.max_steps}-recovery{args.max_recoveries}-sim{int(failure_requested)}-{scenario}.json").write_text(json.dumps(report, indent=2) + "\n")
         return 0 if state["success"] else 1
     except APIStatusError as exc:
         # SDK exception text can include response bodies; never log it.
