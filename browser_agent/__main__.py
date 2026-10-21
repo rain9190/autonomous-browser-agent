@@ -27,7 +27,7 @@ def deadline(*_):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--task", choices=["click-test", "click-button", "click-button-sequence", "enter-text", "login-user", "click-checkboxes-soft", "click-option", "choose-list", "click-tab", "click-collapsible", "click-link", "click-collapsible-2", "click-tab-2-easy", "click-tab-2-medium"], default="click-test")
+    parser.add_argument("--task", choices=["click-test", "click-button", "click-button-sequence", "enter-text", "login-user", "click-checkboxes-soft", "click-option", "choose-list", "click-tab", "click-collapsible", "click-link", "click-collapsible-2", "click-tab-2-easy", "click-tab-2-medium", "enter-text-2", "click-test-2", "click-test-transfer", "click-dialog", "click-dialog-2"], default="click-test")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--max-steps", type=int, choices=range(1, 7), default=2)
     parser.add_argument("--max-recoveries", type=int, choices=range(0, 3), default=0)
