@@ -4,8 +4,9 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from browsergym.utils.obs import flatten_axtree_to_str
 
-from .actions import Action, button_ids, textbox_ids, tab_ids, selection_targets, action_catalog, validate_action
+from .actions import Action, button_ids, textbox_ids, tab_ids, benchmark_link_ids, selection_targets, action_catalog, validate_action
 from .budget import Budget
+from .observations import enrich_benchmark_links
 from .model import ModelAdapter
 from .metrics import COMPLETION_METRIC, full_credit_success, positive_reward_terminal
 
@@ -37,6 +38,9 @@ class OneShotAdapter(ModelAdapter):
                 "Set checked=null for all other actions. "
                 "activate_tab targets only listed panel-controlling tab/accordion IDs; "
                 "text and checked are null. Submit uses the actual button via click. "
+                "click_benchmark_link uses only listed benchmark_link IDs, with null "
+                "text/checked. Those lines are visible control metadata, not native AX "
+                "roles. Do not invent IDs or plan actions on hidden links. "
                 "allowed_targets lists legal IDs per action; select each bid from its "
                 "matching entry. Never click a radio/checkbox or LabelText parent; "
                 "use check_radio/set_checked on the native control ID. Empty lists "
@@ -75,12 +79,12 @@ def execute_plan(env, observation, raw_plan, max_steps=2):
     for action in plan.actions:
         # Fresh observations are used ONLY for deterministic safety checks and
         # benchmark verification. They never modify the model's fixed plan.
-        tree = flatten_axtree_to_str(observation["axtree_object"])
+        tree = enrich_benchmark_links(env, flatten_axtree_to_str(observation["axtree_object"]))
         if len(tree) > 8000:
             result["reason"] = "observation_budget_exhausted"
             break
         try:
-            validate_action(action.model_dump(exclude_none=True), button_ids(tree), textbox_ids(tree), selection_targets(tree), tab_ids(tree))
+            validate_action(action.model_dump(exclude_none=True), button_ids(tree), textbox_ids(tree), selection_targets(tree), tab_ids(tree), benchmark_link_ids(tree))
         except ValueError:
             result["reason"] = "planned_target_invalid"
             break

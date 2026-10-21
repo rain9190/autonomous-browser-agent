@@ -3,6 +3,7 @@ import ast
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
+from .observations import LINK_PREDICATE_JS
 
 
 class ClickAction(BaseModel):
@@ -13,7 +14,7 @@ class ClickAction(BaseModel):
 
 class Action(BaseModel):
     model_config = ConfigDict(extra="forbid", strict=True)
-    action: Literal["click", "fill", "set_checked", "check_radio", "select_option", "activate_tab"]
+    action: Literal["click", "fill", "set_checked", "check_radio", "select_option", "activate_tab", "click_benchmark_link"]
     bid: str = Field(pattern=r"^[A-Za-z0-9_-]{1,64}$")
     text: str | None = Field(default=None, max_length=256)
     checked: bool | None = None
@@ -56,6 +57,10 @@ def tab_ids(tree: str) -> set[str]:
     return set(re.findall(r"(?m)^\s*\[([A-Za-z0-9_-]{1,64})\] tab\b[^\n]*\bcontrols=", tree))
 
 
+def benchmark_link_ids(tree: str) -> set[str]:
+    return set(re.findall(r"(?m)^\s*\[([A-Za-z0-9_-]{1,64})\] benchmark_link\b", tree))
+
+
 def selection_targets(tree: str) -> dict:
     """Read observed AX roles and option labels under each combobox."""
     result = {"checkbox": set(), "radio": set(), "select_options": {}}
@@ -96,22 +101,26 @@ def action_catalog(tree: str) -> dict:
                for bid, labels in selection["select_options"].items()}
     return {"click": sorted(button_ids(tree)), "fill": sorted(textbox_ids(tree)),
             "activate_tab": sorted(tab_ids(tree)),
+            "click_benchmark_link": sorted(benchmark_link_ids(tree)),
             "set_checked": sorted(selection["checkbox"]),
             "check_radio": sorted(selection["radio"]),
             "select_option": {bid: labels for bid, labels in options.items() if labels}}
 
 
 def validate_action(raw: object, allowed: set[str], editable: set[str] | None = None,
-                    selection: dict | None = None, tabs: set[str] | None = None) -> Action:
+                    selection: dict | None = None, tabs: set[str] | None = None,
+                    benchmark_links: set[str] | None = None) -> Action:
     action = Action.model_validate(raw)
     selection = selection or {"checkbox": set(), "radio": set(), "select_options": {}}
     targets = {"click": allowed, "fill": editable or set(),
                "set_checked": selection["checkbox"], "check_radio": selection["radio"],
-               "select_option": set(selection["select_options"]), "activate_tab": tabs or set()}[action.action]
+               "select_option": set(selection["select_options"]), "activate_tab": tabs or set(),
+               "click_benchmark_link": benchmark_links or set()}[action.action]
     if action.bid not in targets:
         roles = {"button": allowed, "textbox": editable or set(),
                  "checkbox": selection["checkbox"], "radio": selection["radio"],
-                 "combobox": set(selection["select_options"]), "tab": tabs or set()}
+                 "combobox": set(selection["select_options"]), "tab": tabs or set(),
+                 "benchmark_link": benchmark_links or set()}
         raise ObservedRoleMismatch(action.action, action.bid,
                                    [role for role, ids in roles.items() if action.bid in ids])
     if action.action == "select_option" and selection["select_options"][action.bid].count(action.text) != 1:
@@ -125,6 +134,11 @@ def action_mapping(payload: str) -> str:
     action = Action.model_validate_json(payload)
     if action.action == "fill":
         return f"page.get_by_test_id({action.bid!r}).fill({action.text!r}, timeout=5000)"
+    if action.action == "click_benchmark_link":
+        return (f"_benchmark_link = page.get_by_test_id({action.bid!r})\n"
+                f"if not _benchmark_link.evaluate({LINK_PREDICATE_JS!r}):\n"
+                "    raise ValueError('Target is not a visible allowlisted benchmark link')\n"
+                "_benchmark_link.click(timeout=5000)")
     if action.action == "activate_tab":
         return (
             f"_tab_target = page.get_by_test_id({action.bid!r})\n"

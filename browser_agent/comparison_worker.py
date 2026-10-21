@@ -15,6 +15,7 @@ from openai import APIConnectionError, APIStatusError
 
 from .actions import action_mapping
 from .budget import Budget
+from .observations import enrich_benchmark_links
 from .metrics import COMPLETION_METRIC
 from .evaluate import TASKS
 from .model import ModelAdapter
@@ -26,8 +27,8 @@ ROOT = Path(__file__).resolve().parents[1]
 MODEL = "gpt-4.1-mini-2025-04-14"
 
 
-def fingerprint(observation):
-    tree = flatten_axtree_to_str(observation["axtree_object"])
+def fingerprint(observation, env=None):
+    tree = enrich_benchmark_links(env, flatten_axtree_to_str(observation["axtree_object"]))
     initial = json.dumps({"goal": observation["goal"], "tree": tree}, sort_keys=True)
     return hashlib.sha256(initial.encode()).hexdigest(), tree
 
@@ -97,7 +98,7 @@ def main():
                        task_kwargs={"base_url": html.as_uri() + "/",
                                     "episode_max_time": budget.run_timeout * 1000})
         observation, _ = env.reset(seed=args.seed)
-        digest, tree = fingerprint(observation)
+        digest, tree = fingerprint(observation, env)
         report["initial_observation_sha256"] = digest
         tracked = CountedEnv(env)
         phase = "agent"

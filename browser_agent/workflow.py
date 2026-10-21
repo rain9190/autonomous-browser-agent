@@ -4,8 +4,9 @@ from browsergym.utils.obs import flatten_axtree_to_str
 from langgraph.graph import END, START, StateGraph
 
 from .budget import Budget
+from .observations import enrich_benchmark_links
 from .metrics import COMPLETION_METRIC, full_credit_success, positive_reward_terminal
-from .actions import button_ids, textbox_ids, tab_ids, selection_targets, validate_action
+from .actions import button_ids, textbox_ids, tab_ids, benchmark_link_ids, selection_targets, validate_action
 
 
 class State(TypedDict, total=False):
@@ -15,6 +16,7 @@ class State(TypedDict, total=False):
     editable: set[str]
     selection: dict
     tabs: set[str]
+    benchmark_links: set[str]
     proposal: Any
     payload: str
     steps: int
@@ -40,16 +42,17 @@ def build_workflow(env, model, max_steps=2, max_recoveries=0):
     if type(max_recoveries) is not int or not 0 <= max_recoveries <= 2:
         raise ValueError("Recovery budget must be an integer from 0 to 2")
     def observe(s):
-        tree = flatten_axtree_to_str(s["observation"]["axtree_object"])
+        tree = enrich_benchmark_links(env, flatten_axtree_to_str(s["observation"]["axtree_object"]))
         if len(tree) > 8000:
             raise ValueError("Accessibility tree exceeds input budget")
         allowed = button_ids(tree)
         editable = textbox_ids(tree)
         selection = selection_targets(tree)
         tabs = tab_ids(tree)
-        if not allowed and not editable and not any(selection.values()) and not tabs:
+        links = benchmark_link_ids(tree)
+        if not allowed and not editable and not any(selection.values()) and not tabs and not links:
             raise ValueError("No supported elements in the observation")
-        return {"tree": tree, "allowed": allowed, "editable": editable, "selection": selection, "tabs": tabs,
+        return {"tree": tree, "allowed": allowed, "editable": editable, "selection": selection, "tabs": tabs, "benchmark_links": links,
                 "trace": s.get("trace", []) + ["observe"]}
 
     def decide(s):
@@ -62,12 +65,12 @@ def build_workflow(env, model, max_steps=2, max_recoveries=0):
                 "trace": s["trace"] + ["decide"]}
 
     def validate(s):
-        action = validate_action(s["proposal"], s["allowed"], s["editable"], s["selection"], s["tabs"])
+        action = validate_action(s["proposal"], s["allowed"], s["editable"], s["selection"], s["tabs"], s["benchmark_links"])
         return {"payload": action.model_dump_json(exclude_none=True),
                 "trace": s["trace"] + ["validate"]}
 
     def execute(s):
-        action = validate_action(s["proposal"], s["allowed"], s["editable"], s["selection"], s["tabs"])
+        action = validate_action(s["proposal"], s["allowed"], s["editable"], s["selection"], s["tabs"], s["benchmark_links"])
         observation, reward, terminated, truncated, _ = env.step(s["payload"])
         attempted = action.model_dump(exclude_none=True)
         error = bool(observation.get("last_action_error"))

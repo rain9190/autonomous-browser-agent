@@ -17,6 +17,7 @@ from openai import APIConnectionError, APIStatusError
 
 from .actions import action_mapping
 from .budget import Budget
+from .observations import enrich_benchmark_links
 from .metrics import COMPLETION_METRIC
 from .evaluate import TASKS
 from .oneshot import OneShotAdapter, execute_plan
@@ -58,7 +59,7 @@ def main():
                        task_kwargs={"base_url": html.as_uri() + "/",
                                     "episode_max_time": budget.run_timeout * 1000})
         observation, _ = env.reset(seed=args.seed)
-        tree = flatten_axtree_to_str(observation["axtree_object"])
+        tree = enrich_benchmark_links(env, flatten_axtree_to_str(observation["axtree_object"]))
         initial = json.dumps({"goal": observation["goal"], "tree": tree}, sort_keys=True)
         report["initial_observation_sha256"] = hashlib.sha256(initial.encode()).hexdigest()
         plan = model.plan(observation["goal"], tree)

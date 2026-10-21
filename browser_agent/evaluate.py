@@ -13,7 +13,7 @@ from uuid import uuid4
 from .budget import Budget
 from .metrics import COMPLETION_METRIC, full_credit_success, positive_reward_terminal, valid_reward
 
-TASKS = ("click-test", "click-button", "click-button-sequence", "enter-text", "login-user", "click-checkboxes-soft", "click-option", "choose-list", "click-tab", "click-collapsible")
+TASKS = ("click-test", "click-button", "click-button-sequence", "enter-text", "login-user", "click-checkboxes-soft", "click-option", "choose-list", "click-tab", "click-collapsible", "click-link", "click-collapsible-2", "click-tab-2-easy", "click-tab-2-medium")
 ROOT = Path(__file__).resolve().parents[1]
 MAX_EPISODES = 12
 
