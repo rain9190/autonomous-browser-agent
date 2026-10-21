@@ -1,0 +1,132 @@
+"""Evaluate injected fill-failure recovery separately from baseline results."""
+import argparse
+from datetime import datetime, timezone
+import json
+import os
+import signal
+import subprocess
+import sys
+import time
+from uuid import uuid4
+
+from .budget import Budget
+from .evaluate import ROOT, parse_result, run_suite, summarize
+
+
+def parse_recovery_result(stdout, returncode, task, seed, max_steps):
+    try:
+        raw = json.loads(stdout)
+        if not isinstance(raw, dict):
+            raise ValueError()
+        if raw.get("simulated_failure_requested") is not True or raw.get("simulated_failure_injected") is not True:
+            raise ValueError()
+        if raw.get("max_recoveries") != 1 or raw.get("max_steps") != max_steps:
+            raise ValueError()
+        used = raw.get("recoveries_used")
+        if type(used) is not int or not 0 <= used <= 1:
+            raise ValueError()
+        rows = raw.get("progress")
+        if not isinstance(rows, list) or len(rows) != raw.get("steps"):
+            raise ValueError()
+        for index, row in enumerate(rows, 1):
+            if not isinstance(row, dict) or row.get("step") != index:
+                raise ValueError()
+            if row.get("action") not in ("click", "fill") or type(row.get("execution_ok")) is not bool:
+                raise ValueError()
+        # The simulator fails the first fill, before any page mutation.
+        failed = [i for i, row in enumerate(rows) if not row["execution_ok"]]
+        if not failed or rows[failed[0]]["action"] != "fill":
+            raise ValueError()
+        if used and failed[0] == len(rows) - 1:
+            raise ValueError()
+        if raw.get("success") and (used != 1 or len(failed) != 1):
+            raise ValueError()
+        cleaned = dict(raw)
+        cleaned["simulated_failure_requested"] = False
+        result = parse_result(json.dumps(cleaned), returncode, task, seed, max_steps)
+        if result["status"] == "invalid_report":
+            raise ValueError()
+        result.update(evaluation_mode="simulated_fill_recovery",
+                      injection_confirmed=True, recoveries_used=used,
+                      recovered_success=result["success"] and used == 1)
+        return result
+    except (ValueError, TypeError, KeyError):
+        # Shared classifier supplies safe status metadata for transport/API errors.
+        result = parse_result(stdout, returncode, task, seed, max_steps)
+        if result["status"] in ("success", "benchmark_failure"):
+            result = {"task": task, "seed": seed, "success": False,
+                      "status": "invalid_report", "api_calls": None,
+                      "input_tokens": None, "output_tokens": None}
+        result.update(evaluation_mode="simulated_fill_recovery",
+                      injection_confirmed=False, recoveries_used=None,
+                      recovered_success=False)
+        return result
+
+
+def run_recovery_episode(task, seed, max_steps=3):
+    if task not in ("enter-text", "login-user"):
+        raise ValueError("Recovery evaluation requires a local text-entry task")
+    budget = Budget(max_steps)
+    command = [sys.executable, "-m", "browser_agent", "--task", task,
+               "--seed", str(seed), "--max-steps", str(max_steps),
+               "--max-recoveries", "1", "--simulate-fill-error-once"]
+    start = time.monotonic()
+    process = subprocess.Popen(command, cwd=ROOT, stdout=subprocess.PIPE,
+                               stderr=subprocess.PIPE, text=True, start_new_session=True)
+    try:
+        stdout, _ = process.communicate(timeout=budget.run_timeout + 10)
+        result = parse_recovery_result(stdout, process.returncode, task, seed, max_steps)
+    except (subprocess.TimeoutExpired, KeyboardInterrupt):
+        try:
+            os.killpg(process.pid, signal.SIGKILL)
+        except ProcessLookupError:
+            pass
+        process.communicate()
+        if sys.exc_info()[0] is KeyboardInterrupt:
+            raise
+        result = {"task": task, "seed": seed, "success": False, "status": "timeout",
+                  "api_calls": None, "input_tokens": None, "output_tokens": None,
+                  "evaluation_mode": "simulated_fill_recovery", "injection_confirmed": False,
+                  "recoveries_used": None, "recovered_success": False}
+    result["duration_seconds"] = round(time.monotonic() - start, 2)
+    return result
+
+
+def recovery_summary(records, planned, max_steps):
+    summary = summarize(records, planned, max_steps)
+    injected = sum(r.get("injection_confirmed", False) for r in records)
+    recovered = sum(r.get("recovered_success", False) for r in records)
+    summary.update(
+        evaluation_mode="simulated_fill_recovery", max_recoveries_per_episode=1,
+        confirmed_injected_episodes=injected, recovered_episodes=recovered,
+        recovery_success_rate_on_attempted=recovered / len(records) if records else None,
+        recovery_success_rate_on_confirmed_injections=recovered / injected if injected else None,
+        recoveries_used=sum(r.get("recoveries_used") or 0 for r in records),
+    )
+    return summary
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--task", choices=("enter-text", "login-user"), default="enter-text")
+    parser.add_argument("--seeds", type=int, nargs="+", default=[7, 42, 123])
+    parser.add_argument("--max-steps", type=int, choices=range(3, 7), default=3)
+    args = parser.parse_args()
+    if len(args.seeds) != len(set(args.seeds)):
+        parser.error("Seeds must be unique")
+    if len(args.seeds) * args.max_steps > 24:
+        parser.error("Evaluation exceeds the 24-call ceiling")
+    if args.task == "login-user" and args.max_steps < 4:
+        parser.error("login-user with an injected failure requires at least four steps")
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    output = ROOT / "results" / f"recovery-eval-{stamp}-{uuid4().hex[:8]}"
+    summary = run_suite([args.task], args.seeds, output,
+                        runner=run_recovery_episode, max_steps=args.max_steps,
+                        summary_builder=recovery_summary)
+    print(json.dumps(summary, indent=2))
+    print(f"Results: {output}")
+    return 0 if summary["complete"] and summary["recovered_episodes"] == summary["planned"] else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

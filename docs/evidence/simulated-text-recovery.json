@@ -1,0 +1,29 @@
+{
+  "evaluation_mode": "simulated_fill_recovery",
+  "planned": 3,
+  "attempted": 3,
+  "unattempted": 0,
+  "complete": true,
+  "successes": 3,
+  "success_rate_on_attempted": 1.0,
+  "max_steps_per_episode": 3,
+  "api_call_ceiling": 9,
+  "reported_api_calls": 9,
+  "episodes_with_unknown_api_usage": 0,
+  "reported_input_tokens": 2763,
+  "reported_output_tokens": 129,
+  "by_task": {
+    "enter-text": {
+      "attempted": 3,
+      "successes": 3,
+      "success_rate": 1.0
+    }
+  },
+  "max_recoveries_per_episode": 1,
+  "confirmed_injected_episodes": 3,
+  "recovered_episodes": 3,
+  "recovery_success_rate_on_attempted": 1.0,
+  "recovery_success_rate_on_confirmed_injections": 1.0,
+  "recoveries_used": 3,
+  "interrupted": false
+}

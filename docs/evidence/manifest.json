@@ -1,0 +1,41 @@
+{
+  "report_date": "2026-10-21",
+  "evidence": [
+    {
+      "file": "baseline-regression.json",
+      "original_project_relative_path": "results/eval-20261021T145144Z-bc2c97aa/summary.json",
+      "classification": "baseline",
+      "sha256": "36688aefb61418ab162cbfa06071f33e4aa10d8802f0bfe0e4a5d57905ccaeb4"
+    },
+    {
+      "file": "baseline-login.json",
+      "original_project_relative_path": "results/eval-20261021T130104Z-737532cb/summary.json",
+      "classification": "baseline",
+      "sha256": "4dc96772961ae5c3c50060ff3ab781517a9c43a6ca2fb4049b27a835c0251994"
+    },
+    {
+      "file": "simulated-text-recovery.json",
+      "original_project_relative_path": "results/recovery-eval-20261021T145615Z-42671409/summary.json",
+      "classification": "simulated_fill_recovery",
+      "sha256": "a4fa839f0e805f9d84893e5bb04100272766de96c17b7dd8bf1b4db651703564"
+    },
+    {
+      "file": "simulated-login-recovery.json",
+      "original_project_relative_path": "results/recovery-eval-20261021T145728Z-820fedbe/summary.json",
+      "classification": "simulated_fill_recovery",
+      "sha256": "5f55cb0e7e4b76d2852046086240e9110de9d3873657d9af576ae1f238002003"
+    }
+  ],
+  "source_snapshot_note": "Hashes record project Python files at documentation preparation; they are not verified source revisions for the earlier live runs.",
+  "implementation_sha256": {
+    "browser_agent/__init__.py": "2691b3b27f3c2f1a7475faf3700a5f4c2f903abd7cb5a81a94a2e86d3b50f156",
+    "browser_agent/__main__.py": "f04f5d8c7c9f4f7e1dad64197cc50398ea0ce5f1c0967c58b9e0af44f10ff382",
+    "browser_agent/actions.py": "8175a103d5cb6d71970561e3864052148c7521ff8b57b2a18ef5eff565b8ea1e",
+    "browser_agent/budget.py": "a68dbc6c59caa9c0503068735a1c82139cfa4c0a954273e425e082889f58cd36",
+    "browser_agent/evaluate.py": "c73a333937b26c0452c94c7d56f829e3befecdd981c5fb9eac7a6f2611114cbf",
+    "browser_agent/evaluate_recovery.py": "d0e348242ff797e8eb48b1a05f33b2ead78e7926c3c11006a1da1f53fa514489",
+    "browser_agent/model.py": "e759a2e7bbd5163cd4accc8a30476907e22fba0efa00ff48e7fe9f8ab9a1c89f",
+    "browser_agent/recovery.py": "7cb23af36e46b3bc872e1976b43ddc9ab432e99a21f185b0571d10c0efe021d7",
+    "browser_agent/workflow.py": "fdfb9c1b0a84d241a418e1d8e61cdf5623b362185f54c10f07505e3c497ed445"
+  }
+}
