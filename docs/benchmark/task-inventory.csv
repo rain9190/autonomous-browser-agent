@@ -1,0 +1,22 @@
+task,selection,family,action_budget,required_actions,status,currently_allowlisted,registered,notes
+click-test,provisional_primary,single_click,2,click(button),implemented,True,True,Existing live evidence
+click-button,provisional_primary,label_matching,2,click(button),implemented,True,True,Existing live evidence
+click-button-sequence,provisional_primary,ordered_actions,2,click(button),implemented,True,True,Existing live evidence
+enter-text,provisional_primary,form_entry,2,"fill(textbox), click(button)",implemented,True,True,Existing live evidence
+login-user,provisional_primary,multi_field_form,3,"fill(textbox), click(button)",implemented,True,True,Existing live evidence
+enter-text-2,provisional_primary,text_transformation,2,"fill(textbox), click(button)",candidate,False,True,Case conversion; same action types but not allowlisted/probed
+click-test-2,provisional_primary,single_click,2,click(button),candidate,False,True,Choose ONE among distractors
+click-test-transfer,provisional_primary,single_click_variant,2,click(button),candidate,False,True,WOB_DATA_MODE affects target; record mode; do not claim held-out task generalization
+click-link,provisional_primary,link_selection,2,click(observed interactive target),candidate,False,True,Link-styled spans may have generic AX roles; needs browser/DOM role audit
+click-checkboxes,provisional_primary,multi_selection,7,"set_checked(checkbox), click(button)",candidate,False,True,2–6 boxes; up to six checks plus Submit; graded reward; current six-step cap insufficient
+click-checkboxes-soft,provisional_primary,semantic_selection,6,"set_checked(checkbox), click(button)",candidate,False,True,Up to five selected boxes plus Submit; graded reward; semantic instruction
+click-option,provisional_primary,radio_selection,3,"check(radio), click(button)",candidate,False,True,"Source uses radio inputs, not native select"
+choose-list,provisional_primary,native_select,3,"select_option(combobox), click(button)",candidate,False,True,Native select; distinguish option values and labels
+click-dialog,provisional_primary,dialog_controls,2,click(button),candidate,False,True,Close icon accessible name/role needs probe
+click-dialog-2,provisional_primary,dialog_label_matching,2,click(button),candidate,False,True,Requested dialog button; not just close
+click-collapsible,provisional_primary,disclosure_sequence,4,"click(accordion control), click(button)",candidate,False,True,Expand then submit; audit jQuery ARIA roles
+click-collapsible-2,provisional_primary,dynamic_discovery,6,"click(accordion control), click(observed interactive target)",candidate,False,True,Three sections; new visible controls require fresh observation; fixed resource cap
+click-tab,provisional_primary,tab_selection,2,click(tab),candidate,False,True,jQuery tab role is outside current button-only click validator
+click-tab-2-easy,provisional_primary,tab_search,4,"click(tab), click(observed interactive target)",candidate,False,True,Source has one tab and generated link-styled targets; audit actual roles
+click-tab-2-medium,provisional_primary,dynamic_tab_state,5,"click(tab), click(observed interactive target)",candidate,False,True,Source generates two tabs and clears second; inspect actual semantics/registration before promotion
+click-checkboxes-large,reserve_blocked,large_multi_selection,13,"set_checked(checkbox), click(button)",blocked_budget,False,True,"5–12 selected boxes plus Submit; reserve, not a substitute chosen by final performance"

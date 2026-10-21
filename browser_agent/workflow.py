@@ -4,7 +4,8 @@ from browsergym.utils.obs import flatten_axtree_to_str
 from langgraph.graph import END, START, StateGraph
 
 from .budget import Budget
-from .actions import button_ids, textbox_ids, validate_action
+from .metrics import COMPLETION_METRIC, full_credit_success, positive_reward_terminal
+from .actions import button_ids, textbox_ids, selection_targets, validate_action
 
 
 class State(TypedDict, total=False):
@@ -12,6 +13,7 @@ class State(TypedDict, total=False):
     tree: str
     allowed: set[str]
     editable: set[str]
+    selection: dict
     proposal: Any
     payload: str
     steps: int
@@ -23,6 +25,8 @@ class State(TypedDict, total=False):
     history: list[dict]
     progress: list[dict]
     remaining_steps: int
+    completion_metric: str
+    positive_reward_terminal: bool
     trace: list[str]
     last_attempt: dict
     failed_actions: list[dict]
@@ -40,9 +44,10 @@ def build_workflow(env, model, max_steps=2, max_recoveries=0):
             raise ValueError("Accessibility tree exceeds input budget")
         allowed = button_ids(tree)
         editable = textbox_ids(tree)
-        if not allowed and not editable:
+        selection = selection_targets(tree)
+        if not allowed and not editable and not any(selection.values()):
             raise ValueError("No supported elements in the observation")
-        return {"tree": tree, "allowed": allowed, "editable": editable,
+        return {"tree": tree, "allowed": allowed, "editable": editable, "selection": selection,
                 "trace": s.get("trace", []) + ["observe"]}
 
     def decide(s):
@@ -55,12 +60,12 @@ def build_workflow(env, model, max_steps=2, max_recoveries=0):
                 "trace": s["trace"] + ["decide"]}
 
     def validate(s):
-        action = validate_action(s["proposal"], s["allowed"], s["editable"])
+        action = validate_action(s["proposal"], s["allowed"], s["editable"], s["selection"])
         return {"payload": action.model_dump_json(exclude_none=True),
                 "trace": s["trace"] + ["validate"]}
 
     def execute(s):
-        action = validate_action(s["proposal"], s["allowed"], s["editable"])
+        action = validate_action(s["proposal"], s["allowed"], s["editable"], s["selection"])
         observation, reward, terminated, truncated, _ = env.step(s["payload"])
         attempted = action.model_dump(exclude_none=True)
         error = bool(observation.get("last_action_error"))
@@ -81,7 +86,8 @@ def build_workflow(env, model, max_steps=2, max_recoveries=0):
                       and "Locator.fill" in diagnostic
                       and "exceeded" in diagnostic else
                       "browser_action_error" if error else None)
-        success = s["reward"] > 0 and s["terminated"] and not error and not s["truncated"]
+        positive = positive_reward_terminal(s["reward"], s["terminated"], s["truncated"], error)
+        success = full_credit_success(s["reward"], s["terminated"], s["truncated"], error)
         if success:
             reason = "benchmark_success"
         elif error:
@@ -94,6 +100,8 @@ def build_workflow(env, model, max_steps=2, max_recoveries=0):
                 reason = "recover"
             else:
                 reason = "browser_action_error"
+        elif positive and s["reward"] < 1:
+            reason = "partial_credit_terminal"
         elif s["terminated"] or s["truncated"]:
             reason = "episode_ended_without_success"
         elif s["steps"] >= budget.max_steps:
@@ -112,6 +120,7 @@ def build_workflow(env, model, max_steps=2, max_recoveries=0):
         recovery_context = ({"action": action["action"], "bid": action["bid"],
                              "status": "previous_fill_failed"} if reason == "recover" else None)
         return {"success": success, "reason": reason, "progress": progress,
+                "completion_metric": COMPLETION_METRIC, "positive_reward_terminal": positive,
                 "recovery_context": recovery_context,
                 "recoveries_used": s.get("recoveries_used", 0) + int(reason == "recover"),
                 "remaining_steps": budget.max_steps - s["steps"],

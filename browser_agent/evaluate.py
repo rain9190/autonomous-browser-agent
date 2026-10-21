@@ -11,13 +11,15 @@ import time
 from uuid import uuid4
 
 from .budget import Budget
+from .metrics import COMPLETION_METRIC, full_credit_success, positive_reward_terminal, valid_reward
 
-TASKS = ("click-test", "click-button", "click-button-sequence", "enter-text", "login-user")
+TASKS = ("click-test", "click-button", "click-button-sequence", "enter-text", "login-user", "click-checkboxes-soft", "click-option", "choose-list")
 ROOT = Path(__file__).resolve().parents[1]
 MAX_EPISODES = 12
 
 
 def parse_result(stdout, returncode, task, seed, max_steps=2):
+    result = None
     try:
         result = json.loads(stdout)
         if isinstance(result, dict) and result.get("simulated_failure_requested", False):
@@ -33,21 +35,31 @@ def parse_result(stdout, returncode, task, seed, max_steps=2):
                 raise ValueError()
         if result["api_calls"] > max_steps or result["steps"] > max_steps:
             raise ValueError()
+        if not valid_reward(result.get("reward")):
+            raise ValueError()
+        if result.get("completion_metric", COMPLETION_METRIC) != COMPLETION_METRIC:
+            raise ValueError()
+        positive = positive_reward_terminal(result["reward"], result.get("terminated"), result.get("truncated"),
+                                            result.get("reason") == "browser_action_error")
+        if "positive_reward_terminal" in result and (type(result["positive_reward_terminal"]) is not bool or result["positive_reward_terminal"] != positive):
+            raise ValueError()
         success = (result["success"] and returncode == 0
                    and result.get("reason") == "benchmark_success"
-                   and result.get("terminated") is True
-                   and result.get("truncated") is False
-                   and isinstance(result.get("reward"), (int, float))
-                   and result["reward"] > 0)
+                   and full_credit_success(result["reward"], result.get("terminated"), result.get("truncated")))
         if result["success"] != success:
             raise ValueError()
         # Keep only known public result fields; never persist raw logs.
         return {"task": task, "seed": seed, "success": success,
                 "status": "success" if success else "benchmark_failure",
+                "reward": result["reward"], "positive_reward_terminal": positive,
+                "completion_metric": result.get("completion_metric", "legacy_unversioned"),
                 **{key: result[key] for key in
                    ("api_calls", "steps", "input_tokens", "output_tokens")}}
     except (ValueError, TypeError, KeyError):
         status = "invalid_report"
+        if (isinstance(result, dict) and result.get("status") == "run_failed"
+                and result.get("task") == task and result.get("seed") == seed):
+            status = "timeout" if result.get("category") == "run_timeout" else "agent_validation_or_run_error"
         if "API request failed (HTTP 429)" in stdout:
             status = "api_quota_or_rate_limit"
         elif "API request failed (HTTP" in stdout:
@@ -102,6 +114,9 @@ def summarize(records, planned, max_steps=2):
                          "success_rate": won / len(rows)}
     return {
         "evaluation_mode": "baseline",
+        "completion_metric": COMPLETION_METRIC,
+        "positive_reward_terminal_episodes": sum(r.get("positive_reward_terminal", False) for r in records),
+        "partial_credit_episodes": sum(r.get("positive_reward_terminal", False) and valid_reward(r.get("reward")) and r["reward"] < 1 - 1e-9 for r in records),
         "planned": planned, "attempted": len(records),
         "unattempted": planned - len(records),
         "complete": len(records) == planned,

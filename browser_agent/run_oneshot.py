@@ -17,6 +17,7 @@ from openai import APIConnectionError, APIStatusError
 
 from .actions import action_mapping
 from .budget import Budget
+from .metrics import COMPLETION_METRIC
 from .evaluate import TASKS
 from .oneshot import OneShotAdapter, execute_plan
 
@@ -42,7 +43,8 @@ def main():
     if not (html / (args.task + ".html")).is_file():
         print("Requested MiniWoB task HTML missing from vendor checkout")
         return 1
-    report = {"evaluation_mode": "oneshot", "task": args.task, "seed": args.seed,
+    report = {"evaluation_mode": "oneshot", "completion_metric": COMPLETION_METRIC,
+              "positive_reward_terminal": False, "task": args.task, "seed": args.seed,
               "max_steps": args.max_steps, "success": False, "steps": 0,
               "reason": "run_error", "reward": 0.0, "terminated": False, "truncated": False}
     env = model = None

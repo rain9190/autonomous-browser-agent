@@ -15,6 +15,7 @@ from openai import APIConnectionError, APIStatusError
 
 from .actions import action_mapping
 from .budget import Budget
+from .metrics import COMPLETION_METRIC
 from .evaluate import TASKS
 from .model import ModelAdapter
 from .oneshot import OneShotAdapter, execute_plan
@@ -69,7 +70,8 @@ def main():
     allowance = int(args.arm == "recovery_on")
     budget = Budget(args.max_steps)
     load_dotenv(ROOT / ".env.local", override=False)
-    report = {"arm": args.arm, "task": args.task, "seed": args.seed,
+    report = {"completion_metric": COMPLETION_METRIC, "positive_reward_terminal": False,
+              "arm": args.arm, "task": args.task, "seed": args.seed,
               "model": MODEL, "max_steps": args.max_steps, "max_recoveries": allowance,
               "controlled_failure_scenario": args.scenario, "failure_injection_confirmed": False,
               "injected_failure_signature": None, "recoveries_used": 0,
@@ -109,7 +111,7 @@ def main():
                 {"recursion_limit": 5 * args.max_steps + 2})
         report["recoveries_used"] = state.get("recoveries_used", 0)
         report.update({key: state[key] for key in
-                       ("success", "reason", "reward", "terminated", "truncated")})
+                       ("success", "reason", "reward", "terminated", "truncated", "completion_metric", "positive_reward_terminal")})
     except APIStatusError as exc:
         report.update(reason="api_error", http_status=exc.status_code)
     except APIConnectionError:
