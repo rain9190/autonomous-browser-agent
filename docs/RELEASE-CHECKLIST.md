@@ -10,10 +10,19 @@
   event filtering and fake-worker cleanup tests.
 - Frozen agent source unchanged; verify with `python scripts/check_benchmark_plan.py`.
 
+## User-verified on 22 October 2026
+
+- Saved evaluation overview loaded: one-shot 55/60, iterative 57/60, recovery on 6/6.
+- Text-entry interface run, seed 61: full credit, two calls, two action attempts, no recovery.
+- Controlled-timeout interface run, seed 61: full credit, three calls, three action attempts,
+  one recovery after the induced first-fill failure.
+- Both workers exited 0. User returned to the terminal and committed demo `332f646`.
+- Final read-only freeze check passed after the report and demo commits.
+
 ## Remaining
 
-- User smoke-check the interface and first live development run; retain the actual outcome.
-- Check Stop/Ctrl-C on the user's Mac; optionally record a short demo.
+- Explicitly check Stop during an active run and restart behavior if needed; optionally record
+  a short demo. Active cancellation was not established by the successful-run screenshots.
 - Clean-environment reproduction remains unverified: direct pins are not a transitive lock,
   and the existing vendor/Chromium setup is required.
 - GitHub push and public sharing have not been requested or performed.

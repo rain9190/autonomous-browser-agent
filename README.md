@@ -6,9 +6,12 @@ Playwright action template, and checks benchmark completion through a LangGraph 
 The project investigates when fresh observations and bounded recovery justify additional
 model calls compared with a fixed one-shot plan.
 
-**Status:** the frozen Phase 4 evaluation and report are complete. Phase 5 adds a local
-demo and portfolio documentation. The new demo needs a user-run interface smoke check;
-no live demo success is claimed from offline tests.
+**Status:** the frozen Phase 4 evaluation and report are complete. The local demo and
+portfolio documentation are implemented. User-run interface checks on 22 October 2026
+confirmed text-entry success (two calls) and controlled-timeout recovery (three calls,
+one recovery), both at development seed 61 with full credit and worker exit 0.
+These checks are separate from the frozen final evaluation. See the
+[demo verification record](docs/DEMO-VERIFICATION.md) for scope and remaining checks.
 
 ## Measured results
 

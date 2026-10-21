@@ -33,12 +33,18 @@ alone does not cancel the worker. Use Stop or Ctrl-C in the server terminal. Sto
 worker process group, may prevent graceful cleanup, and flags incomplete usage. The deadline
 also stops an overlong worker. Do not expose this single-user development server externally.
 
-## User smoke checks still pending
+## Verified user runs and remaining checks
 
-- Page opens, shows 132 saved episodes and eight planning failures.
-- First live run shows actual stages and action-verification entries, then its real outcome.
-- Only one run can be active; Stop ends it and flags incomplete usage.
-- Ctrl-C returns the terminal prompt. Restart still loads the original frozen evidence.
+On 22 October 2026, the user shared screenshots confirming that the saved overview loaded
+and both live seed-61 checks completed with full credit and worker exit 0:
 
-Offline tests do not establish these interface results. Record the first live result before
-claiming an end-to-end UI test or recording a portfolio video.
+- Text entry: fill [14], click [15]; two calls, two action attempts, zero recoveries.
+- Controlled timeout: failed fill [14], successful fill [14], click [15]; three calls,
+  three action attempts, one recovery. The failed attempt consumed budget as intended.
+
+See [DEMO-VERIFICATION.md](DEMO-VERIFICATION.md). These were actual user-run interface
+checks, separate from the 132 final benchmark episodes. They were not rerun for documentation.
+
+Still unconfirmed by the screenshots: the expanded 132-row table/filter, Stop during an
+active run, prevention of concurrent runs in the live UI, and restart behavior. Offline tests
+cover several boundaries but do not substitute for those manual interface checks.
