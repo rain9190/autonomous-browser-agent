@@ -1,0 +1,794 @@
+{
+  "docs/evidence/final-v1/P01/01-click-test-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T210949Z-3068eebb/01-click-test-seed1009-iterative.json",
+    "sha256": "a5e0bac03cf1298608859b53ece2fa2da416d15b63ac8631f0c78267121aaf57"
+  },
+  "docs/evidence/final-v1/P01/01-click-test-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T210949Z-3068eebb/01-click-test-seed1009-oneshot.json",
+    "sha256": "48401ef1bb82a37b2c6da5341fe584ac54b2dde9d38ad41e2eef51bcddcb46b3"
+  },
+  "docs/evidence/final-v1/P01/02-click-test-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T210949Z-3068eebb/02-click-test-seed1013-iterative.json",
+    "sha256": "771e0a979deddc78ee6646fb089deb66a8bd6f0d219fdce4990fc0a733b4176f"
+  },
+  "docs/evidence/final-v1/P01/02-click-test-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T210949Z-3068eebb/02-click-test-seed1013-oneshot.json",
+    "sha256": "30e874ce0067c853a877e00b64e46a16dc3f907d29367e303ef1629a837e766c"
+  },
+  "docs/evidence/final-v1/P01/03-click-test-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T210949Z-3068eebb/03-click-test-seed1019-iterative.json",
+    "sha256": "4e03fcf1d4a20f204197a8070bb9ea3c3129604c9aa1ca94f0057177a6483806"
+  },
+  "docs/evidence/final-v1/P01/03-click-test-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T210949Z-3068eebb/03-click-test-seed1019-oneshot.json",
+    "sha256": "5ab4cdbdd006d5fd167861caaf53c475455d4ebb6c6b87e1c47da25fa4e3aa29"
+  },
+  "docs/evidence/final-v1/P01/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T210949Z-3068eebb/config.json",
+    "sha256": "0846d69e0e38208da2d62984ca86f68e708dde5089678aba19d6e6e00bd73f9b"
+  },
+  "docs/evidence/final-v1/P01/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T210949Z-3068eebb/pairs.json",
+    "sha256": "5d60c1a0606f9759237b10124d3d8c19b3744d7536e8e17d062c361241bb4944"
+  },
+  "docs/evidence/final-v1/P01/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T210949Z-3068eebb/summary.json",
+    "sha256": "0727d98e7862b85b9e87c7177e5c245f1a60433c5bdce3e1401d6e1fb997c5b4"
+  },
+  "docs/evidence/final-v1/P02/01-click-button-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211121Z-1619485d/01-click-button-seed1009-iterative.json",
+    "sha256": "6bf1ac80a3c8ee315bb178762ec4a62320ebc9614f2c9840f496bce864df1232"
+  },
+  "docs/evidence/final-v1/P02/01-click-button-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211121Z-1619485d/01-click-button-seed1009-oneshot.json",
+    "sha256": "c1b12da0ee667e541011ef0b047a30d64ef9fbb0eb1f5e957c0bbe6fd9b19e75"
+  },
+  "docs/evidence/final-v1/P02/02-click-button-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211121Z-1619485d/02-click-button-seed1013-iterative.json",
+    "sha256": "e98ceeb6348814d06ae56117b83aea5d8f08d472ef3ce0626aee986357b4909f"
+  },
+  "docs/evidence/final-v1/P02/02-click-button-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211121Z-1619485d/02-click-button-seed1013-oneshot.json",
+    "sha256": "60c414de037b1c4fdec0cb08190426e29b8537b76f2d0253d9aa18c7c352a2dc"
+  },
+  "docs/evidence/final-v1/P02/03-click-button-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211121Z-1619485d/03-click-button-seed1019-iterative.json",
+    "sha256": "b32935415016326b03e56e06e0070253d874fefb7858589600e439cee4593cc9"
+  },
+  "docs/evidence/final-v1/P02/03-click-button-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211121Z-1619485d/03-click-button-seed1019-oneshot.json",
+    "sha256": "984750765f92dbd700422bdc9c410cdb563159243c73a0f04f35381db48cb41a"
+  },
+  "docs/evidence/final-v1/P02/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211121Z-1619485d/config.json",
+    "sha256": "eae7dc36316c3f68fb3f93ea55a868d015dcc8bef5aac9dfa7a9cff43264aee1"
+  },
+  "docs/evidence/final-v1/P02/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211121Z-1619485d/pairs.json",
+    "sha256": "413ce703908a09f702a65fb813e71955e99f944feca8b0283a2584c6319d684f"
+  },
+  "docs/evidence/final-v1/P02/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211121Z-1619485d/summary.json",
+    "sha256": "0abe6a5ffd87b0e7df6e1fce3f0fd91b5600a67c13964ffca801a628fea1143e"
+  },
+  "docs/evidence/final-v1/P03/01-click-button-sequence-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211413Z-c453a3cd/01-click-button-sequence-seed1009-iterative.json",
+    "sha256": "02c30688d51b909baba192269e56ad732e6b49cfed8bb6a17b0c37d52a1a10cb"
+  },
+  "docs/evidence/final-v1/P03/01-click-button-sequence-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211413Z-c453a3cd/01-click-button-sequence-seed1009-oneshot.json",
+    "sha256": "b82028715246a1aebdf2c886de2618075cb2145ad59a6d4639fba5bc4ba7a3c8"
+  },
+  "docs/evidence/final-v1/P03/02-click-button-sequence-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211413Z-c453a3cd/02-click-button-sequence-seed1013-iterative.json",
+    "sha256": "30140df615b23d94398c18e0e9ba50aa00bd9820d2b57fdef085df31beaea5b1"
+  },
+  "docs/evidence/final-v1/P03/02-click-button-sequence-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211413Z-c453a3cd/02-click-button-sequence-seed1013-oneshot.json",
+    "sha256": "540bdb33bfc6eb996dea17668ba7ef68b4b84e58a1995c3c60747a389b75d6f6"
+  },
+  "docs/evidence/final-v1/P03/03-click-button-sequence-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211413Z-c453a3cd/03-click-button-sequence-seed1019-iterative.json",
+    "sha256": "473fd8941436c65706545344dd50d3361d53b1bb0f505b9175d8cfd7e129a18a"
+  },
+  "docs/evidence/final-v1/P03/03-click-button-sequence-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211413Z-c453a3cd/03-click-button-sequence-seed1019-oneshot.json",
+    "sha256": "8962a4d3104656bf55521dbd2e7a5ae0a68834f8b39cc9b5cfa243068db2b58d"
+  },
+  "docs/evidence/final-v1/P03/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211413Z-c453a3cd/config.json",
+    "sha256": "520f518ecd01de9f793aef08abd10e275787de7e204b391609f6d2183fb9b533"
+  },
+  "docs/evidence/final-v1/P03/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211413Z-c453a3cd/pairs.json",
+    "sha256": "16fe5b241d8438c32008f0a4b6971c62fc644c4008a2f4ace54b3b53a47a1fb2"
+  },
+  "docs/evidence/final-v1/P03/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211413Z-c453a3cd/summary.json",
+    "sha256": "e85fb67d168cef203a1bd109dcf81838f12456f60a0dcb636be51cd45ffea71a"
+  },
+  "docs/evidence/final-v1/P04/01-enter-text-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211511Z-6a15071a/01-enter-text-seed1009-iterative.json",
+    "sha256": "35d0f280a040d8a080f8f5a8e23594e8b3864aa03584cbde3c55f6b214538b04"
+  },
+  "docs/evidence/final-v1/P04/01-enter-text-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211511Z-6a15071a/01-enter-text-seed1009-oneshot.json",
+    "sha256": "fa966fa137a822378299621859da692f6203fbb94a945b207da23059c1e72647"
+  },
+  "docs/evidence/final-v1/P04/02-enter-text-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211511Z-6a15071a/02-enter-text-seed1013-iterative.json",
+    "sha256": "4ee4f87c6391983c62e5085e74fbb38356e34a68e7944cf3d3a5c348b41c31fe"
+  },
+  "docs/evidence/final-v1/P04/02-enter-text-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211511Z-6a15071a/02-enter-text-seed1013-oneshot.json",
+    "sha256": "6c6d0c29b1996afa148870626b96dad112b3e2b3668254c5fa41625142229345"
+  },
+  "docs/evidence/final-v1/P04/03-enter-text-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211511Z-6a15071a/03-enter-text-seed1019-iterative.json",
+    "sha256": "e73bca99369ef9c6ae377d683a4f353a563fb03b82bc3f1b89ca4210a0d30377"
+  },
+  "docs/evidence/final-v1/P04/03-enter-text-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211511Z-6a15071a/03-enter-text-seed1019-oneshot.json",
+    "sha256": "0b2880f5ee99d594cb0349934b0937e28f5631b770bcc049ff064bd5f405fd0b"
+  },
+  "docs/evidence/final-v1/P04/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211511Z-6a15071a/config.json",
+    "sha256": "1144aec5628ef9676963e18e31a5514f4dded205b007638daa600d656ce93422"
+  },
+  "docs/evidence/final-v1/P04/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211511Z-6a15071a/pairs.json",
+    "sha256": "0a674de799680169b68712874ed98eb36e721431c506792f6797c17b55b4cddf"
+  },
+  "docs/evidence/final-v1/P04/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211511Z-6a15071a/summary.json",
+    "sha256": "701a8c4957f19426f2af65aa03cd9847ef942b62119ddec93cd779d4db72e660"
+  },
+  "docs/evidence/final-v1/P05/01-login-user-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211707Z-f44697fd/01-login-user-seed1009-iterative.json",
+    "sha256": "e24af8fb1cea667e668c7739fc0ccee788bab7ccb866a705f01e3d1086963a32"
+  },
+  "docs/evidence/final-v1/P05/01-login-user-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211707Z-f44697fd/01-login-user-seed1009-oneshot.json",
+    "sha256": "1ce4b6fe58bb62dd111e7f1a47fb86c7d5709357d60a833157a07b92ebff77a8"
+  },
+  "docs/evidence/final-v1/P05/02-login-user-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211707Z-f44697fd/02-login-user-seed1013-iterative.json",
+    "sha256": "d2d421fd439fbd3587f3f178fb46d50494088262aaba7bf6117a21f996c6b640"
+  },
+  "docs/evidence/final-v1/P05/02-login-user-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211707Z-f44697fd/02-login-user-seed1013-oneshot.json",
+    "sha256": "2956aeddd3a6383e75d78970af113cf47564ac5d4bfce80417eb6f2c83162159"
+  },
+  "docs/evidence/final-v1/P05/03-login-user-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211707Z-f44697fd/03-login-user-seed1019-iterative.json",
+    "sha256": "48cc9baf3f259e0944b2dd0a0902488d09160acf6649fdfb95753eccac6f7d9c"
+  },
+  "docs/evidence/final-v1/P05/03-login-user-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211707Z-f44697fd/03-login-user-seed1019-oneshot.json",
+    "sha256": "73a7a28ea9b2f0d1b6dea00e0b71414557396b86c685acc74372453d95d8bf2d"
+  },
+  "docs/evidence/final-v1/P05/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211707Z-f44697fd/config.json",
+    "sha256": "db05e77b0720fe69203a1e21aed39ee0a827e19f506db79a31ef655003cd0d27"
+  },
+  "docs/evidence/final-v1/P05/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211707Z-f44697fd/pairs.json",
+    "sha256": "54169c13559d72d8d0770ab9cf563c20ed97c43f102dd39cc6b4dd9c7624547f"
+  },
+  "docs/evidence/final-v1/P05/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211707Z-f44697fd/summary.json",
+    "sha256": "5863a13a959faf4336fc43fe05a8c2f9dd8dc2348e38889ec901a8afa742d19e"
+  },
+  "docs/evidence/final-v1/P06/01-enter-text-2-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211921Z-36231d24/01-enter-text-2-seed1009-iterative.json",
+    "sha256": "cd445460b677c111efe6e8a1321a2f097a33b56966f5e318bf1d47a5cc4965d2"
+  },
+  "docs/evidence/final-v1/P06/01-enter-text-2-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211921Z-36231d24/01-enter-text-2-seed1009-oneshot.json",
+    "sha256": "5331000776637412b90d829d8fc11310ef5a07882ac6affeb383249ce608316b"
+  },
+  "docs/evidence/final-v1/P06/02-enter-text-2-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211921Z-36231d24/02-enter-text-2-seed1013-iterative.json",
+    "sha256": "2dd666c5eb1ca28eaaa1978a6ac8761235f3a30ab20049c5e6e5d56130da9b56"
+  },
+  "docs/evidence/final-v1/P06/02-enter-text-2-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211921Z-36231d24/02-enter-text-2-seed1013-oneshot.json",
+    "sha256": "bcb202b53b5269adc628dd8b8c45e469386899d4ae8abcf4b296cf135c97e6cd"
+  },
+  "docs/evidence/final-v1/P06/03-enter-text-2-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211921Z-36231d24/03-enter-text-2-seed1019-iterative.json",
+    "sha256": "21b4a947d930fce99226877530cc073bcb4396d022579f16c282f64cedf09109"
+  },
+  "docs/evidence/final-v1/P06/03-enter-text-2-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211921Z-36231d24/03-enter-text-2-seed1019-oneshot.json",
+    "sha256": "f09fccd2cf84067980f0a7de5ce23a16120edc4c0dd10bd3d35a0baf45a84e83"
+  },
+  "docs/evidence/final-v1/P06/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211921Z-36231d24/config.json",
+    "sha256": "691650c129aafe444fe855586f9a7d8a7b601e79bcf4dcbd57e0722cbdd8519e"
+  },
+  "docs/evidence/final-v1/P06/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211921Z-36231d24/pairs.json",
+    "sha256": "cf7a9c06b91dbd883925c007697652edbe1886e35523d1e305f9befd96cc1486"
+  },
+  "docs/evidence/final-v1/P06/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T211921Z-36231d24/summary.json",
+    "sha256": "c4b8ab848672e43bf2ec14738518e797be0e64f5032baba6cfd10eae30b292cb"
+  },
+  "docs/evidence/final-v1/P07/01-click-test-2-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212128Z-d1139c85/01-click-test-2-seed1009-iterative.json",
+    "sha256": "aacbfed80e5b5e7f66f8ad06c82bb37f678a6acce38d9587bd99324f9c643a17"
+  },
+  "docs/evidence/final-v1/P07/01-click-test-2-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212128Z-d1139c85/01-click-test-2-seed1009-oneshot.json",
+    "sha256": "13ea26b8735e22174bdd1af89566264680bbe5c18222d5dc0959d27eec358b38"
+  },
+  "docs/evidence/final-v1/P07/02-click-test-2-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212128Z-d1139c85/02-click-test-2-seed1013-iterative.json",
+    "sha256": "7ed9f060366eace986052918d98715a793252ab638d22abecd6a821c94b3cbe9"
+  },
+  "docs/evidence/final-v1/P07/02-click-test-2-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212128Z-d1139c85/02-click-test-2-seed1013-oneshot.json",
+    "sha256": "851e6fc79120aae3d70665f26d17d02c7d857929d4dc34f3e56e19103ef4b56f"
+  },
+  "docs/evidence/final-v1/P07/03-click-test-2-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212128Z-d1139c85/03-click-test-2-seed1019-iterative.json",
+    "sha256": "a4ef8a6e101399e5da91a70110658dc7a901edc4a04c249460fa51569b240c8e"
+  },
+  "docs/evidence/final-v1/P07/03-click-test-2-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212128Z-d1139c85/03-click-test-2-seed1019-oneshot.json",
+    "sha256": "1af736c99f25e7d0e66f750d4c13b23e07c572950fa874e12cd2eb0d8c8b310b"
+  },
+  "docs/evidence/final-v1/P07/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212128Z-d1139c85/config.json",
+    "sha256": "4051af29c7402efb29a53e48fbf7663bf04e6a2f119131d520f779d8266c2c2f"
+  },
+  "docs/evidence/final-v1/P07/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212128Z-d1139c85/pairs.json",
+    "sha256": "0bfd0c68b8cf61a4b70a8c8d102f59bd1b965029bb6ac95428655f1c853a67ce"
+  },
+  "docs/evidence/final-v1/P07/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212128Z-d1139c85/summary.json",
+    "sha256": "af1e32beb8f188ae97a0dc05044aedfbf4e0d15a751b636cd48a6f577193b6b5"
+  },
+  "docs/evidence/final-v1/P08/01-click-test-transfer-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212255Z-253113a8/01-click-test-transfer-seed1009-iterative.json",
+    "sha256": "0498ea0add095f42dfdf6ff82510a7b5f90474e5101c674665d21db6f3a627b4"
+  },
+  "docs/evidence/final-v1/P08/01-click-test-transfer-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212255Z-253113a8/01-click-test-transfer-seed1009-oneshot.json",
+    "sha256": "dc34a1cc0a88f5cbba44968f4a0af96b269947e20edd067a596adcef1be489a9"
+  },
+  "docs/evidence/final-v1/P08/02-click-test-transfer-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212255Z-253113a8/02-click-test-transfer-seed1013-iterative.json",
+    "sha256": "022324c61546db1262be20023be96888b07f40850c088e9b24fcf4e75d20e60f"
+  },
+  "docs/evidence/final-v1/P08/02-click-test-transfer-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212255Z-253113a8/02-click-test-transfer-seed1013-oneshot.json",
+    "sha256": "0de95369fb84d98a36722e979b7e0dc747c0e4cf83da5bfe2c46f16567d6b142"
+  },
+  "docs/evidence/final-v1/P08/03-click-test-transfer-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212255Z-253113a8/03-click-test-transfer-seed1019-iterative.json",
+    "sha256": "6f467a40dae9725a9c227c7dce78ee8981aeb62abf8dde2878bf3e505eab610b"
+  },
+  "docs/evidence/final-v1/P08/03-click-test-transfer-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212255Z-253113a8/03-click-test-transfer-seed1019-oneshot.json",
+    "sha256": "4089ec8859ced7cd1a855ea95856b4f498ec91576feaefc4252ee2f5d3bf1a60"
+  },
+  "docs/evidence/final-v1/P08/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212255Z-253113a8/config.json",
+    "sha256": "c1fa0377de354ea0800ea33020d3458a626a97f1c4e12f1c86d41d72f6ea59aa"
+  },
+  "docs/evidence/final-v1/P08/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212255Z-253113a8/pairs.json",
+    "sha256": "fdd3259fb35bf4d87962d0546b61b9da2caf220f336b5dc22416ad7cf3e3850c"
+  },
+  "docs/evidence/final-v1/P08/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212255Z-253113a8/summary.json",
+    "sha256": "96fadd9d3107f4854eeeb7c139b166e4c9a9e00aab4b76af61d9184ed43ce04e"
+  },
+  "docs/evidence/final-v1/P09/01-click-link-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212407Z-1a8c3ec5/01-click-link-seed1009-iterative.json",
+    "sha256": "d9779ccceb09bf4d4fd3f4d1e621cdd98e9ff274375900369b27972393052187"
+  },
+  "docs/evidence/final-v1/P09/01-click-link-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212407Z-1a8c3ec5/01-click-link-seed1009-oneshot.json",
+    "sha256": "53e60bbb4dffabc57f64c2004afcd7a6f93fc98585e00226f572de1243d6c998"
+  },
+  "docs/evidence/final-v1/P09/02-click-link-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212407Z-1a8c3ec5/02-click-link-seed1013-iterative.json",
+    "sha256": "d18912ebb1c74a873eb321deeca6ba66ac37c60483c64e1f5780e447f75fb4ca"
+  },
+  "docs/evidence/final-v1/P09/02-click-link-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212407Z-1a8c3ec5/02-click-link-seed1013-oneshot.json",
+    "sha256": "a2b584979a4a3f81c25f4ee0ad50ebeca251870c68289a19867fab135b05a967"
+  },
+  "docs/evidence/final-v1/P09/03-click-link-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212407Z-1a8c3ec5/03-click-link-seed1019-iterative.json",
+    "sha256": "71743c5bbbcb26adcce688b0e8518454c421d98e29de9937b5348ac653d54520"
+  },
+  "docs/evidence/final-v1/P09/03-click-link-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212407Z-1a8c3ec5/03-click-link-seed1019-oneshot.json",
+    "sha256": "db467736b051e6dea9272580293b2c8a208f2323f83b30235c186ce9e5a5177f"
+  },
+  "docs/evidence/final-v1/P09/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212407Z-1a8c3ec5/config.json",
+    "sha256": "23fd542e9ec3f44da17f07bc08132562bf25c61bafe517349ef633ec95ad28d7"
+  },
+  "docs/evidence/final-v1/P09/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212407Z-1a8c3ec5/pairs.json",
+    "sha256": "5eb0aa0573216908e2a6ff0549fdec34b537a0a21dc6c2f5f31dd37a4b7c097d"
+  },
+  "docs/evidence/final-v1/P09/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212407Z-1a8c3ec5/summary.json",
+    "sha256": "d590177cc79e06a3819d1be26eed0efc4a61c17d362e98f18c2376aa76614aa5"
+  },
+  "docs/evidence/final-v1/P10/01-click-checkboxes-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212512Z-38effd33/01-click-checkboxes-seed1009-iterative.json",
+    "sha256": "8552d7b2431339b3be0f178dcc129f1f65c963f371412ac2f7e0687fcaaff39c"
+  },
+  "docs/evidence/final-v1/P10/01-click-checkboxes-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212512Z-38effd33/01-click-checkboxes-seed1009-oneshot.json",
+    "sha256": "da30460af4ae86cc3a8b05f5d83d2d3d150cf51713ce2f1b679fca76891c7084"
+  },
+  "docs/evidence/final-v1/P10/02-click-checkboxes-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212512Z-38effd33/02-click-checkboxes-seed1013-iterative.json",
+    "sha256": "94448ac0e58077b783468db01cc79b4f0b29d3182c4eb7ce4eccc3ddc21697b5"
+  },
+  "docs/evidence/final-v1/P10/02-click-checkboxes-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212512Z-38effd33/02-click-checkboxes-seed1013-oneshot.json",
+    "sha256": "b8bc6bfb125b78c6d77689eb369d2ac48b770ef21d26fd361c568f67c3a706df"
+  },
+  "docs/evidence/final-v1/P10/03-click-checkboxes-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212512Z-38effd33/03-click-checkboxes-seed1019-iterative.json",
+    "sha256": "f264667dbfc223064a4e8aa4561b82daeb10a485f639e7aeb0d0ef4a33903dad"
+  },
+  "docs/evidence/final-v1/P10/03-click-checkboxes-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212512Z-38effd33/03-click-checkboxes-seed1019-oneshot.json",
+    "sha256": "4e4471cc8d1c362b10afd91c2f18fe4ef1f8621ed0fd3b23512f228dc8c00fcb"
+  },
+  "docs/evidence/final-v1/P10/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212512Z-38effd33/config.json",
+    "sha256": "676564308648f4e44973b881ffee126433d468381cd9f10c67df573a1f6e65ce"
+  },
+  "docs/evidence/final-v1/P10/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212512Z-38effd33/pairs.json",
+    "sha256": "bf57dc2816fe81d95164f8b78ee65c97dbb68b26f818467e07cf97f2d12a76ff"
+  },
+  "docs/evidence/final-v1/P10/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212512Z-38effd33/summary.json",
+    "sha256": "39853139ee139f56a9cc19dfbc6a60b385035290cf57ceb7ebb295451d0df864"
+  },
+  "docs/evidence/final-v1/P11/01-click-checkboxes-soft-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212744Z-32d0918a/01-click-checkboxes-soft-seed1009-iterative.json",
+    "sha256": "6cf396f2e6d28bdea178b1f9f32688ce575b270c4ff1a2d74964124ff90358d4"
+  },
+  "docs/evidence/final-v1/P11/01-click-checkboxes-soft-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212744Z-32d0918a/01-click-checkboxes-soft-seed1009-oneshot.json",
+    "sha256": "6736b90237f23aee5883a7cef0c9e050288cf58d4af8033998fbc9e05dac6ccd"
+  },
+  "docs/evidence/final-v1/P11/02-click-checkboxes-soft-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212744Z-32d0918a/02-click-checkboxes-soft-seed1013-iterative.json",
+    "sha256": "dab0a3dd155a6005ec1b874318a202579cea563f20e43417093af3609b8e5775"
+  },
+  "docs/evidence/final-v1/P11/02-click-checkboxes-soft-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212744Z-32d0918a/02-click-checkboxes-soft-seed1013-oneshot.json",
+    "sha256": "2e0db00db252242cbe05d373d9ccd300c905815228f94d6b2847ad841911953c"
+  },
+  "docs/evidence/final-v1/P11/03-click-checkboxes-soft-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212744Z-32d0918a/03-click-checkboxes-soft-seed1019-iterative.json",
+    "sha256": "9940c3471ce67f3f7be09d49a9b4187fa4d8cf79edd3121ba8051eee3fc36254"
+  },
+  "docs/evidence/final-v1/P11/03-click-checkboxes-soft-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212744Z-32d0918a/03-click-checkboxes-soft-seed1019-oneshot.json",
+    "sha256": "7b0421576f49f8acdbcf9b04e81d291b6565ff3aa5bc5c2a783071809f085d4b"
+  },
+  "docs/evidence/final-v1/P11/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212744Z-32d0918a/config.json",
+    "sha256": "88d2dede65648cc9c60533e30ad979aad26762f5dfdc95f2c595163dc275341d"
+  },
+  "docs/evidence/final-v1/P11/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212744Z-32d0918a/pairs.json",
+    "sha256": "e48440df06f482ba7e0355c7ac32f17863a5e0e27a113dced8754c6315b9a256"
+  },
+  "docs/evidence/final-v1/P11/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T212744Z-32d0918a/summary.json",
+    "sha256": "bc465365d12bff3c011a9548b942bf83d9b05163373bb1fa6376cae42a918629"
+  },
+  "docs/evidence/final-v1/P12/01-click-option-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213008Z-4068acd7/01-click-option-seed1009-iterative.json",
+    "sha256": "7d2b143f8c778b45a6db34652aa2912c0fe5b66dcdc3c4442f1612c24a43508f"
+  },
+  "docs/evidence/final-v1/P12/01-click-option-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213008Z-4068acd7/01-click-option-seed1009-oneshot.json",
+    "sha256": "55526867d72606045af38dbf8974da14db68a4cd9203b2c4d2dc8728d69f8502"
+  },
+  "docs/evidence/final-v1/P12/02-click-option-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213008Z-4068acd7/02-click-option-seed1013-iterative.json",
+    "sha256": "a84d5f65d727bb32187a5689cbafea28a0bfa69658414dfecfcc2a843d3498c1"
+  },
+  "docs/evidence/final-v1/P12/02-click-option-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213008Z-4068acd7/02-click-option-seed1013-oneshot.json",
+    "sha256": "3fbc61d703b39af195d8ac9c3ff408ad5ec3fc657d4a21be94d2ea3f1e2e72fd"
+  },
+  "docs/evidence/final-v1/P12/03-click-option-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213008Z-4068acd7/03-click-option-seed1019-iterative.json",
+    "sha256": "7ed7d76e6eebd5500834c93a788455f8eddf47b068f15af0e86899d6a7460dbd"
+  },
+  "docs/evidence/final-v1/P12/03-click-option-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213008Z-4068acd7/03-click-option-seed1019-oneshot.json",
+    "sha256": "45f509f9d16829245af8aaf6848c4fec96549e96145662850cce1d265ce8bce3"
+  },
+  "docs/evidence/final-v1/P12/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213008Z-4068acd7/config.json",
+    "sha256": "85fd46284a11ecee045f4e2b84f460b374b6fac1237eb97125d256d03a0eff9a"
+  },
+  "docs/evidence/final-v1/P12/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213008Z-4068acd7/pairs.json",
+    "sha256": "d498b19412ad549ee3eef811b1ea8e3ff4d8a8bc0559ece994d9d1717b2b3776"
+  },
+  "docs/evidence/final-v1/P12/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213008Z-4068acd7/summary.json",
+    "sha256": "8f294a73cbd3116c315e7f86841f29c2c1d8b125d64a0d41a5e6f262b0703f56"
+  },
+  "docs/evidence/final-v1/P13/01-choose-list-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213209Z-71907ebb/01-choose-list-seed1009-iterative.json",
+    "sha256": "cc3bc69804c4134d749d42370a12957661cbb6ec480bdd1de63f45ead4dc42c9"
+  },
+  "docs/evidence/final-v1/P13/01-choose-list-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213209Z-71907ebb/01-choose-list-seed1009-oneshot.json",
+    "sha256": "9193000a18a1ef99dfd54a7e0173712747b85f080b06d5e3125278710748a649"
+  },
+  "docs/evidence/final-v1/P13/02-choose-list-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213209Z-71907ebb/02-choose-list-seed1013-iterative.json",
+    "sha256": "39525fc8541fd20d8a24e7fe3efde0c359687290cdbadf1e64685fc7b576b37a"
+  },
+  "docs/evidence/final-v1/P13/02-choose-list-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213209Z-71907ebb/02-choose-list-seed1013-oneshot.json",
+    "sha256": "4477120402927f13e114b3573632f1ca6d1dec539a29172bb46803f49129bc51"
+  },
+  "docs/evidence/final-v1/P13/03-choose-list-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213209Z-71907ebb/03-choose-list-seed1019-iterative.json",
+    "sha256": "5306b0391b8823a50a34888fb513037a02a312555df8f263180c1ca9520c1ada"
+  },
+  "docs/evidence/final-v1/P13/03-choose-list-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213209Z-71907ebb/03-choose-list-seed1019-oneshot.json",
+    "sha256": "d0a1715d36950cd47e29fbda2a5ac894301cbab905593786e9f8eafe6145de95"
+  },
+  "docs/evidence/final-v1/P13/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213209Z-71907ebb/config.json",
+    "sha256": "ef96cd9a9a88cfb40ee005458be02655a1da514832d8f9dc528d00c8d1c17a58"
+  },
+  "docs/evidence/final-v1/P13/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213209Z-71907ebb/pairs.json",
+    "sha256": "04f954e1a2e0e30c78f10fdc8b2a58856ad1835f210de4f4cfeb9cc14d600a55"
+  },
+  "docs/evidence/final-v1/P13/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213209Z-71907ebb/summary.json",
+    "sha256": "34c0eb2518ea1420a825142d15d9403d1fa0ec013548107bdcf59846e294e407"
+  },
+  "docs/evidence/final-v1/P14/01-click-dialog-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213418Z-5628c9c2/01-click-dialog-seed1009-iterative.json",
+    "sha256": "eed75aaa82daff8b0dbbe1f2291cc69c0c2a7678b3aa385a8b076a8104c10499"
+  },
+  "docs/evidence/final-v1/P14/01-click-dialog-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213418Z-5628c9c2/01-click-dialog-seed1009-oneshot.json",
+    "sha256": "ad93ace0d9dfb43e5534bc7cb762d7150458f28ac8357c8696c2453002a33acb"
+  },
+  "docs/evidence/final-v1/P14/02-click-dialog-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213418Z-5628c9c2/02-click-dialog-seed1013-iterative.json",
+    "sha256": "072f2386db75e4b5c9e5aa601fe404b66ccfd61d051181aac81d0707912e5b99"
+  },
+  "docs/evidence/final-v1/P14/02-click-dialog-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213418Z-5628c9c2/02-click-dialog-seed1013-oneshot.json",
+    "sha256": "18573f195596d883d9cb42627fa3440b5b45cdbf4a4e264d0bf094f6ec759888"
+  },
+  "docs/evidence/final-v1/P14/03-click-dialog-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213418Z-5628c9c2/03-click-dialog-seed1019-iterative.json",
+    "sha256": "147d506fbe7bfade2519eb35c55238f13636a1f5841b1f7ab44af9a7036fc70d"
+  },
+  "docs/evidence/final-v1/P14/03-click-dialog-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213418Z-5628c9c2/03-click-dialog-seed1019-oneshot.json",
+    "sha256": "3fec8686fb2c7309a02e6649022250b9c661c3062f68669f122251f7e7f847ba"
+  },
+  "docs/evidence/final-v1/P14/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213418Z-5628c9c2/config.json",
+    "sha256": "af0bedac6246999d2e4e240a80c7d009cf5605fcf5971937f3bfc110e4c6d117"
+  },
+  "docs/evidence/final-v1/P14/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213418Z-5628c9c2/pairs.json",
+    "sha256": "958988d019c852b9a6b04699b615f9df93334843ca9ebaf50c718eecf4ac90fb"
+  },
+  "docs/evidence/final-v1/P14/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213418Z-5628c9c2/summary.json",
+    "sha256": "1e08529d6b3fc3a88392047209bd5ab08cf2554002842af95fce934e18f772cb"
+  },
+  "docs/evidence/final-v1/P15/01-click-dialog-2-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213527Z-c9dedbe1/01-click-dialog-2-seed1009-iterative.json",
+    "sha256": "5e0a9311f532648a6eec1bcc67d9b4b12d09d1c997b740f03cc24ad969e3cb9f"
+  },
+  "docs/evidence/final-v1/P15/01-click-dialog-2-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213527Z-c9dedbe1/01-click-dialog-2-seed1009-oneshot.json",
+    "sha256": "97f5c4f0ca34a207f35eeb93a892dff838b4a1c393e18de4b16c247805d14da4"
+  },
+  "docs/evidence/final-v1/P15/02-click-dialog-2-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213527Z-c9dedbe1/02-click-dialog-2-seed1013-iterative.json",
+    "sha256": "1720f9b96e0747ab299efb69a0676137a59ad4cac9b1ba96ecdd567bcc51b9e7"
+  },
+  "docs/evidence/final-v1/P15/02-click-dialog-2-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213527Z-c9dedbe1/02-click-dialog-2-seed1013-oneshot.json",
+    "sha256": "573b5439ce745ee5db6abd24ba01cdca873caa47fd5706b8f01bb64348e96151"
+  },
+  "docs/evidence/final-v1/P15/03-click-dialog-2-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213527Z-c9dedbe1/03-click-dialog-2-seed1019-iterative.json",
+    "sha256": "666995c373c43c4bce2d627889f7ce489d17c76d910cea0ff48c9c071c73094a"
+  },
+  "docs/evidence/final-v1/P15/03-click-dialog-2-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213527Z-c9dedbe1/03-click-dialog-2-seed1019-oneshot.json",
+    "sha256": "ba264cd530dde291266ff9ba16387ebca0951796f9a79b48b132429a314eb0d9"
+  },
+  "docs/evidence/final-v1/P15/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213527Z-c9dedbe1/config.json",
+    "sha256": "73750ab1203be964cbabe476e39d3ad64e485f635fdd42a9100d352dd5a197f7"
+  },
+  "docs/evidence/final-v1/P15/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213527Z-c9dedbe1/pairs.json",
+    "sha256": "c78cf7b150f6b8ef6a7fb6988b2a3ebb6f693f3133cb31ef8078015bfb00beb3"
+  },
+  "docs/evidence/final-v1/P15/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213527Z-c9dedbe1/summary.json",
+    "sha256": "d19420b527538bc9129ebb1345b4cfed29745fbedd5e68d3f854aa79ceaadac5"
+  },
+  "docs/evidence/final-v1/P16/01-click-collapsible-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213653Z-c089e3bf/01-click-collapsible-seed1009-iterative.json",
+    "sha256": "0d8bca739d98773456de3b3971b410791876c81b103c648e0f5ecade95125243"
+  },
+  "docs/evidence/final-v1/P16/01-click-collapsible-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213653Z-c089e3bf/01-click-collapsible-seed1009-oneshot.json",
+    "sha256": "9e8ade53994c1aae23cbf66982026a7c0f332f71a3bec7d906b7aeee8bb0b87a"
+  },
+  "docs/evidence/final-v1/P16/02-click-collapsible-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213653Z-c089e3bf/02-click-collapsible-seed1013-iterative.json",
+    "sha256": "78c8ff78e92f2694997f9f57e5aa8112942f6bebbd9debf07e8e7c282cb28638"
+  },
+  "docs/evidence/final-v1/P16/02-click-collapsible-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213653Z-c089e3bf/02-click-collapsible-seed1013-oneshot.json",
+    "sha256": "0aa43aa0b23106513ca6165d208e2bad207ca87a350d8278ad45472fe5531f9e"
+  },
+  "docs/evidence/final-v1/P16/03-click-collapsible-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213653Z-c089e3bf/03-click-collapsible-seed1019-iterative.json",
+    "sha256": "a88b15715c7da2b7548ae6b0adbf0eb533560d83b6e4493e2b9d1c8f215af13a"
+  },
+  "docs/evidence/final-v1/P16/03-click-collapsible-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213653Z-c089e3bf/03-click-collapsible-seed1019-oneshot.json",
+    "sha256": "58714ce9d2171064f28dedcd0efafa3fc0bbce5fde225b7c924d22ae3454576d"
+  },
+  "docs/evidence/final-v1/P16/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213653Z-c089e3bf/config.json",
+    "sha256": "4fba7ff71d20d94bbedca8b0deac51e9707b92c4e383ef864790d488061d1da6"
+  },
+  "docs/evidence/final-v1/P16/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213653Z-c089e3bf/pairs.json",
+    "sha256": "968a32362dd8cc46b438da3e3a4431d68874e58c1e8d27c1cd60083d142a08ad"
+  },
+  "docs/evidence/final-v1/P16/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213653Z-c089e3bf/summary.json",
+    "sha256": "dd1f33f2d7e559ff8bca9be5df8a00c32ea5dffb53ea0e2d938ede72bc8fcce5"
+  },
+  "docs/evidence/final-v1/P17/01-click-collapsible-2-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213825Z-3298d644/01-click-collapsible-2-seed1009-iterative.json",
+    "sha256": "1c0ec629be7ad78b14df1d073c73e32dcd810f432b55bb1679a1e017951f219e"
+  },
+  "docs/evidence/final-v1/P17/01-click-collapsible-2-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213825Z-3298d644/01-click-collapsible-2-seed1009-oneshot.json",
+    "sha256": "d597961864febeca07cc566a06f0231cc29ccc8291c0158fb2f1c57421a3dc5a"
+  },
+  "docs/evidence/final-v1/P17/02-click-collapsible-2-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213825Z-3298d644/02-click-collapsible-2-seed1013-iterative.json",
+    "sha256": "8b025510d66cad21a52af1cb45a9d645b0b5a0c4a360b541fec85193e85a19d1"
+  },
+  "docs/evidence/final-v1/P17/02-click-collapsible-2-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213825Z-3298d644/02-click-collapsible-2-seed1013-oneshot.json",
+    "sha256": "8f4847eb2f00217ebaea2639096377f6d10a86583703f204bcc40a756f6f58e6"
+  },
+  "docs/evidence/final-v1/P17/03-click-collapsible-2-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213825Z-3298d644/03-click-collapsible-2-seed1019-iterative.json",
+    "sha256": "788ca1e99a8565d02b286a28918ea8b25ce3532118020a4746032b1086339ef7"
+  },
+  "docs/evidence/final-v1/P17/03-click-collapsible-2-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213825Z-3298d644/03-click-collapsible-2-seed1019-oneshot.json",
+    "sha256": "ca594812e03daf998a6178afb1a40b23159022ac0ede3ebeaf6e1a2ae8d08518"
+  },
+  "docs/evidence/final-v1/P17/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213825Z-3298d644/config.json",
+    "sha256": "7698cacc8add144a5405d927ac62b7a1dbe34c6b88463230bc58a5b367c1c21c"
+  },
+  "docs/evidence/final-v1/P17/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213825Z-3298d644/pairs.json",
+    "sha256": "6552c2722992f85749e9c0aa1ea827ce1bfe55e3b4bf92399feaa60ba803f59b"
+  },
+  "docs/evidence/final-v1/P17/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T213825Z-3298d644/summary.json",
+    "sha256": "28b80375265018abbd1e4c489b33d59e46d562f902c6158392abbd50435ab071"
+  },
+  "docs/evidence/final-v1/P18/01-click-tab-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214010Z-1b956fce/01-click-tab-seed1009-iterative.json",
+    "sha256": "2469849e44e34e87d86ae9b470679f8ebc8150a098ba071c138ffc87af41462c"
+  },
+  "docs/evidence/final-v1/P18/01-click-tab-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214010Z-1b956fce/01-click-tab-seed1009-oneshot.json",
+    "sha256": "c74fefc09e4c3d36f65fc4efb58127f58654351ea4cdff61e87431a95c22d1fe"
+  },
+  "docs/evidence/final-v1/P18/02-click-tab-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214010Z-1b956fce/02-click-tab-seed1013-iterative.json",
+    "sha256": "6f54e3249935010a798e9b4ec69cd20aa58221e32d61c2dc59f78ebeaa080b58"
+  },
+  "docs/evidence/final-v1/P18/02-click-tab-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214010Z-1b956fce/02-click-tab-seed1013-oneshot.json",
+    "sha256": "3e8606ec899f7c7a5052645ffef570a23d2c80b8b2cc8fc9bc79e5b04a186a2a"
+  },
+  "docs/evidence/final-v1/P18/03-click-tab-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214010Z-1b956fce/03-click-tab-seed1019-iterative.json",
+    "sha256": "40aed37ac7523023e31edd069c8f7cec1646df6ae4cb67b221da9edb07a1d5b5"
+  },
+  "docs/evidence/final-v1/P18/03-click-tab-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214010Z-1b956fce/03-click-tab-seed1019-oneshot.json",
+    "sha256": "1454625cda1099de562472a74b627668f047fd316c83e559afbc11c9f9fef1a3"
+  },
+  "docs/evidence/final-v1/P18/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214010Z-1b956fce/config.json",
+    "sha256": "41c8a3ea18e88ec45f314226a93fc933d8c8c77fceb1029662955ac017a1e085"
+  },
+  "docs/evidence/final-v1/P18/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214010Z-1b956fce/pairs.json",
+    "sha256": "0050b9e03592c3f8907d2dfc5d6c640c75bb13dc52b236b6cfb4fb0db7317818"
+  },
+  "docs/evidence/final-v1/P18/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214010Z-1b956fce/summary.json",
+    "sha256": "7d922d9e8d246d0beed02cd71edb84e8cd3dfe49a4d23fd1982f7ef5488b7575"
+  },
+  "docs/evidence/final-v1/P19/01-click-tab-2-easy-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214058Z-668a87ae/01-click-tab-2-easy-seed1009-iterative.json",
+    "sha256": "b60338f792335fcdfbde5e627a7c8612fdcf6170f189efd9b16895325f645403"
+  },
+  "docs/evidence/final-v1/P19/01-click-tab-2-easy-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214058Z-668a87ae/01-click-tab-2-easy-seed1009-oneshot.json",
+    "sha256": "202ccfa51378753789c5aea1929e5733fb6a691f901f5343eaf50abd956b57d1"
+  },
+  "docs/evidence/final-v1/P19/02-click-tab-2-easy-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214058Z-668a87ae/02-click-tab-2-easy-seed1013-iterative.json",
+    "sha256": "48a72c59c0a0a7e05a47329f6b6bd64cb23ec33403b03c3a186e3761e782af77"
+  },
+  "docs/evidence/final-v1/P19/02-click-tab-2-easy-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214058Z-668a87ae/02-click-tab-2-easy-seed1013-oneshot.json",
+    "sha256": "dc31c5da8fad56a6d9578d7a1cedd1c7852eca0aea49f2ccbb7d534877134a05"
+  },
+  "docs/evidence/final-v1/P19/03-click-tab-2-easy-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214058Z-668a87ae/03-click-tab-2-easy-seed1019-iterative.json",
+    "sha256": "9a62ccc7f7b3fda919847dfebe6b77311cba53f95df9fe56ff551b21a879fa6d"
+  },
+  "docs/evidence/final-v1/P19/03-click-tab-2-easy-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214058Z-668a87ae/03-click-tab-2-easy-seed1019-oneshot.json",
+    "sha256": "bc04bfe0c3e40639ee12e9f1fb357d95f579cf47370344280fdae8aa0f34076c"
+  },
+  "docs/evidence/final-v1/P19/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214058Z-668a87ae/config.json",
+    "sha256": "7cf9329724b9d8d768400fd132a22be52581d5a4d8e93f054ff50f8f33d5e357"
+  },
+  "docs/evidence/final-v1/P19/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214058Z-668a87ae/pairs.json",
+    "sha256": "5d6eda6ac91cb911c99b9753c23f4277c80584ad6a2b538e5cf205a391d85768"
+  },
+  "docs/evidence/final-v1/P19/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214058Z-668a87ae/summary.json",
+    "sha256": "6c34dca1f2153dadd540f3a81508c1574d42b73adc2644cc7d7f4d25fd24a044"
+  },
+  "docs/evidence/final-v1/P20/01-click-tab-2-medium-seed1009-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214142Z-5f5c6e88/01-click-tab-2-medium-seed1009-iterative.json",
+    "sha256": "826085625feaea3e521102d0c9daa0609c43aa5b6dd5d6d04463ed1b9b1524fd"
+  },
+  "docs/evidence/final-v1/P20/01-click-tab-2-medium-seed1009-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214142Z-5f5c6e88/01-click-tab-2-medium-seed1009-oneshot.json",
+    "sha256": "9a2ba623da86cc8a6859c02ac75b4b144a715181a2cd77dfc35818811212ae99"
+  },
+  "docs/evidence/final-v1/P20/02-click-tab-2-medium-seed1013-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214142Z-5f5c6e88/02-click-tab-2-medium-seed1013-iterative.json",
+    "sha256": "68177ee66690d2411bc3ebceb32a6b8e606054fb55c38ce94841ead9f5614e7a"
+  },
+  "docs/evidence/final-v1/P20/02-click-tab-2-medium-seed1013-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214142Z-5f5c6e88/02-click-tab-2-medium-seed1013-oneshot.json",
+    "sha256": "6a97d5e215aefba0b1bfe6f72be08f097764123f8471459bd4e0a9c6ff1dc1fa"
+  },
+  "docs/evidence/final-v1/P20/03-click-tab-2-medium-seed1019-iterative.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214142Z-5f5c6e88/03-click-tab-2-medium-seed1019-iterative.json",
+    "sha256": "30a17bd4a49e66527e41c0ab2c21a6e1dd6f84cfce712cfd1d8d97e1f11ba99a"
+  },
+  "docs/evidence/final-v1/P20/03-click-tab-2-medium-seed1019-oneshot.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214142Z-5f5c6e88/03-click-tab-2-medium-seed1019-oneshot.json",
+    "sha256": "516e87883903789197e10d995d621b97d54831459972fbd4a78684120dafa177"
+  },
+  "docs/evidence/final-v1/P20/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214142Z-5f5c6e88/config.json",
+    "sha256": "5ff96b5acfcfc7cbbf0a38288bcd8459457ae15a67f0e52f519779e78f5bc1e4"
+  },
+  "docs/evidence/final-v1/P20/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214142Z-5f5c6e88/pairs.json",
+    "sha256": "dda6a28dd98b8c2ae276e25bfc0f9b53bebd44f463cfe49756ecf010e37cea86"
+  },
+  "docs/evidence/final-v1/P20/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/comparison-20261021T214142Z-5f5c6e88/summary.json",
+    "sha256": "c665f298aa2a293d99a56b55e9d6f0bf42edf73916495b34ec2e00dbb7a28fba"
+  },
+  "docs/evidence/final-v1/R01/01-enter-text-seed1009-recovery_off.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/recovery-ablation-20261021T214255Z-fcac2b99/01-enter-text-seed1009-recovery_off.json",
+    "sha256": "6f99ea83f3acadab4b722a4ce58e706ba5b05efff4fb8bab0ebf67e6f459890e"
+  },
+  "docs/evidence/final-v1/R01/01-enter-text-seed1009-recovery_on.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/recovery-ablation-20261021T214255Z-fcac2b99/01-enter-text-seed1009-recovery_on.json",
+    "sha256": "de8b346384cc37a0e562ca42b231116b7d5cc008d98cac27c1104e197327c911"
+  },
+  "docs/evidence/final-v1/R01/02-enter-text-seed1013-recovery_off.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/recovery-ablation-20261021T214255Z-fcac2b99/02-enter-text-seed1013-recovery_off.json",
+    "sha256": "0ef6f2b3e2c143a34f33491823fa9515f3b85bbefb0b6a102deec305d177e597"
+  },
+  "docs/evidence/final-v1/R01/02-enter-text-seed1013-recovery_on.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/recovery-ablation-20261021T214255Z-fcac2b99/02-enter-text-seed1013-recovery_on.json",
+    "sha256": "db82b92d02b9b5d6f1c8c2aea13246c250781084b928c5ed52a6f3a8c0a3bbbe"
+  },
+  "docs/evidence/final-v1/R01/03-enter-text-seed1019-recovery_off.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/recovery-ablation-20261021T214255Z-fcac2b99/03-enter-text-seed1019-recovery_off.json",
+    "sha256": "dfca8c0fc4a1be7441f34a7cd99de2b739679796f87805d71bacd482a995115a"
+  },
+  "docs/evidence/final-v1/R01/03-enter-text-seed1019-recovery_on.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/recovery-ablation-20261021T214255Z-fcac2b99/03-enter-text-seed1019-recovery_on.json",
+    "sha256": "aae6b9ffd90769967701a69f0019f135e99c7ca86f8984dccb0ef9b495712515"
+  },
+  "docs/evidence/final-v1/R01/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/recovery-ablation-20261021T214255Z-fcac2b99/config.json",
+    "sha256": "a193da8a912054ecac4a04c3942e5a706481edc242551eb79c33a65af37476ca"
+  },
+  "docs/evidence/final-v1/R01/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/recovery-ablation-20261021T214255Z-fcac2b99/pairs.json",
+    "sha256": "3134b78c12d4fc84c77361d3598dbd64fea0b34f255a73261c777fe0f0c0925b"
+  },
+  "docs/evidence/final-v1/R01/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/recovery-ablation-20261021T214255Z-fcac2b99/summary.json",
+    "sha256": "4db9a0f5df2ac54ce26785bd79bab9d50c89e68a76fe0cf441150749d0d7f25c"
+  },
+  "docs/evidence/final-v1/R02/01-login-user-seed1009-recovery_off.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/recovery-ablation-20261021T214422Z-26870403/01-login-user-seed1009-recovery_off.json",
+    "sha256": "7551ffe99c24ff384dc572af9929e123472330ae4e77e5e1c3334c72f15da440"
+  },
+  "docs/evidence/final-v1/R02/01-login-user-seed1009-recovery_on.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/recovery-ablation-20261021T214422Z-26870403/01-login-user-seed1009-recovery_on.json",
+    "sha256": "ea6f239454373c78ee7e2786f37784c79a5decd6d89aa41266bfe1b0fba12330"
+  },
+  "docs/evidence/final-v1/R02/02-login-user-seed1013-recovery_off.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/recovery-ablation-20261021T214422Z-26870403/02-login-user-seed1013-recovery_off.json",
+    "sha256": "52105ddb3dba9a3cf8fc097743168c10bdc238998cd13c8a75f60e827e6e5a30"
+  },
+  "docs/evidence/final-v1/R02/02-login-user-seed1013-recovery_on.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/recovery-ablation-20261021T214422Z-26870403/02-login-user-seed1013-recovery_on.json",
+    "sha256": "0e53b83ff28a012f515a99666562bd04744f9f4677038e1618af9cf366926d93"
+  },
+  "docs/evidence/final-v1/R02/03-login-user-seed1019-recovery_off.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/recovery-ablation-20261021T214422Z-26870403/03-login-user-seed1019-recovery_off.json",
+    "sha256": "9c9f3f1697e0e957c6f94423eb256dd15312e8dc6d2d3f66321131536516f30b"
+  },
+  "docs/evidence/final-v1/R02/03-login-user-seed1019-recovery_on.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/recovery-ablation-20261021T214422Z-26870403/03-login-user-seed1019-recovery_on.json",
+    "sha256": "58c81fc84210f1e96eab3b716ac08037233c9e57c5344e1fc2edbf8fe128bde4"
+  },
+  "docs/evidence/final-v1/R02/config.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/recovery-ablation-20261021T214422Z-26870403/config.json",
+    "sha256": "f78e2af16ef259410928d0e84cada1622d00a652a2c9e231b134026faf8c47e3"
+  },
+  "docs/evidence/final-v1/R02/pairs.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/recovery-ablation-20261021T214422Z-26870403/pairs.json",
+    "sha256": "30858fad8e59f281c12c66b104eaf45ab61c8b124246f6df33da7d5f525bdec2"
+  },
+  "docs/evidence/final-v1/R02/summary.json": {
+    "source": "/Users/adwaiy/Projects/autonomous-browser-agent/results/recovery-ablation-20261021T214422Z-26870403/summary.json",
+    "sha256": "9a10e386536f11453fc5f853b225f6c32e189d2d1d4184f2a8498b2083583eb7"
+  }
+}

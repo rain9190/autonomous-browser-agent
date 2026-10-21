@@ -1,0 +1,20 @@
+{
+  "arm": "iterative",
+  "task": "click-button-sequence",
+  "seed": 1013,
+  "model": "gpt-4.1-mini-2025-04-14",
+  "max_steps": 2,
+  "max_recoveries": 0,
+  "success": true,
+  "reason": "benchmark_success",
+  "steps": 2,
+  "api_calls": 2,
+  "input_tokens": 1251,
+  "output_tokens": 36,
+  "api_usage_may_be_incomplete": false,
+  "duration_seconds": 5.09,
+  "initial_observation_sha256": "26e9ab7eb139abf8ebb60c2353660630841419defb7a65cdbc3bc8077026d923",
+  "reward": 1.0,
+  "positive_reward_terminal": true,
+  "completion_metric": "terminal_full_credit_reward_1_v1"
+}

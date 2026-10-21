@@ -1,0 +1,46 @@
+{
+  "completion_metric": "terminal_full_credit_reward_1_v1",
+  "tasks": [
+    "click-tab"
+  ],
+  "seeds": [
+    1009,
+    1013,
+    1019
+  ],
+  "max_steps": 2,
+  "model": "gpt-4.1-mini-2025-04-14",
+  "max_recoveries": 0,
+  "arm_order": "alternates by pair; starts oneshot",
+  "source_sha256": {
+    "__init__.py": "2691b3b27f3c2f1a7475faf3700a5f4c2f903abd7cb5a81a94a2e86d3b50f156",
+    "__main__.py": "0246f0c2fb33b00db7bf246e714ad85cdc027b7a61ece1ae73bc17940c7a0074",
+    "ablate_recovery.py": "98695356a7170b904312581d957c53daaf0cc385214a3439ff6a5a380cf51a95",
+    "actions.py": "d136ecdda45bbb6d3a8fd40f55d4f3a0e8555d5c93f613d1c17d9d08560158ae",
+    "budget.py": "0366740b4a75061d5c8298b6c563795a3be46882ca75f8a1874052bf262fd0e6",
+    "compare.py": "099f674ea4ddad52419548967f66f65cf6882efb92da1952765eb50ef0d7a615",
+    "comparison_worker.py": "1c5563816ff92395fb76f7aca1777f7bd769f8cbf89154bea4118c927a668b77",
+    "diagnostics.py": "fa9252f71f42a8621f62ecdb953faacbade906e2ba4393d2f0ffe70e76585bbe",
+    "evaluate.py": "ffc9d30e8d5593abac34f8affcf2d68c6754c5f6db753983ac558d034ca26ce9",
+    "evaluate_recovery.py": "825c87a3405766275e939f58458486aa5cb92b903c7167428c7757c3a4c282cc",
+    "metrics.py": "679f9a0a00aa29a15dda8065542d79dc468e19c80de343b075f96016b1825241",
+    "model.py": "37446840b25460303bec0a327a9bca629f4f4ed1963c9444ac96e4634102779e",
+    "observations.py": "94fd7b39ea6b9c5f9e5531a0d4e0e53f6579cc0ff3d221c52023a750ad4cd594",
+    "oneshot.py": "66f13d7cb6aa6d55ceabbfc6253d87c29064fe01e8bb02711158d7419b808783",
+    "recovery.py": "1f73045d6af07bff8dbaaa5331e05a8d134756c249c07315d22e1f5f5fdf317a",
+    "run_oneshot.py": "addfc99f151a87a8fd4e981fa8ec33679acc23e8602963b0e1cee28fce688ef1",
+    "workflow.py": "8c96b967bc1dfcebfd0ae14307f70c35491734a3b8d4ebd09f979e86aef000d3"
+  },
+  "package_versions": {
+    "openai": "3.35.1",
+    "langgraph": "1.2.16",
+    "pydantic": "2.14.1",
+    "browsergym-core": "0.14.3",
+    "browsergym-miniwob": "0.14.3"
+  },
+  "arms": [
+    "oneshot",
+    "iterative"
+  ],
+  "planned_api_call_ceiling": 9
+}

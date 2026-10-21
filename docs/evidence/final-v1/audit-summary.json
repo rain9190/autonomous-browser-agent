@@ -1,0 +1,531 @@
+{
+  "audit_status": "passed",
+  "protocol_version": "1.0",
+  "frozen_agent_commit": "27e004f7230959ee2bd41d147565c6f4527d8567",
+  "batches": [
+    {
+      "batch": "P01",
+      "folder": "comparison-20261021T210949Z-3068eebb",
+      "kind": "planning",
+      "task": "click-test",
+      "api_calls": 6,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P02",
+      "folder": "comparison-20261021T211121Z-1619485d",
+      "kind": "planning",
+      "task": "click-button",
+      "api_calls": 6,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P03",
+      "folder": "comparison-20261021T211413Z-c453a3cd",
+      "kind": "planning",
+      "task": "click-button-sequence",
+      "api_calls": 9,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P04",
+      "folder": "comparison-20261021T211511Z-6a15071a",
+      "kind": "planning",
+      "task": "enter-text",
+      "api_calls": 9,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P05",
+      "folder": "comparison-20261021T211707Z-f44697fd",
+      "kind": "planning",
+      "task": "login-user",
+      "api_calls": 12,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P06",
+      "folder": "comparison-20261021T211921Z-36231d24",
+      "kind": "planning",
+      "task": "enter-text-2",
+      "api_calls": 9,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P07",
+      "folder": "comparison-20261021T212128Z-d1139c85",
+      "kind": "planning",
+      "task": "click-test-2",
+      "api_calls": 6,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P08",
+      "folder": "comparison-20261021T212255Z-253113a8",
+      "kind": "planning",
+      "task": "click-test-transfer",
+      "api_calls": 6,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P09",
+      "folder": "comparison-20261021T212407Z-1a8c3ec5",
+      "kind": "planning",
+      "task": "click-link",
+      "api_calls": 6,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P10",
+      "folder": "comparison-20261021T212512Z-38effd33",
+      "kind": "planning",
+      "task": "click-checkboxes",
+      "api_calls": 12,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P11",
+      "folder": "comparison-20261021T212744Z-32d0918a",
+      "kind": "planning",
+      "task": "click-checkboxes-soft",
+      "api_calls": 21,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P12",
+      "folder": "comparison-20261021T213008Z-4068acd7",
+      "kind": "planning",
+      "task": "click-option",
+      "api_calls": 8,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P13",
+      "folder": "comparison-20261021T213209Z-71907ebb",
+      "kind": "planning",
+      "task": "choose-list",
+      "api_calls": 9,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P14",
+      "folder": "comparison-20261021T213418Z-5628c9c2",
+      "kind": "planning",
+      "task": "click-dialog",
+      "api_calls": 6,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P15",
+      "folder": "comparison-20261021T213527Z-c9dedbe1",
+      "kind": "planning",
+      "task": "click-dialog-2",
+      "api_calls": 6,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P16",
+      "folder": "comparison-20261021T213653Z-c089e3bf",
+      "kind": "planning",
+      "task": "click-collapsible",
+      "api_calls": 9,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P17",
+      "folder": "comparison-20261021T213825Z-3298d644",
+      "kind": "planning",
+      "task": "click-collapsible-2",
+      "api_calls": 16,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P18",
+      "folder": "comparison-20261021T214010Z-1b956fce",
+      "kind": "planning",
+      "task": "click-tab",
+      "api_calls": 6,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P19",
+      "folder": "comparison-20261021T214058Z-668a87ae",
+      "kind": "planning",
+      "task": "click-tab-2-easy",
+      "api_calls": 6,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "P20",
+      "folder": "comparison-20261021T214142Z-5f5c6e88",
+      "kind": "planning",
+      "task": "click-tab-2-medium",
+      "api_calls": 6,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "R01",
+      "folder": "recovery-ablation-20261021T214255Z-fcac2b99",
+      "kind": "recovery",
+      "task": "enter-text",
+      "api_calls": 12,
+      "matched_pairs": 3
+    },
+    {
+      "batch": "R02",
+      "folder": "recovery-ablation-20261021T214422Z-26870403",
+      "kind": "recovery",
+      "task": "login-user",
+      "api_calls": 15,
+      "matched_pairs": 3
+    }
+  ],
+  "scheduled_pairs": 66,
+  "matched_pairs": 66,
+  "episodes": 132,
+  "totals": {
+    "oneshot": {
+      "episodes": 60,
+      "successes": 55,
+      "success_rate": 0.9166666666666666,
+      "failure_reasons": {
+        "episode_ended_without_success": 2,
+        "plan_exhausted": 3
+      },
+      "potentially_incomplete_usage_episodes": 0,
+      "total_api_calls": 60,
+      "mean_api_calls": 1.0,
+      "total_steps": 102,
+      "mean_steps": 1.7,
+      "total_duration_seconds": 243.74100000000004,
+      "mean_duration_seconds": 4.06235,
+      "total_input_tokens": 35721,
+      "mean_input_tokens": 595.35,
+      "total_output_tokens": 2106,
+      "mean_output_tokens": 35.1
+    },
+    "iterative": {
+      "episodes": 60,
+      "successes": 57,
+      "success_rate": 0.95,
+      "failure_reasons": {
+        "step_budget_exhausted": 2,
+        "invalid_model_action_or_plan": 1
+      },
+      "potentially_incomplete_usage_episodes": 1,
+      "total_api_calls": 114,
+      "mean_api_calls": 1.9,
+      "total_steps": 113,
+      "mean_steps": 1.8833333333333333,
+      "total_duration_seconds": 302.001,
+      "mean_duration_seconds": 5.0333499999999995,
+      "total_input_tokens": 83735,
+      "mean_input_tokens": 1395.5833333333333,
+      "total_output_tokens": 2127,
+      "mean_output_tokens": 35.45
+    },
+    "recovery_off": {
+      "episodes": 6,
+      "successes": 0,
+      "success_rate": 0.0,
+      "failure_reasons": {
+        "browser_action_error": 6
+      },
+      "potentially_incomplete_usage_episodes": 0,
+      "total_api_calls": 6,
+      "mean_api_calls": 1.0,
+      "total_steps": 6,
+      "mean_steps": 1.0,
+      "total_duration_seconds": 21.238999999999997,
+      "mean_duration_seconds": 3.5398333333333327,
+      "total_input_tokens": 3934,
+      "mean_input_tokens": 655.6666666666666,
+      "total_output_tokens": 116,
+      "mean_output_tokens": 19.333333333333332
+    },
+    "recovery_on": {
+      "episodes": 6,
+      "successes": 6,
+      "success_rate": 1.0,
+      "failure_reasons": {},
+      "potentially_incomplete_usage_episodes": 0,
+      "total_api_calls": 21,
+      "mean_api_calls": 3.5,
+      "total_steps": 21,
+      "mean_steps": 3.5,
+      "total_duration_seconds": 53.496,
+      "mean_duration_seconds": 8.916,
+      "total_input_tokens": 14510,
+      "mean_input_tokens": 2418.3333333333335,
+      "total_output_tokens": 398,
+      "mean_output_tokens": 66.33333333333333
+    }
+  },
+  "planning_tasks": [
+    {
+      "task": "click-test",
+      "family": "single_click",
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "task": "click-button",
+      "family": "label_matching",
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "task": "click-button-sequence",
+      "family": "ordered_actions",
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "task": "enter-text",
+      "family": "form_entry",
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "task": "login-user",
+      "family": "multi_field_form",
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "task": "enter-text-2",
+      "family": "text_transformation",
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "task": "click-test-2",
+      "family": "single_click",
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "task": "click-test-transfer",
+      "family": "single_click_variant",
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "task": "click-link",
+      "family": "link_selection",
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "task": "click-checkboxes",
+      "family": "multi_selection",
+      "oneshot": 3,
+      "iterative": 2
+    },
+    {
+      "task": "click-checkboxes-soft",
+      "family": "semantic_selection",
+      "oneshot": 3,
+      "iterative": 2
+    },
+    {
+      "task": "click-option",
+      "family": "radio_selection",
+      "oneshot": 3,
+      "iterative": 2
+    },
+    {
+      "task": "choose-list",
+      "family": "native_select",
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "task": "click-dialog",
+      "family": "dialog_controls",
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "task": "click-dialog-2",
+      "family": "dialog_label_matching",
+      "oneshot": 2,
+      "iterative": 3
+    },
+    {
+      "task": "click-collapsible",
+      "family": "disclosure_sequence",
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "task": "click-collapsible-2",
+      "family": "dynamic_discovery",
+      "oneshot": 0,
+      "iterative": 3
+    },
+    {
+      "task": "click-tab",
+      "family": "tab_selection",
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "task": "click-tab-2-easy",
+      "family": "tab_search",
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "task": "click-tab-2-medium",
+      "family": "dynamic_tab_state",
+      "oneshot": 2,
+      "iterative": 3
+    }
+  ],
+  "families": [
+    {
+      "family": "dialog_controls",
+      "task_ids": 1,
+      "episodes_per_arm": 3,
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "family": "dialog_label_matching",
+      "task_ids": 1,
+      "episodes_per_arm": 3,
+      "oneshot": 2,
+      "iterative": 3
+    },
+    {
+      "family": "disclosure_sequence",
+      "task_ids": 1,
+      "episodes_per_arm": 3,
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "family": "dynamic_discovery",
+      "task_ids": 1,
+      "episodes_per_arm": 3,
+      "oneshot": 0,
+      "iterative": 3
+    },
+    {
+      "family": "dynamic_tab_state",
+      "task_ids": 1,
+      "episodes_per_arm": 3,
+      "oneshot": 2,
+      "iterative": 3
+    },
+    {
+      "family": "form_entry",
+      "task_ids": 1,
+      "episodes_per_arm": 3,
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "family": "label_matching",
+      "task_ids": 1,
+      "episodes_per_arm": 3,
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "family": "link_selection",
+      "task_ids": 1,
+      "episodes_per_arm": 3,
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "family": "multi_field_form",
+      "task_ids": 1,
+      "episodes_per_arm": 3,
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "family": "multi_selection",
+      "task_ids": 1,
+      "episodes_per_arm": 3,
+      "oneshot": 3,
+      "iterative": 2
+    },
+    {
+      "family": "native_select",
+      "task_ids": 1,
+      "episodes_per_arm": 3,
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "family": "ordered_actions",
+      "task_ids": 1,
+      "episodes_per_arm": 3,
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "family": "radio_selection",
+      "task_ids": 1,
+      "episodes_per_arm": 3,
+      "oneshot": 3,
+      "iterative": 2
+    },
+    {
+      "family": "semantic_selection",
+      "task_ids": 1,
+      "episodes_per_arm": 3,
+      "oneshot": 3,
+      "iterative": 2
+    },
+    {
+      "family": "single_click",
+      "task_ids": 2,
+      "episodes_per_arm": 6,
+      "oneshot": 6,
+      "iterative": 6
+    },
+    {
+      "family": "single_click_variant",
+      "task_ids": 1,
+      "episodes_per_arm": 3,
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "family": "tab_search",
+      "task_ids": 1,
+      "episodes_per_arm": 3,
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "family": "tab_selection",
+      "task_ids": 1,
+      "episodes_per_arm": 3,
+      "oneshot": 3,
+      "iterative": 3
+    },
+    {
+      "family": "text_transformation",
+      "task_ids": 1,
+      "episodes_per_arm": 3,
+      "oneshot": 3,
+      "iterative": 3
+    }
+  ],
+  "planning_failure_count": 8,
+  "reported_api_calls": 201,
+  "reported_input_tokens": 137900,
+  "reported_output_tokens": 4747,
+  "potentially_incomplete_usage_episodes": 1,
+  "limits": [
+    "Episode exports omit action histories, goals, per-step observations, terminal/truncated flags and raw model responses. Exact action-level root causes and terminal flags cannot be independently reconstructed.",
+    "Arm order is verified as configured, not independently timestamped execution order.",
+    "Current frozen sources/versions match; run config records agent source/package versions but not all supporting-asset hashes at run time."
+  ]
+}

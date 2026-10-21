@@ -1,0 +1,143 @@
+[
+  {
+    "task": "click-checkboxes-soft",
+    "seed": 1009,
+    "matched": true,
+    "arms": {
+      "oneshot": {
+        "arm": "oneshot",
+        "task": "click-checkboxes-soft",
+        "seed": 1009,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 6,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 2,
+        "api_calls": 1,
+        "input_tokens": 644,
+        "output_tokens": 39,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 5.026,
+        "initial_observation_sha256": "a2b716bc32ce2a3decf7682be4eb3b31fca00a9aa64abc10fad8359ba67cae8f",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      },
+      "iterative": {
+        "arm": "iterative",
+        "task": "click-checkboxes-soft",
+        "seed": 1009,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 6,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 6,
+        "api_calls": 6,
+        "input_tokens": 4721,
+        "output_tokens": 113,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 13.191,
+        "initial_observation_sha256": "a2b716bc32ce2a3decf7682be4eb3b31fca00a9aa64abc10fad8359ba67cae8f",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      }
+    }
+  },
+  {
+    "task": "click-checkboxes-soft",
+    "seed": 1013,
+    "matched": true,
+    "arms": {
+      "iterative": {
+        "arm": "iterative",
+        "task": "click-checkboxes-soft",
+        "seed": 1013,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 6,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 6,
+        "api_calls": 6,
+        "input_tokens": 4991,
+        "output_tokens": 113,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 13.545,
+        "initial_observation_sha256": "46e8a79b9e767ed6fca69db2d1c0b2a119ce2bf8963521b53350205d8214471d",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      },
+      "oneshot": {
+        "arm": "oneshot",
+        "task": "click-checkboxes-soft",
+        "seed": 1013,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 6,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 4,
+        "api_calls": 1,
+        "input_tokens": 689,
+        "output_tokens": 73,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 6.245,
+        "initial_observation_sha256": "46e8a79b9e767ed6fca69db2d1c0b2a119ce2bf8963521b53350205d8214471d",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      }
+    }
+  },
+  {
+    "task": "click-checkboxes-soft",
+    "seed": 1019,
+    "matched": true,
+    "arms": {
+      "oneshot": {
+        "arm": "oneshot",
+        "task": "click-checkboxes-soft",
+        "seed": 1019,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 6,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 4,
+        "api_calls": 1,
+        "input_tokens": 654,
+        "output_tokens": 73,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 5.809,
+        "initial_observation_sha256": "f8381b40285cf8c995490d6ae5bdbfc56da54e41a7fb472c7654cb4c1a243a1a",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      },
+      "iterative": {
+        "arm": "iterative",
+        "task": "click-checkboxes-soft",
+        "seed": 1019,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 6,
+        "max_recoveries": 0,
+        "success": false,
+        "reason": "step_budget_exhausted",
+        "steps": 6,
+        "api_calls": 6,
+        "input_tokens": 4803,
+        "output_tokens": 114,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 13.851,
+        "initial_observation_sha256": "f8381b40285cf8c995490d6ae5bdbfc56da54e41a7fb472c7654cb4c1a243a1a",
+        "reward": 0.0,
+        "positive_reward_terminal": false,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      }
+    }
+  }
+]

@@ -1,0 +1,626 @@
+{
+  "protocol_version": "1.0",
+  "execute_automatically": false,
+  "batches": [
+    {
+      "batch_id": "P01",
+      "kind": "planning",
+      "tasks": [
+        "click-test"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 2,
+      "planned_pairs": 3,
+      "api_call_ceiling": 9,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "click-test",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "2"
+      ]
+    },
+    {
+      "batch_id": "P02",
+      "kind": "planning",
+      "tasks": [
+        "click-button"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 2,
+      "planned_pairs": 3,
+      "api_call_ceiling": 9,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "click-button",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "2"
+      ]
+    },
+    {
+      "batch_id": "P03",
+      "kind": "planning",
+      "tasks": [
+        "click-button-sequence"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 2,
+      "planned_pairs": 3,
+      "api_call_ceiling": 9,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "click-button-sequence",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "2"
+      ]
+    },
+    {
+      "batch_id": "P04",
+      "kind": "planning",
+      "tasks": [
+        "enter-text"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 2,
+      "planned_pairs": 3,
+      "api_call_ceiling": 9,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "enter-text",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "2"
+      ]
+    },
+    {
+      "batch_id": "P05",
+      "kind": "planning",
+      "tasks": [
+        "login-user"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 3,
+      "planned_pairs": 3,
+      "api_call_ceiling": 12,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "login-user",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "3"
+      ]
+    },
+    {
+      "batch_id": "P06",
+      "kind": "planning",
+      "tasks": [
+        "enter-text-2"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 2,
+      "planned_pairs": 3,
+      "api_call_ceiling": 9,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "enter-text-2",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "2"
+      ]
+    },
+    {
+      "batch_id": "P07",
+      "kind": "planning",
+      "tasks": [
+        "click-test-2"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 2,
+      "planned_pairs": 3,
+      "api_call_ceiling": 9,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "click-test-2",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "2"
+      ]
+    },
+    {
+      "batch_id": "P08",
+      "kind": "planning",
+      "tasks": [
+        "click-test-transfer"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 2,
+      "planned_pairs": 3,
+      "api_call_ceiling": 9,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "click-test-transfer",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "2"
+      ]
+    },
+    {
+      "batch_id": "P09",
+      "kind": "planning",
+      "tasks": [
+        "click-link"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 2,
+      "planned_pairs": 3,
+      "api_call_ceiling": 9,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "click-link",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "2"
+      ]
+    },
+    {
+      "batch_id": "P10",
+      "kind": "planning",
+      "tasks": [
+        "click-checkboxes"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 7,
+      "planned_pairs": 3,
+      "api_call_ceiling": 24,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "click-checkboxes",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "7"
+      ]
+    },
+    {
+      "batch_id": "P11",
+      "kind": "planning",
+      "tasks": [
+        "click-checkboxes-soft"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 6,
+      "planned_pairs": 3,
+      "api_call_ceiling": 21,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "click-checkboxes-soft",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "6"
+      ]
+    },
+    {
+      "batch_id": "P12",
+      "kind": "planning",
+      "tasks": [
+        "click-option"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 3,
+      "planned_pairs": 3,
+      "api_call_ceiling": 12,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "click-option",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "3"
+      ]
+    },
+    {
+      "batch_id": "P13",
+      "kind": "planning",
+      "tasks": [
+        "choose-list"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 3,
+      "planned_pairs": 3,
+      "api_call_ceiling": 12,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "choose-list",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "3"
+      ]
+    },
+    {
+      "batch_id": "P14",
+      "kind": "planning",
+      "tasks": [
+        "click-dialog"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 2,
+      "planned_pairs": 3,
+      "api_call_ceiling": 9,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "click-dialog",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "2"
+      ]
+    },
+    {
+      "batch_id": "P15",
+      "kind": "planning",
+      "tasks": [
+        "click-dialog-2"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 2,
+      "planned_pairs": 3,
+      "api_call_ceiling": 9,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "click-dialog-2",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "2"
+      ]
+    },
+    {
+      "batch_id": "P16",
+      "kind": "planning",
+      "tasks": [
+        "click-collapsible"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 4,
+      "planned_pairs": 3,
+      "api_call_ceiling": 15,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "click-collapsible",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "4"
+      ]
+    },
+    {
+      "batch_id": "P17",
+      "kind": "planning",
+      "tasks": [
+        "click-collapsible-2"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 6,
+      "planned_pairs": 3,
+      "api_call_ceiling": 21,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "click-collapsible-2",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "6"
+      ]
+    },
+    {
+      "batch_id": "P18",
+      "kind": "planning",
+      "tasks": [
+        "click-tab"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 2,
+      "planned_pairs": 3,
+      "api_call_ceiling": 9,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "click-tab",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "2"
+      ]
+    },
+    {
+      "batch_id": "P19",
+      "kind": "planning",
+      "tasks": [
+        "click-tab-2-easy"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 4,
+      "planned_pairs": 3,
+      "api_call_ceiling": 15,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "click-tab-2-easy",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "4"
+      ]
+    },
+    {
+      "batch_id": "P20",
+      "kind": "planning",
+      "tasks": [
+        "click-tab-2-medium"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 5,
+      "planned_pairs": 3,
+      "api_call_ceiling": 18,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.compare",
+        "--tasks",
+        "click-tab-2-medium",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "5"
+      ]
+    },
+    {
+      "batch_id": "R01",
+      "kind": "recovery",
+      "tasks": [
+        "enter-text"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 3,
+      "planned_pairs": 3,
+      "api_call_ceiling": 18,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.ablate_recovery",
+        "--task",
+        "enter-text",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "3",
+        "--scenario",
+        "disabled_textbox_timeout"
+      ]
+    },
+    {
+      "batch_id": "R02",
+      "kind": "recovery",
+      "tasks": [
+        "login-user"
+      ],
+      "seeds": [
+        1009,
+        1013,
+        1019
+      ],
+      "max_steps": 4,
+      "planned_pairs": 3,
+      "api_call_ceiling": 24,
+      "command": [
+        "python",
+        "-m",
+        "browser_agent.ablate_recovery",
+        "--task",
+        "login-user",
+        "--seeds",
+        "1009",
+        "1013",
+        "1019",
+        "--max-steps",
+        "4",
+        "--scenario",
+        "disabled_textbox_timeout"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "evaluation_mode": "paired_recovery_ablation",
+  "completion_metric": "terminal_full_credit_reward_1_v1",
+  "planned_pairs": 3,
+  "attempted_pairs": 3,
+  "matched_pairs": 3,
+  "unmatched_or_incomplete_pairs": 0,
+  "unattempted_pairs": 0,
+  "complete": true,
+  "model": "gpt-4.1-mini-2025-04-14",
+  "max_steps_per_arm": 4,
+  "max_recoveries": {
+    "recovery_off": 0,
+    "recovery_on": 1
+  },
+  "api_call_ceiling": 24,
+  "reported_api_calls": 15,
+  "reported_input_tokens": 10880,
+  "reported_output_tokens": 286,
+  "episodes_with_unknown_or_incomplete_usage": 0,
+  "controlled_failure_scenario": "disabled_textbox_timeout",
+  "per_arm_on_matched_pairs": {
+    "recovery_off": {
+      "partial_credit_episodes": 0,
+      "matched_episodes": 3,
+      "successes": 0,
+      "success_rate": 0.0,
+      "episodes_with_potentially_incomplete_usage": 0,
+      "failure_reasons": {
+        "browser_action_error": 3
+      },
+      "mean_steps": 1.0,
+      "mean_api_calls": 1.0,
+      "mean_duration_seconds": 3.5209999999999995,
+      "mean_input_tokens": 694.0,
+      "mean_output_tokens": 19.333333333333332
+    },
+    "recovery_on": {
+      "partial_credit_episodes": 0,
+      "matched_episodes": 3,
+      "successes": 3,
+      "success_rate": 1.0,
+      "episodes_with_potentially_incomplete_usage": 0,
+      "failure_reasons": {},
+      "mean_steps": 4.0,
+      "mean_api_calls": 4.0,
+      "mean_duration_seconds": 9.691333333333333,
+      "mean_input_tokens": 2932.6666666666665,
+      "mean_output_tokens": 76.0
+    }
+  },
+  "paired_outcomes": {
+    "both_succeeded": 0,
+    "both_failed": 0,
+    "recovery_off_only": 0,
+    "recovery_on_only": 3
+  },
+  "success_rate_difference_percentage_points": 100.0,
+  "mean_additional_api_calls": 3.0,
+  "mean_additional_duration_seconds": 6.170333333333334,
+  "interrupted": false
+}

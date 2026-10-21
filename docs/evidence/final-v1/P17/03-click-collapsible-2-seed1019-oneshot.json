@@ -1,0 +1,20 @@
+{
+  "arm": "oneshot",
+  "task": "click-collapsible-2",
+  "seed": 1019,
+  "model": "gpt-4.1-mini-2025-04-14",
+  "max_steps": 6,
+  "max_recoveries": 0,
+  "success": false,
+  "reason": "plan_exhausted",
+  "steps": 3,
+  "api_calls": 1,
+  "input_tokens": 604,
+  "output_tokens": 57,
+  "api_usage_may_be_incomplete": false,
+  "duration_seconds": 4.83,
+  "initial_observation_sha256": "2db27cc2202fe4a9636fe9e315a47e89a584464aa7b03bec336efc34667317d7",
+  "reward": 0.0,
+  "positive_reward_terminal": false,
+  "completion_metric": "terminal_full_credit_reward_1_v1"
+}

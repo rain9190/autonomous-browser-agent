@@ -1,0 +1,53 @@
+{
+  "evaluation_mode": "paired_oneshot_vs_iterative",
+  "completion_metric": "terminal_full_credit_reward_1_v1",
+  "planned_pairs": 3,
+  "attempted_pairs": 3,
+  "matched_pairs": 3,
+  "unmatched_or_incomplete_pairs": 0,
+  "unattempted_pairs": 0,
+  "complete": true,
+  "model": "gpt-4.1-mini-2025-04-14",
+  "max_steps_per_arm": 3,
+  "max_recoveries": 0,
+  "api_call_ceiling": 12,
+  "reported_api_calls": 9,
+  "reported_input_tokens": 6303,
+  "reported_output_tokens": 231,
+  "episodes_with_unknown_or_incomplete_usage": 0,
+  "paired_outcomes": {
+    "both_succeeded": 3,
+    "both_failed": 0,
+    "oneshot_only": 0,
+    "iterative_only": 0
+  },
+  "per_arm_on_matched_pairs": {
+    "oneshot": {
+      "partial_credit_episodes": 0,
+      "matched_episodes": 3,
+      "successes": 3,
+      "success_rate": 1.0,
+      "episodes_with_potentially_incomplete_usage": 0,
+      "failure_reasons": {},
+      "mean_steps": 2.0,
+      "mean_api_calls": 1.0,
+      "mean_duration_seconds": 4.553333333333334,
+      "mean_input_tokens": 623.6666666666666,
+      "mean_output_tokens": 40.333333333333336
+    },
+    "iterative": {
+      "partial_credit_episodes": 0,
+      "matched_episodes": 3,
+      "successes": 3,
+      "success_rate": 1.0,
+      "episodes_with_potentially_incomplete_usage": 0,
+      "failure_reasons": {},
+      "mean_steps": 2.0,
+      "mean_api_calls": 2.0,
+      "mean_duration_seconds": 5.507000000000001,
+      "mean_input_tokens": 1477.3333333333333,
+      "mean_output_tokens": 36.666666666666664
+    }
+  },
+  "interrupted": false
+}

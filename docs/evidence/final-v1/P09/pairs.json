@@ -1,0 +1,143 @@
+[
+  {
+    "task": "click-link",
+    "seed": 1009,
+    "matched": true,
+    "arms": {
+      "oneshot": {
+        "arm": "oneshot",
+        "task": "click-link",
+        "seed": 1009,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 2,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 1,
+        "api_calls": 1,
+        "input_tokens": 590,
+        "output_tokens": 25,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 4.071,
+        "initial_observation_sha256": "ba6eb9e354b77b14ce6f0e288fb2c1ecfc1d648a9511af606cd56db99bd73bb6",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      },
+      "iterative": {
+        "arm": "iterative",
+        "task": "click-link",
+        "seed": 1009,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 2,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 1,
+        "api_calls": 1,
+        "input_tokens": 687,
+        "output_tokens": 21,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 2.974,
+        "initial_observation_sha256": "ba6eb9e354b77b14ce6f0e288fb2c1ecfc1d648a9511af606cd56db99bd73bb6",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      }
+    }
+  },
+  {
+    "task": "click-link",
+    "seed": 1013,
+    "matched": true,
+    "arms": {
+      "iterative": {
+        "arm": "iterative",
+        "task": "click-link",
+        "seed": 1013,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 2,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 1,
+        "api_calls": 1,
+        "input_tokens": 749,
+        "output_tokens": 21,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 2.966,
+        "initial_observation_sha256": "c4161115d9533041f8f6286146f7397867633e964e70156da9f32d8e3e1f4155",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      },
+      "oneshot": {
+        "arm": "oneshot",
+        "task": "click-link",
+        "seed": 1013,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 2,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 1,
+        "api_calls": 1,
+        "input_tokens": 652,
+        "output_tokens": 25,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 3.095,
+        "initial_observation_sha256": "c4161115d9533041f8f6286146f7397867633e964e70156da9f32d8e3e1f4155",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      }
+    }
+  },
+  {
+    "task": "click-link",
+    "seed": 1019,
+    "matched": true,
+    "arms": {
+      "oneshot": {
+        "arm": "oneshot",
+        "task": "click-link",
+        "seed": 1019,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 2,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 1,
+        "api_calls": 1,
+        "input_tokens": 607,
+        "output_tokens": 25,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 3.581,
+        "initial_observation_sha256": "7952ad3a397774fe28d4d70f4b96dce4f45e4c5be77d3568e8712edf74d2d897",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      },
+      "iterative": {
+        "arm": "iterative",
+        "task": "click-link",
+        "seed": 1019,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 2,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 1,
+        "api_calls": 1,
+        "input_tokens": 704,
+        "output_tokens": 21,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 3.204,
+        "initial_observation_sha256": "7952ad3a397774fe28d4d70f4b96dce4f45e4c5be77d3568e8712edf74d2d897",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      }
+    }
+  }
+]

@@ -1,0 +1,143 @@
+[
+  {
+    "task": "click-option",
+    "seed": 1009,
+    "matched": true,
+    "arms": {
+      "oneshot": {
+        "arm": "oneshot",
+        "task": "click-option",
+        "seed": 1009,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 3,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 2,
+        "api_calls": 1,
+        "input_tokens": 587,
+        "output_tokens": 39,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 5.668,
+        "initial_observation_sha256": "f2ebcd14529bde9a01d5ff08a4e3126a95c145e471d917e72b82007a9f927ef7",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      },
+      "iterative": {
+        "arm": "iterative",
+        "task": "click-option",
+        "seed": 1009,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 3,
+        "max_recoveries": 0,
+        "success": false,
+        "reason": "invalid_model_action_or_plan",
+        "steps": 0,
+        "api_calls": 1,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "api_usage_may_be_incomplete": true,
+        "duration_seconds": 2.038,
+        "initial_observation_sha256": "f2ebcd14529bde9a01d5ff08a4e3126a95c145e471d917e72b82007a9f927ef7",
+        "reward": 0.0,
+        "positive_reward_terminal": false,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      }
+    }
+  },
+  {
+    "task": "click-option",
+    "seed": 1013,
+    "matched": true,
+    "arms": {
+      "iterative": {
+        "arm": "iterative",
+        "task": "click-option",
+        "seed": 1013,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 3,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 2,
+        "api_calls": 2,
+        "input_tokens": 1579,
+        "output_tokens": 37,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 5.863,
+        "initial_observation_sha256": "6102728eb02771169dc357fff76cba27da17abef499004cf235f44584d3885d0",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      },
+      "oneshot": {
+        "arm": "oneshot",
+        "task": "click-option",
+        "seed": 1013,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 3,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 2,
+        "api_calls": 1,
+        "input_tokens": 685,
+        "output_tokens": 39,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 4.506,
+        "initial_observation_sha256": "6102728eb02771169dc357fff76cba27da17abef499004cf235f44584d3885d0",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      }
+    }
+  },
+  {
+    "task": "click-option",
+    "seed": 1019,
+    "matched": true,
+    "arms": {
+      "oneshot": {
+        "arm": "oneshot",
+        "task": "click-option",
+        "seed": 1019,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 3,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 2,
+        "api_calls": 1,
+        "input_tokens": 624,
+        "output_tokens": 39,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 4.138,
+        "initial_observation_sha256": "f578799c128b59ea4e43086f282da22d6327a52dc827613db8b2d33877b838c3",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      },
+      "iterative": {
+        "arm": "iterative",
+        "task": "click-option",
+        "seed": 1019,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 3,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 2,
+        "api_calls": 2,
+        "input_tokens": 1457,
+        "output_tokens": 37,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 5.16,
+        "initial_observation_sha256": "f578799c128b59ea4e43086f282da22d6327a52dc827613db8b2d33877b838c3",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      }
+    }
+  }
+]

@@ -1,0 +1,143 @@
+[
+  {
+    "task": "click-checkboxes",
+    "seed": 1009,
+    "matched": true,
+    "arms": {
+      "oneshot": {
+        "arm": "oneshot",
+        "task": "click-checkboxes",
+        "seed": 1009,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 7,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 3,
+        "api_calls": 1,
+        "input_tokens": 579,
+        "output_tokens": 56,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 5.736,
+        "initial_observation_sha256": "10d4ca942395eee8dcc84931071e1f152d7a99958e03d92854ea2babe48e9fdf",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      },
+      "iterative": {
+        "arm": "iterative",
+        "task": "click-checkboxes",
+        "seed": 1009,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 7,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 1,
+        "api_calls": 1,
+        "input_tokens": 676,
+        "output_tokens": 18,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 2.986,
+        "initial_observation_sha256": "10d4ca942395eee8dcc84931071e1f152d7a99958e03d92854ea2babe48e9fdf",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      }
+    }
+  },
+  {
+    "task": "click-checkboxes",
+    "seed": 1013,
+    "matched": true,
+    "arms": {
+      "iterative": {
+        "arm": "iterative",
+        "task": "click-checkboxes",
+        "seed": 1013,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 7,
+        "max_recoveries": 0,
+        "success": false,
+        "reason": "step_budget_exhausted",
+        "steps": 7,
+        "api_calls": 7,
+        "input_tokens": 5992,
+        "output_tokens": 132,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 16.058,
+        "initial_observation_sha256": "d91f8cc93a10cffc7c8fea2a7a464d11c11586db92fb8807ffb2793ad69c77d7",
+        "reward": 0.0,
+        "positive_reward_terminal": false,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      },
+      "oneshot": {
+        "arm": "oneshot",
+        "task": "click-checkboxes",
+        "seed": 1013,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 7,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 4,
+        "api_calls": 1,
+        "input_tokens": 701,
+        "output_tokens": 73,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 5.96,
+        "initial_observation_sha256": "d91f8cc93a10cffc7c8fea2a7a464d11c11586db92fb8807ffb2793ad69c77d7",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      }
+    }
+  },
+  {
+    "task": "click-checkboxes",
+    "seed": 1019,
+    "matched": true,
+    "arms": {
+      "oneshot": {
+        "arm": "oneshot",
+        "task": "click-checkboxes",
+        "seed": 1019,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 7,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 1,
+        "api_calls": 1,
+        "input_tokens": 617,
+        "output_tokens": 22,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 3.066,
+        "initial_observation_sha256": "86d4ce928a4c4c7b78dcb0b210f65d490e142362efd96f8b504ce40ca6409da2",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      },
+      "iterative": {
+        "arm": "iterative",
+        "task": "click-checkboxes",
+        "seed": 1019,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 7,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 1,
+        "api_calls": 1,
+        "input_tokens": 714,
+        "output_tokens": 18,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 2.976,
+        "initial_observation_sha256": "86d4ce928a4c4c7b78dcb0b210f65d490e142362efd96f8b504ce40ca6409da2",
+        "reward": 1.0,
+        "positive_reward_terminal": true,
+        "completion_metric": "terminal_full_credit_reward_1_v1"
+      }
+    }
+  }
+]
