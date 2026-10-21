@@ -105,6 +105,9 @@ def build_workflow(env, model, max_steps=2, max_recoveries=0):
             "step": s["steps"], "action": action["action"], "bid": action["bid"],
             "execution_ok": not error, "benchmark_success": success,
             "error_kind": error_kind,
+            "failed_fill_target_absent": bool(error and action["action"] == "fill"
+                and action["bid"] not in textbox_ids(flatten_axtree_to_str(
+                    s["observation"]["axtree_object"]))),
         }]
         recovery_context = ({"action": action["action"], "bid": action["bid"],
                              "status": "previous_fill_failed"} if reason == "recover" else None)

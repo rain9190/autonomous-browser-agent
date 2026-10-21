@@ -11,11 +11,17 @@ import time
 from uuid import uuid4
 
 from .budget import Budget
+
+def scenario_mode(scenario):
+    return {"python_exception": "simulated_fill_recovery",
+            "disabled_textbox_timeout": "controlled_browser_timeout_recovery",
+            "changed_textbox_id": "controlled_changed_id_recovery"}[scenario]
+
 from .evaluate import ROOT, parse_result, run_suite, summarize
 
 
 def parse_recovery_result(stdout, returncode, task, seed, max_steps, scenario="python_exception"):
-    mode = "controlled_browser_timeout_recovery" if scenario == "disabled_textbox_timeout" else "simulated_fill_recovery"
+    mode = scenario_mode(scenario)
     try:
         raw = json.loads(stdout)
         if not isinstance(raw, dict):
@@ -41,11 +47,20 @@ def parse_recovery_result(stdout, returncode, task, seed, max_steps, scenario="p
         failed = [i for i, row in enumerate(rows) if not row["execution_ok"]]
         if not failed or rows[failed[0]]["action"] != "fill":
             raise ValueError()
-        if scenario == "disabled_textbox_timeout" and (
+        if scenario in ("disabled_textbox_timeout", "changed_textbox_id") and (
             raw.get("controlled_timeout_confirmed") is not True
             or rows[failed[0]].get("error_kind") != "playwright_fill_timeout"
         ):
             raise ValueError()
+        if scenario == "changed_textbox_id":
+            first_failure = rows[failed[0]]
+            changed = (raw.get("changed_id_confirmed") is True
+                       and first_failure.get("failed_fill_target_absent") is True)
+            fresh = any(row["action"] == "fill" and row["execution_ok"]
+                        and row.get("bid") and row.get("bid") != first_failure.get("bid")
+                        for row in rows[failed[0] + 1:])
+            if not changed or (raw.get("success") and (not fresh or raw.get("fresh_id_recovery_confirmed") is not True)):
+                raise ValueError()
         if used and failed[0] == len(rows) - 1:
             raise ValueError()
         if raw.get("success") and (used != 1 or len(failed) != 1):
@@ -56,7 +71,9 @@ def parse_recovery_result(stdout, returncode, task, seed, max_steps, scenario="p
         if result["status"] == "invalid_report":
             raise ValueError()
         result.update(evaluation_mode=mode, controlled_failure_scenario=scenario,
-                      browser_timeout_confirmed=scenario == "disabled_textbox_timeout",
+                      browser_timeout_confirmed=scenario in ("disabled_textbox_timeout", "changed_textbox_id"),
+                      changed_id_confirmed=scenario == "changed_textbox_id",
+                      fresh_id_recovery_confirmed=bool(scenario == "changed_textbox_id" and raw.get("fresh_id_recovery_confirmed")),
                       injection_confirmed=True, recoveries_used=used,
                       recovered_success=result["success"] and used == 1)
         return result
@@ -75,16 +92,18 @@ def parse_recovery_result(stdout, returncode, task, seed, max_steps, scenario="p
 
 
 def run_recovery_episode(task, seed, max_steps=3, scenario="python_exception"):
-    if scenario not in ("python_exception", "disabled_textbox_timeout"):
+    if scenario not in ("python_exception", "disabled_textbox_timeout", "changed_textbox_id"):
         raise ValueError("Unknown controlled failure scenario")
-    mode = "controlled_browser_timeout_recovery" if scenario == "disabled_textbox_timeout" else "simulated_fill_recovery"
+    mode = scenario_mode(scenario)
     if task not in ("enter-text", "login-user"):
         raise ValueError("Recovery evaluation requires a local text-entry task")
     budget = Budget(max_steps)
     command = [sys.executable, "-m", "browser_agent", "--task", task,
                "--seed", str(seed), "--max-steps", str(max_steps),
                "--max-recoveries", "1",
-               "--disabled-textbox-timeout-once" if scenario == "disabled_textbox_timeout" else "--simulate-fill-error-once"]
+               {"disabled_textbox_timeout": "--disabled-textbox-timeout-once",
+                "changed_textbox_id": "--changed-textbox-id-once",
+                "python_exception": "--simulate-fill-error-once"}[scenario]]
     start = time.monotonic()
     process = subprocess.Popen(command, cwd=ROOT, stdout=subprocess.PIPE,
                                stderr=subprocess.PIPE, text=True, start_new_session=True)
@@ -113,8 +132,10 @@ def recovery_summary(records, planned, max_steps, scenario="python_exception"):
     injected = sum(r.get("injection_confirmed", False) for r in records)
     recovered = sum(r.get("recovered_success", False) for r in records)
     summary.update(
-        evaluation_mode=("controlled_browser_timeout_recovery" if scenario == "disabled_textbox_timeout" else "simulated_fill_recovery"),
+        evaluation_mode=(scenario_mode(scenario)),
         controlled_failure_scenario=scenario,
+        confirmed_changed_id_episodes=sum(r.get("changed_id_confirmed", False) for r in records),
+        fresh_id_recovered_episodes=sum(r.get("fresh_id_recovery_confirmed", False) and r.get("recovered_success", False) for r in records),
         confirmed_browser_timeout_episodes=sum(r.get("browser_timeout_confirmed", False) for r in records),
         max_recoveries_per_episode=1,
         confirmed_injected_episodes=injected, recovered_episodes=recovered,
@@ -130,7 +151,7 @@ def main():
     parser.add_argument("--task", choices=("enter-text", "login-user"), default="enter-text")
     parser.add_argument("--seeds", type=int, nargs="+", default=[7, 42, 123])
     parser.add_argument("--max-steps", type=int, choices=range(3, 7), default=3)
-    parser.add_argument("--scenario", choices=("python_exception", "disabled_textbox_timeout"), default="python_exception")
+    parser.add_argument("--scenario", choices=("python_exception", "disabled_textbox_timeout", "changed_textbox_id"), default="python_exception")
     args = parser.parse_args()
     if len(args.seeds) != len(set(args.seeds)):
         parser.error("Seeds must be unique")
@@ -139,7 +160,8 @@ def main():
     if args.task == "login-user" and args.max_steps < 4:
         parser.error("login-user with an injected failure requires at least four steps")
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    prefix = "browser-timeout-eval" if args.scenario == "disabled_textbox_timeout" else "recovery-eval"
+    prefix = {"python_exception": "recovery-eval", "disabled_textbox_timeout": "browser-timeout-eval",
+              "changed_textbox_id": "changed-id-eval"}[args.scenario]
     output = ROOT / "results" / f"{prefix}-{stamp}-{uuid4().hex[:8]}"
     summary = run_suite([args.task], args.seeds, output,
                         runner=partial(run_recovery_episode, scenario=args.scenario), max_steps=args.max_steps,

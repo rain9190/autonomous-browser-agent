@@ -12,7 +12,7 @@ from openai import APIConnectionError, APIStatusError
 from .actions import action_mapping
 from .budget import Budget
 from .model import ModelAdapter
-from .recovery import FillFailureOnce, DisabledTextboxOnce
+from .recovery import FillFailureOnce, DisabledTextboxOnce, ChangedTextboxIdOnce
 from .workflow import build_workflow
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,9 +31,11 @@ def main():
     scenarios = parser.add_mutually_exclusive_group()
     scenarios.add_argument("--simulate-fill-error-once", action="store_true")
     scenarios.add_argument("--disabled-textbox-timeout-once", action="store_true")
+    scenarios.add_argument("--changed-textbox-id-once", action="store_true")
     args = parser.parse_args()
-    failure_requested = args.simulate_fill_error_once or args.disabled_textbox_timeout_once
-    scenario = ("disabled_textbox_timeout" if args.disabled_textbox_timeout_once else
+    failure_requested = args.simulate_fill_error_once or args.disabled_textbox_timeout_once or args.changed_textbox_id_once
+    scenario = ("changed_textbox_id" if args.changed_textbox_id_once else
+                "disabled_textbox_timeout" if args.disabled_textbox_timeout_once else
                 "python_exception" if args.simulate_fill_error_once else "none")
     if failure_requested and args.task not in ("enter-text", "login-user"):
         parser.error("Fill-error simulation requires enter-text or login-user")
@@ -54,7 +56,8 @@ def main():
     signal.alarm(budget.run_timeout)
     try:
         model = ModelAdapter(key, max_steps=budget.max_steps)
-        mapping = (DisabledTextboxOnce() if args.disabled_textbox_timeout_once else
+        mapping = (ChangedTextboxIdOnce() if args.changed_textbox_id_once else
+                   DisabledTextboxOnce() if args.disabled_textbox_timeout_once else
                    FillFailureOnce() if args.simulate_fill_error_once else action_mapping)
         env = gym.make(
             f"browsergym/miniwob.{args.task}", headless=True,
@@ -66,10 +69,18 @@ def main():
             {"observation": observation, "steps": 0}, {"recursion_limit": 5 * budget.max_steps + 2}
         )
         report = {k: state[k] for k in ["success", "reason", "steps", "reward", "terminated", "truncated", "trace", "history", "progress", "remaining_steps", "recoveries_used", "failed_actions"]}
-        report.update(max_recoveries=args.max_recoveries,
+        changed_id_confirmed = bool(args.changed_textbox_id_once and any(
+            row["failed_fill_target_absent"] and row["bid"] == mapping.old_bid
+            for row in state["progress"]))
+        fresh_id_confirmed = bool(changed_id_confirmed and any(
+            row["action"] == "fill" and row["execution_ok"] and row["bid"] != mapping.old_bid
+            for row in state["progress"]))
+        report.update(changed_id_confirmed=changed_id_confirmed,
+                      fresh_id_recovery_confirmed=fresh_id_confirmed,
+                      max_recoveries=args.max_recoveries,
                       simulated_failure_requested=failure_requested,
                       controlled_failure_scenario=scenario,
-                      controlled_timeout_confirmed=bool(args.disabled_textbox_timeout_once and any(
+                      controlled_timeout_confirmed=bool((args.disabled_textbox_timeout_once or args.changed_textbox_id_once) and any(
                           row["error_kind"] == "playwright_fill_timeout" for row in state["progress"])),
                       simulated_failure_injected=bool(failure_requested and mapping.injected),
                       max_steps=budget.max_steps, task=args.task, seed=args.seed, model=model.model, api_calls=model.calls,
