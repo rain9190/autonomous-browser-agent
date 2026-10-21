@@ -1,0 +1,35 @@
+{
+  "tasks": [
+    "login-user"
+  ],
+  "seeds": [
+    11,
+    29
+  ],
+  "max_steps": 3,
+  "model": "gpt-4.1-mini-2025-04-14",
+  "max_recoveries": 0,
+  "arm_order": "alternates by pair; starts oneshot",
+  "source_sha256": {
+    "__init__.py": "2691b3b27f3c2f1a7475faf3700a5f4c2f903abd7cb5a81a94a2e86d3b50f156",
+    "__main__.py": "539b2ef168e09b064f9b33c83634631ec6a0edfab96fea7c2085eab2a8fbf0c8",
+    "actions.py": "8175a103d5cb6d71970561e3864052148c7521ff8b57b2a18ef5eff565b8ea1e",
+    "budget.py": "a68dbc6c59caa9c0503068735a1c82139cfa4c0a954273e425e082889f58cd36",
+    "compare.py": "3b09f06de619f6667ade12d2f5d2c2adece0750a2e683810ca2a4b1011e4be7d",
+    "comparison_worker.py": "c16b86ff962096ef114cdcee2b3480b5dbdb15e25e67d74fc29288ff806d0b62",
+    "evaluate.py": "c73a333937b26c0452c94c7d56f829e3befecdd981c5fb9eac7a6f2611114cbf",
+    "evaluate_recovery.py": "6aad8a1ff902e1ee775c5ea4a27e93cd672d395521a8a5b9fb651aaf7badb6bb",
+    "model.py": "e759a2e7bbd5163cd4accc8a30476907e22fba0efa00ff48e7fe9f8ab9a1c89f",
+    "oneshot.py": "bc6036c5661c058d8a8c9b024fec6c852068370a121b37084a028c67e49a0ea8",
+    "recovery.py": "1f73045d6af07bff8dbaaa5331e05a8d134756c249c07315d22e1f5f5fdf317a",
+    "run_oneshot.py": "1e1c9f2c7f15ff1aee87d6c954b4f321b987d8dba7d43c2db4cf7cc236de82b1",
+    "workflow.py": "059e832113a66ffc4892f78ae42f3b9549433f3fabc9ed832a68a4eadf849271"
+  },
+  "package_versions": {
+    "openai": "3.35.1",
+    "langgraph": "1.2.16",
+    "pydantic": "2.14.1",
+    "browsergym-core": "0.14.3",
+    "browsergym-miniwob": "0.14.3"
+  }
+}

@@ -1,0 +1,84 @@
+[
+  {
+    "task": "login-user",
+    "seed": 11,
+    "matched": true,
+    "arms": {
+      "oneshot": {
+        "arm": "oneshot",
+        "task": "login-user",
+        "seed": 11,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 3,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 3,
+        "api_calls": 1,
+        "input_tokens": 328,
+        "output_tokens": 46,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 5.457,
+        "initial_observation_sha256": "71fbeac7e523bfc911693811eb423c18b79b386480b618bdd14473ccdab7aa44"
+      },
+      "iterative": {
+        "arm": "iterative",
+        "task": "login-user",
+        "seed": 11,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 3,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 3,
+        "api_calls": 3,
+        "input_tokens": 1206,
+        "output_tokens": 46,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 8.574,
+        "initial_observation_sha256": "71fbeac7e523bfc911693811eb423c18b79b386480b618bdd14473ccdab7aa44"
+      }
+    }
+  },
+  {
+    "task": "login-user",
+    "seed": 29,
+    "matched": true,
+    "arms": {
+      "iterative": {
+        "arm": "iterative",
+        "task": "login-user",
+        "seed": 29,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 3,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 3,
+        "api_calls": 3,
+        "input_tokens": 1210,
+        "output_tokens": 46,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 7.629,
+        "initial_observation_sha256": "38c8a0b92cf06b21af32692cef546456cc2568817fed02650900efb5e9c19e3d"
+      },
+      "oneshot": {
+        "arm": "oneshot",
+        "task": "login-user",
+        "seed": 29,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 3,
+        "max_recoveries": 0,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 3,
+        "api_calls": 1,
+        "input_tokens": 326,
+        "output_tokens": 44,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 4.686,
+        "initial_observation_sha256": "38c8a0b92cf06b21af32692cef546456cc2568817fed02650900efb5e9c19e3d"
+      }
+    }
+  }
+]

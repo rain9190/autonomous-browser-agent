@@ -1,0 +1,59 @@
+{
+  "evaluation_mode": "paired_recovery_ablation",
+  "planned_pairs": 2,
+  "attempted_pairs": 2,
+  "matched_pairs": 2,
+  "unmatched_or_incomplete_pairs": 0,
+  "unattempted_pairs": 0,
+  "complete": true,
+  "model": "gpt-4.1-mini-2025-04-14",
+  "max_steps_per_arm": 3,
+  "max_recoveries": {
+    "recovery_off": 0,
+    "recovery_on": 1
+  },
+  "api_call_ceiling": 12,
+  "reported_api_calls": 8,
+  "reported_input_tokens": 2437,
+  "reported_output_tokens": 113,
+  "episodes_with_unknown_or_incomplete_usage": 0,
+  "controlled_failure_scenario": "disabled_textbox_timeout",
+  "per_arm_on_matched_pairs": {
+    "recovery_off": {
+      "matched_episodes": 2,
+      "successes": 0,
+      "success_rate": 0.0,
+      "episodes_with_potentially_incomplete_usage": 0,
+      "failure_reasons": {
+        "browser_action_error": 2
+      },
+      "mean_steps": 1.0,
+      "mean_api_calls": 1.0,
+      "mean_duration_seconds": 3.917,
+      "mean_input_tokens": 301.0,
+      "mean_output_tokens": 14.0
+    },
+    "recovery_on": {
+      "matched_episodes": 2,
+      "successes": 2,
+      "success_rate": 1.0,
+      "episodes_with_potentially_incomplete_usage": 0,
+      "failure_reasons": {},
+      "mean_steps": 3.0,
+      "mean_api_calls": 3.0,
+      "mean_duration_seconds": 8.5495,
+      "mean_input_tokens": 917.5,
+      "mean_output_tokens": 42.5
+    }
+  },
+  "paired_outcomes": {
+    "both_succeeded": 0,
+    "both_failed": 0,
+    "recovery_off_only": 0,
+    "recovery_on_only": 2
+  },
+  "success_rate_difference_percentage_points": 100.0,
+  "mean_additional_api_calls": 2.0,
+  "mean_additional_duration_seconds": 4.6325,
+  "interrupted": false
+}

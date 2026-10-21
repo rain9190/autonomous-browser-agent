@@ -1,0 +1,21 @@
+{
+  "arm": "recovery_off",
+  "task": "enter-text",
+  "seed": 31,
+  "model": "gpt-4.1-mini-2025-04-14",
+  "max_steps": 3,
+  "max_recoveries": 0,
+  "success": false,
+  "reason": "browser_action_error",
+  "steps": 1,
+  "api_calls": 1,
+  "input_tokens": 300,
+  "output_tokens": 14,
+  "api_usage_may_be_incomplete": false,
+  "duration_seconds": 4.234,
+  "initial_observation_sha256": "e83d26b483dddef66a358a6a0372157fa1de68057be16bed67e29392401a1dd8",
+  "recoveries_used": 0,
+  "controlled_failure_scenario": "disabled_textbox_timeout",
+  "failure_injection_confirmed": true,
+  "injected_failure_signature": "db8d8dd6a615a489b8c7fc2a6d7c398c566c3efad96b37aa8ded52f31ddf9d22"
+}

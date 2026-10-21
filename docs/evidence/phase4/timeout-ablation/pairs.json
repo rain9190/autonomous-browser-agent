@@ -1,0 +1,100 @@
+[
+  {
+    "task": "enter-text",
+    "seed": 31,
+    "matched": true,
+    "arms": {
+      "recovery_off": {
+        "arm": "recovery_off",
+        "task": "enter-text",
+        "seed": 31,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 3,
+        "max_recoveries": 0,
+        "success": false,
+        "reason": "browser_action_error",
+        "steps": 1,
+        "api_calls": 1,
+        "input_tokens": 300,
+        "output_tokens": 14,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 4.234,
+        "initial_observation_sha256": "e83d26b483dddef66a358a6a0372157fa1de68057be16bed67e29392401a1dd8",
+        "recoveries_used": 0,
+        "controlled_failure_scenario": "disabled_textbox_timeout",
+        "failure_injection_confirmed": true,
+        "injected_failure_signature": "db8d8dd6a615a489b8c7fc2a6d7c398c566c3efad96b37aa8ded52f31ddf9d22"
+      },
+      "recovery_on": {
+        "arm": "recovery_on",
+        "task": "enter-text",
+        "seed": 31,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 3,
+        "max_recoveries": 1,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 3,
+        "api_calls": 3,
+        "input_tokens": 914,
+        "output_tokens": 42,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 8.311,
+        "initial_observation_sha256": "e83d26b483dddef66a358a6a0372157fa1de68057be16bed67e29392401a1dd8",
+        "recoveries_used": 1,
+        "controlled_failure_scenario": "disabled_textbox_timeout",
+        "failure_injection_confirmed": true,
+        "injected_failure_signature": "db8d8dd6a615a489b8c7fc2a6d7c398c566c3efad96b37aa8ded52f31ddf9d22"
+      }
+    }
+  },
+  {
+    "task": "enter-text",
+    "seed": 47,
+    "matched": true,
+    "arms": {
+      "recovery_on": {
+        "arm": "recovery_on",
+        "task": "enter-text",
+        "seed": 47,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 3,
+        "max_recoveries": 1,
+        "success": true,
+        "reason": "benchmark_success",
+        "steps": 3,
+        "api_calls": 3,
+        "input_tokens": 921,
+        "output_tokens": 43,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 8.788,
+        "initial_observation_sha256": "0d77ab5bd5245847e0263d2234c80b306c923631c766957b660074dba5e5af77",
+        "recoveries_used": 1,
+        "controlled_failure_scenario": "disabled_textbox_timeout",
+        "failure_injection_confirmed": true,
+        "injected_failure_signature": "8e23e3da97ae00c1898af68cd6ed3b7ccb8efe88d1135854322f8b615bcb4581"
+      },
+      "recovery_off": {
+        "arm": "recovery_off",
+        "task": "enter-text",
+        "seed": 47,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "max_steps": 3,
+        "max_recoveries": 0,
+        "success": false,
+        "reason": "browser_action_error",
+        "steps": 1,
+        "api_calls": 1,
+        "input_tokens": 302,
+        "output_tokens": 14,
+        "api_usage_may_be_incomplete": false,
+        "duration_seconds": 3.6,
+        "initial_observation_sha256": "0d77ab5bd5245847e0263d2234c80b306c923631c766957b660074dba5e5af77",
+        "recoveries_used": 0,
+        "controlled_failure_scenario": "disabled_textbox_timeout",
+        "failure_injection_confirmed": true,
+        "injected_failure_signature": "8e23e3da97ae00c1898af68cd6ed3b7ccb8efe88d1135854322f8b615bcb4581"
+      }
+    }
+  }
+]

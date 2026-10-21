@@ -1,0 +1,65 @@
+{
+  "report_date": "2026-10-22",
+  "experiments": [
+    {
+      "label": "text-comparison",
+      "original_project_relative_path": "results/comparison-20261021T192647Z-991a770a",
+      "sha256": {
+        "01-enter-text-seed11-iterative.json": "0eb851fa859ce29c92d81502caf69cf2203166dbc4b53bb4e97f3dbce4a88c84",
+        "01-enter-text-seed11-oneshot.json": "86b73c94029e72dc1d4cae29a11a9e2150a4a19d26afd23bfe42bd08d09fc611",
+        "02-enter-text-seed29-iterative.json": "13973f172f8d2f2e82092101031abb26a17fc64b8c2ee8874d091712756d8a98",
+        "02-enter-text-seed29-oneshot.json": "6ad2870d161cf014999b76fce0a4b1073ca6c04823a7c302b329c89b8a31827d",
+        "config.json": "076025632592bcde91525c34612513a6e84d516b04b63c3803c112423e9b3f26",
+        "pairs.json": "922749187c984a7e222f9b707153a954d9d894957bd0bb64953a4b9a3646f4dd",
+        "summary.json": "be5f53891705b33ff86d62ef94f83544848fc9d64ba7b0b9058d3a24320a89a2"
+      }
+    },
+    {
+      "label": "sequence-comparison",
+      "original_project_relative_path": "results/comparison-20261021T192809Z-bdac5d14",
+      "sha256": {
+        "01-click-button-sequence-seed11-iterative.json": "689eaa4289ef9e2fba42e1ba5792847f69749881e4a3b4a543ff8ba9f5d5b328",
+        "01-click-button-sequence-seed11-oneshot.json": "6e4b4aaac2443ee308f2ec826ef75948218b2189245627c9cc151eb8d3fdc3ef",
+        "02-click-button-sequence-seed29-iterative.json": "fd0eaf789b700809e41803cd3987c1d7bda5cf90c2cba7e26094e6bdc84fa954",
+        "02-click-button-sequence-seed29-oneshot.json": "276e4e51704054028c7f97da16532bc3cf8a4f93239f92c90a0b5daeaaa78d49",
+        "config.json": "d92d637c4896f5e17bf216a4a3a6f4f62a8ad5d96f53276e57fb8724101e2c75",
+        "pairs.json": "479d807bc230e273677e7d1340498a0f2b895017e05bd6d08d12820870876ee9",
+        "summary.json": "bc5248dffbe6898e8c699c0b8679a81e02772876e4e87b90903a3d667bebcd51"
+      }
+    },
+    {
+      "label": "login-comparison",
+      "original_project_relative_path": "results/comparison-20261021T192844Z-721e2464",
+      "sha256": {
+        "01-login-user-seed11-iterative.json": "ff0ac203813aeedee85e06a504120199df112272fd9d09442bf8a5a570111507",
+        "01-login-user-seed11-oneshot.json": "2c06709dc4ca05df80430e909c5205b0f4108ca8d2c7d4071e30e6d835c3dd5a",
+        "02-login-user-seed29-iterative.json": "943a8457d06d1c2e1151655d207d42440910e842929f2a7ae4024c3ef82140fc",
+        "02-login-user-seed29-oneshot.json": "6f96cc18da179ae1ef080984b9141c119e16a29b3237a5e467f785e9054177e0",
+        "config.json": "dcaa305d10c63c518efbddc4ab3b20cf35263e6ae5b7121a9b25691e7a830d6d",
+        "pairs.json": "35d6b82b4b757a6d44d52810c76cd8668c0ca57fe790c289d8ae5f8a44649b6f",
+        "summary.json": "9c6e1795c5ce8894826100f6616a5a298b867a63dc12d68a518ffd6f3e5c735d"
+      }
+    },
+    {
+      "label": "timeout-ablation",
+      "original_project_relative_path": "results/recovery-ablation-20261021T193509Z-d041bd33",
+      "sha256": {
+        "01-enter-text-seed31-recovery_off.json": "84fa55ce4ac1b653ce37919571ec4d954e365e6ad0b71e147afd4f0fcbcd6821",
+        "01-enter-text-seed31-recovery_on.json": "59c1142313ba43ec53a09f33e6bb72f88a29ba0b6fca29926d176daa4b5e3a5a",
+        "02-enter-text-seed47-recovery_off.json": "a0002a0140035dc29512cd241617f2c0ea39930df5606633a367568b8a3ddf32",
+        "02-enter-text-seed47-recovery_on.json": "1263862be44bb5cfcb35b6862aea3e9c83ae0785ea61cf13f78048764525b2eb",
+        "config.json": "9ceb73ee11944d59c38eca8fb391b4f7c22ea40a0edf737d835cf00f0a08154f",
+        "pairs.json": "bc37301a0fd6b69f21fed239c291f193373caeb041d755dbdf806263747350e5",
+        "summary.json": "4b57e96f4c269bc0e26cecc12b9f97e788d663ef8dafbbd867d9671f3429acb6"
+      }
+    }
+  ],
+  "note": "Curated raw experiment JSON; no action histories, page text, API keys or logs. Original results directory names retain their UTC timestamps.",
+  "checked_shared_source_modules": [
+    "model.py",
+    "actions.py",
+    "workflow.py",
+    "budget.py",
+    "oneshot.py"
+  ]
+}

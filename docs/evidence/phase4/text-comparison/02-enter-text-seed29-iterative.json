@@ -1,0 +1,17 @@
+{
+  "arm": "iterative",
+  "task": "enter-text",
+  "seed": 29,
+  "model": "gpt-4.1-mini-2025-04-14",
+  "max_steps": 2,
+  "max_recoveries": 0,
+  "success": true,
+  "reason": "benchmark_success",
+  "steps": 2,
+  "api_calls": 2,
+  "input_tokens": 619,
+  "output_tokens": 28,
+  "api_usage_may_be_incomplete": false,
+  "duration_seconds": 7.101,
+  "initial_observation_sha256": "153453e782b7612afdd61612a35fc2088da736b46605ad085c3f108d523507e2"
+}

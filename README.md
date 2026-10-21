@@ -6,7 +6,9 @@ API, validates it, executes it, and checks the benchmark outcome. The current
 milestone supports clicks, text filling, bounded multi-step execution, and
 controlled recovery from an injected fill failure.
 
-**Status, 21 October 2026:** 87 offline tests passed during update preparation.
+**Status, 22 October 2026:** 148 offline tests passed during update preparation;
+two browser checks remain opt-in. Matched planning comparisons and a first
+recovery-on/off ablation are complete on small exploratory samples.
 User-run live evaluations passed the selected baseline tasks and six simulated
 recovery episodes. These are small local benchmark results; natural browser
 failure recovery and arbitrary websites have not been established. See the
@@ -171,6 +173,32 @@ READMEs remain as historical instructions; use this README for current commands.
 - A missing task HTML message means the expected local vendor checkout is absent.
 - A budget failure is not a benchmark pass; increase the explicit allowance only when the task needs more actions.
 - For a stopped evaluation, inspect `complete`, `unattempted` and unknown-usage counts before interpreting its success rate.
+
+## Comparative findings — Phase 4
+
+See the [experiment findings](docs/EXPERIMENT-FINDINGS.md) and curated evidence.
+Both one-shot and iterative planning succeeded on six matched task instances
+across text entry, ordered clicks and login. One-shot used fewer calls and was
+faster on these instances. In two matched induced-timeout instances, recovery-off
+succeeded on 0/2 and recovery-on on 2/2, using two additional model calls and
+4.63 additional seconds per episode on average. These are exploratory controlled
+results, not general success-rate claims or proof of superiority.
+
+```bash
+python -m browser_agent.run_oneshot --task enter-text --seed 11 --max-steps 2
+python -m browser_agent.compare --tasks enter-text --seeds 11 29 --max-steps 2
+python -m browser_agent.ablate_recovery --task enter-text --seeds 31 47 --max-steps 3 --scenario disabled_textbox_timeout
+```
+
+Commands make paid API calls. Comparison results go into unique `comparison-...`
+and `recovery-ablation-...` directories under ignored `results/`. They check both
+initial observations, and the recovery ablation also checks the first failure
+signature, before accepting a matched pair. Benchmark failures remain in the data.
+A completed experiment does not imply that every agent run succeeded.
+
+Current single-run filenames also include a controlled scenario suffix. Historical
+milestone and result files may predate it. Older milestone reports describe the
+state at their dates; use the newer experiment findings for comparative results.
 
 ## Next work
 
