@@ -1,13 +1,11 @@
 # Benchmark results
 
-I compared two ways of running the agent on local BrowserGym/MiniWoB tasks:
-
-- **One-shot:** generate a plan once, then execute it.
-- **Iterative:** observe the page again before deciding the next action.
+I compared one-shot plans with iterative decisions on local BrowserGym/MiniWoB tasks.
+One-shot plans once; iterative observes the page again before choosing its next action.
 
 Both used `gpt-4.1-mini-2025-04-14`, the same per-task action limits and full-credit scoring.
-The test covered 20 tasks with three reserved seeds each: `1009`, `1013` and `1019`.
-The code and evaluation settings were frozen before these runs.
+There were 20 tasks, each tested on seeds `1009`, `1013` and `1019`. The code and settings
+were frozen before the runs.
 
 ## Planning
 
@@ -18,35 +16,29 @@ The code and evaluation settings were frozen before these runs.
 | Reported API calls | 60 | 114 |
 | Average time per run | 4.06 s | 5.03 s |
 
-Both succeeded on 52 instances. Iterative alone succeeded on five; one-shot alone succeeded
-on three. Iterative handled `click-collapsible-2` better (3/3 versus 0/3), but lost one
-instance each on the two checkbox tasks and the radio-choice task.
+Both passed 52 instances. Iterative alone passed five; one-shot alone passed three.
+On `click-collapsible-2`, iterative passed 3/3 and one-shot 0/3. One-shot did better
+on three instances across the checkbox and radio tasks.
 
-The tradeoff was fairly simple: iteration completed two more instances overall, but used
-nearly twice as many requests. Neither approach won on every task.
+Iteration completed two more instances overall, but needed nearly twice as many calls.
+Neither approach won on every task.
 
 ## Recovery
 
-A separate test deliberately caused the first fill action to time out on `enter-text`
-and `login-user`, using three seeds per task.
+A separate test deliberately timed out the first fill on `enter-text` and `login-user`,
+with three seeds each. Recovery passed **6/6** with one retry, versus **0/6** when disabled.
+This measures an injected timeout, not naturally occurring website failures.
 
-| Recovery | Successful runs |
-| --- | ---: |
-| Disabled | 0/6 |
-| Enabled, with one retry | 6/6 |
+## Limits
 
-This tests recovery from an injected timeout, not naturally occurring website failures.
+The full study contains 132 episodes and 201 reported API calls. One iterative episode
+has incomplete token reporting. Full action histories weren't exported, so some failures
+can't be explained further from these records.
 
-## Limits and saved results
+This is a small local benchmark. The 95% figure is not a real-website form-filling score
+or proof that iteration is generally better.
 
-There were 132 episodes in total: 120 planning runs and 12 recovery runs. They reported
-201 API calls. One iterative episode has incomplete token-usage reporting.
-
-This is a small local benchmark with related task variants. The 95% figure is not a
-real-website form-filling success rate or evidence that iteration is generally better.
-The exports also lack full action histories, so some failure causes cannot be reconstructed.
-
-Saved evidence: [audit summary](evidence/final-v1/audit-summary.json),
-[episode metrics](evidence/final-v1/episode-metrics.csv),
-[failure records](evidence/final-v1/planning-failures.json) and
-[frozen protocol](benchmark/PROTOCOL.md).
+[Audit summary](evidence/final-v1/audit-summary.json) ·
+[Episode metrics](evidence/final-v1/episode-metrics.csv) ·
+[Failures](evidence/final-v1/planning-failures.json) ·
+[Frozen protocol](benchmark/PROTOCOL.md)

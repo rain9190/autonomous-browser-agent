@@ -1,31 +1,28 @@
-# Using the Chrome extension
+# Chrome extension
 
-The extension fills fields in the tab you have open. A local Python service handles the
-model requests; the side panel only needs your instructions, Fill form and Stop.
+The panel fills supported fields in your current tab. It needs the local Python service
+running in the background.
 
 ## Setup
 
-Follow the [README setup](../README.md#try-it) first, then start the service:
+Complete the [README setup](../README.md#get-started), then run:
 
 ```bash
 source .venv/bin/activate
 python -m extension_service.server
 ```
 
-Keep the terminal open.
-
 1. Open `chrome://extensions` and enable **Developer mode**.
 2. Click **Load unpacked** and select this project's `extension/` folder.
-3. Open your form and click the extension icon.
-4. In **Settings**, paste the connection code printed in the terminal and click **Connect**.
+3. Open a form and click the extension icon.
+4. In **Settings**, enter the connection code from the terminal.
 
-The connection code is not your API key. It changes when you restart the service.
-After updating the extension, click **Reload** in Chrome and refresh the website tab.
+The code changes when the service restarts. It isn't your API key.
+After an extension update, click **Reload** in Chrome and refresh the website tab.
 
-## Try it
+## First try
 
-Open the [practice form](http://127.0.0.1:8766/practice) while the service is running.
-Enter these details in the panel:
+Open the [practice form](http://127.0.0.1:8766/practice) and enter:
 
 ```text
 Name: Alex Example
@@ -35,32 +32,25 @@ Session: Afternoon
 Attend Day 1 and Day 2. Dietary preference: Vegetarian.
 ```
 
-Click **Fill form** and watch the two sections fill. Practice submission is disabled.
-The agent asks for missing required details and permission to replace existing answers.
-**Stop** halts further actions but doesn't undo what was already entered.
+Click **Fill form**. It should fill both sections and stop for review. Practice submission
+is disabled. Missing details and conflicting existing answers trigger a question.
 
-## Supported fields
+## What works
 
-Text inputs, search boxes, text areas, native dropdowns, radio buttons, checkboxes and
-simple editable text regions. It also checks fields outside forms, open shadow roots
-and accessible same-origin frames. Google Forms has a separate question adapter.
+Text/search inputs, text areas, native choices and dropdowns, Google Forms controls,
+and simple editable regions. Detection includes fields outside forms, open shadow roots
+and accessible same-origin frames.
 
-Be specific, for example: “Type Paris in the search box and leave everything else blank.”
-Every detected textbox is a candidate; unrelated boxes are not filled automatically.
+Be specific: “Type Paris in the search box and leave everything else blank.” Keep the
+form tab active. Uploads, CAPTCHA, passwords, closed shadow roots, cross-origin frames
+and some custom controls need manual input. Only supported in-page Next steps are automated.
 
-File uploads, CAPTCHA, passwords, sensitive declarations, closed shadow roots,
-cross-origin frames and some custom widgets still need manual input. Only supported
-in-page Next transitions are automated. Keep the form tab active and review before submitting.
+## Things to know
 
-## Data and limits
+- Relevant fields and instructions go to OpenAI; live runs use API credits.
+- The key stays in Python. The app doesn't save answer profiles or logs.
+- Stop doesn't undo earlier entries or recall an in-flight API request.
+- The agent never clicks Submit, but websites may autosave while you type.
+- Each run is limited to 24 model calls, 60 interactions and ten minutes.
 
-Relevant form fields, current answers and your instructions go to OpenAI. Live runs use
-API credits. The key stays in Python, and the app doesn't save answer profiles or logs.
-Websites may autosave as you type, even though the agent never clicks Submit.
-
-Each run allows up to 24 model calls, 60 counted interactions, 40 questions, eight sections
-and ten minutes. These aren't monetary billing caps; an in-flight API call may still be
-billed after Stop.
-
-Seven automated browser checks cover local fixtures with simulated model responses.
-They don't establish compatibility with every website.
+Seven local browser checks use simulated responses. They don't prove every website works.

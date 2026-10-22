@@ -1,33 +1,23 @@
-# Local demo verification — 22 October 2026
+# Demo checks
 
-Observed from user-supplied screenshots and terminal output in the project conversation.
-Demo implementation commit: `332f646`. Final evidence/report commit: `aba1584`.
-Protocol commit: `317eba5`. No additional browser runs or API requests were made to write
-this record. The following five calls are live-development demo calls, separate from the
-201 reported final-evaluation calls; they are not a total for all project development.
+## Earlier benchmark interface — 22 October 2026
 
-| Check | Task / development seed | Outcome | Calls | Action attempts | Recoveries | Worker exit |
-|---|---|---|---:|---:|---:|---:|
-| Basic live interface | enter-text / 61 | Full credit | 2 | 2 | 0 | 0 |
-| Controlled recovery interface | enter-text / 61 | Full credit | 3 | 3 | 1 | 0 |
+User screenshots and terminal output showed these seed-61 runs:
 
-The basic trace showed observe → decide → validate → execute → verify twice, filling
-observed field 14 and clicking button 15. The recovery trace showed an induced first-fill
-failure, a fresh decision and successful fill, then submission. This establishes the tested
-interface paths; it does not establish spontaneous-error recovery or arbitrary website support.
+| Run | Result | Calls | Action attempts | Recoveries |
+| --- | --- | ---: | ---: | ---: |
+| Text entry | Full credit, exit 0 | 2 | 2 | 0 |
+| Controlled fill timeout | Full credit, exit 0 | 3 | 3 | 1 |
 
-The recorded overview loaded 55/60 one-shot, 57/60 iterative and 6/6 controlled recovery on.
-The displayed episode counts and summary values match the audited evidence. The expanded
-row table and filter were not shown in these screenshots.
+The saved overview also displayed 55/60 one-shot, 57/60 iterative and 6/6 recovery-on.
+These development runs are separate from the 132 final benchmark episodes.
+Demo commit: `332f646`; report commit: `aba1584`.
 
-User-installed tests: 268 passed, 10 optional browser checks skipped. The user subsequently
-ran the frozen protocol checker successfully with zero browser launches and API calls.
-The final log showed `332f646`, `aba1584`, `317eba5` in order, and git status listed only
-untracked historical README files, day2.gitignore and vendor/. No tracked modifications
-were reported at that checkpoint.
+## Chrome extension
 
-Active Stop cancellation, live concurrent-run prevention, restart behavior and clean-machine
-installation have not been manually established by this evidence. Successful worker exit and
-return to terminal do not prove every cancellation path. Raw model responses, filled values
-and credentials are not included in this record. Original screenshots remain in the project
-conversation; this bundle adds a written observation record, not new benchmark episode JSON.
+A later user screenshot showed a real Google Form with the supplied name and roll number
+filled and **No** selected for the registration question. The assistant reported
+**Needs your review** for the screenshot upload and left Submit untouched.
+
+That demonstrates this form path. It doesn't establish a success rate across websites,
+active cancellation or clean-machine installation.

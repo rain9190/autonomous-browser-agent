@@ -1,9 +1,12 @@
-# Seven-step checkbox development milestone
+# Seven-step checkbox task
 
-Enables click-checkboxes in all task runners through the shared evaluation list and the single iterative CLI. The source can create up to six checkboxes; checking six and submitting needs seven actions. Full-credit terminal reward 1 remains required; partial checkbox rewards do not count as success.
+`click-checkboxes` can require six selections followed by Submit, so the explicit episode
+maximum increased from six to seven actions. The default stayed at two; budgets don't
+increase automatically after a failure.
 
-Raises the explicit episode maximum from six to seven consistently across Budget, one-shot plan schema, iterative/one-shot CLIs, comparison workers, recovery evaluator and ablation CLI. Default remains two actions; no automatic budget escalation. Existing model call caps, 4000-character history cap, observation caps, fixed action validation, max_retries=0 and 24-call suite/comparison caps remain. Seven-step timeout is 190 seconds; subprocess grace remains ten seconds. One-shot remains one API call, output allowance 256 tokens per permitted action.
+```bash
+python -m browser_agent --task click-checkboxes --seed 61 --max-steps 7
+```
 
-Offline tests verify a six-checkbox plus Submit sequence in both modes, stopping at six, rejecting an over-budget plan before any execution, and rejecting four seven-step episodes against the 24-call cap. Existing upper-bound tests now reject eight steps/actions.
-
-Install then run python -m pytest tests -q. Live development check: python -m browser_agent --task click-checkboxes --seed 61 --max-steps 7. At most seven API calls. Do not run reserved final seeds 1009, 1013, 1019 yet. This update does not freeze or execute the benchmark protocol, nor establish live success.
+The limit was updated across both planners and evaluation runners. Over-budget plans are
+rejected before execution, and partial checkbox reward still doesn't count as success.

@@ -1,70 +1,35 @@
-# Final project details
+# Project notes
 
-## Identity and purpose
+**Autonomous Browser Agent — Form Assistant** is a Chrome extension backed by a local
+Python service. It fills supported page fields from instructions and supplied details,
+then leaves the final review and submission to the user.
 
-**Project:** Autonomous Browser Agent — Form Assistant.
-**Deliverable:** a locally loaded Chrome extension plus Python model service.
-**Product version:** 0.2.0, local prototype.
-**Use case:** reduce repetitive entry on registration, enquiry and ordinary application forms
-by mapping user-supplied facts to visible fields, then leaving the final review to the user.
+## Main parts
 
-The user opens a website, invokes the assistant, supplies instructions/details, clicks Fill
-form and watches the current page update. The panel asks for missing information or overwrite
-permission only when necessary. Stop interrupts subsequent actions. The assistant has no
-Submit tool. It does not continuously watch the desktop.
+- `extension/`: the side panel, page inspection and fixed field operations.
+- `extension_service/`: the local browser/model connection.
+- `form_assistant/`: planning, validation and the shared LangGraph workflow.
+- `browser_agent/`: the earlier MiniWoB benchmark agent.
+- `tests/` and `docs/evidence/`: checks and saved experiment results.
 
-## What was built
+The stack is Python, LangGraph, OpenAI structured outputs, Pydantic and JavaScript.
+The project uses a hosted model; it doesn't train or fine-tune one.
 
-- Chrome Manifest V3 side panel with activeTab access, a packaged isolated DOM adapter,
-  and a plain instructions/buttons/status interface.
-- Detection of visible fields throughout the current page, including search inputs,
-  standalone textboxes, multiple forms, ordinary contenteditable regions, open shadow roots
-  and accessible same-origin frames. Missing labels fall back to metadata or a positional name.
-- Existing Google Forms question handling, native radio/checkbox/dropdown control, and
-  supported in-page Next transitions.
-- A shared LangGraph observe → decide → validate → execute → verify workflow, strict
-  Pydantic plans, evidence checks against supplied information, fixed operations, read-back,
-  bounded retry, inline clarification and explicit overwrite confirmation.
-- An authenticated loopback Python service with session cancellation, browser-command and
-  clarification timeouts, and model/action/field/section limits. The OpenAI key stays in Python.
-- A frozen BrowserGym/MiniWoB research suite, paired planning comparisons, controlled recovery
-  experiments, audited exports and preserved source/protocol fingerprints.
+## What has been checked
 
-The project uses an existing hosted language model. No model training or fine-tuning was
-performed. Product browser interaction uses the DOM; benchmark automation uses Playwright
-and BrowserGym. The plain interface exposes neither the benchmark dashboard nor raw logs.
+- 340 regression tests passed after cleanup.
+- Seven extension browser checks passed using local fixtures and simulated responses.
+- The frozen MiniWoB comparison passed 57/60 iterative and 55/60 one-shot instances.
+- A user-run Google Form example filled text fields and a radio choice, leaving the
+  screenshot upload for manual review.
 
-## Verified evidence
+The real-form example is a working demonstration, not a measured website success rate.
+[Benchmark details](FINAL-BENCHMARK-REPORT.md)
 
-| Evidence | Result | Scope |
-| --- | --- | --- |
-| Final regression suite after isolated cleanup | 340 passed; 21 opt-in browser checks skipped | Includes four cleanup checks; no paid model acceptance |
-| Targeted extension Chromium checks | 7 passed | Local fixtures and simulated model responses |
-| Frozen iterative planning | 57/60; 95.0% | Local MiniWoB, 20 task IDs × three seeds |
-| Frozen one-shot planning | 55/60; 91.7% | Same paired local instances |
-| Controlled recovery enabled / disabled | 6/6 versus 0/6 | Intentionally induced first-fill timeouts |
-| Final experiment records | 132 episodes; 66 matched pairs | 120 planning + 12 recovery episodes |
+## Still to improve
 
-Final experiments reported 201 API calls; one planning episode has potentially incomplete
-usage reporting. The planning difference is small and task dependent; it is not a claim of
-statistical significance. Controlled recovery is not a production uptime measurement.
-See the unchanged [audited report](FINAL-BENCHMARK-REPORT.md).
+Test more real forms, check installation on a fresh machine, and make the local service
+easier to start. Some custom controls, uploads and inaccessible embedded fields remain
+unsupported. The source is on GitHub; the extension isn't a Chrome Web Store release.
 
-The supplied public Google Form was previously inspected read-only. That is compatibility
-inspection, not proof that the extension has completed real forms with the live model.
-The extension toolbar installation and live real-website acceptance remain user-run checks.
-Earlier benchmark-interface runs were user-verified separately, as recorded in
-[DEMO-VERIFICATION.md](DEMO-VERIFICATION.md).
-
-## Limits and remaining work
-
-The extension cannot guarantee every form: closed shadow roots, cross-origin/sandboxed frames,
-CAPTCHA, files, sensitive declarations, read-only fields and some rich editors remain outside
-scope. Next transitions that reload the document stop rather than silently resume. Website
-scripts may autosave or send data when a field changes, despite the lack of a Submit tool.
-Human review remains necessary for meaning, field matching and the website's business rules.
-
-The prepared deliverable is a usable local prototype with automated fixture coverage.
-A broad live-website evaluation, clean-machine installation, distributable service packaging
-and Chrome Web Store release are future work. No public deployment, license selection or
-repository publication is implied by finalizing these local files.
+[Using the extension](EXTENSION.md) · [Development history](history/README.md)
