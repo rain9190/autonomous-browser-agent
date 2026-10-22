@@ -1,108 +1,72 @@
-# Autonomous Browser Agent — Form Assistant
+# Autonomous Browser Agent
 
-A Chrome side-panel assistant that fills supported fields on the current page from your
-instructions. Watch the browser work, answer missing questions, and review before submitting.
+A Chrome extension that fills forms from plain-English instructions.
 
-**Stack:** Python, LangGraph, OpenAI structured outputs, Pydantic, JavaScript, Chrome Manifest V3.
-**Current product:** extension version 0.2.0; local service required.
+Open a form, tell the agent what to enter, and watch it fill the fields in your current tab.
+It asks when something is missing and leaves the final submission to you.
 
-## Run
+**Python · LangGraph · OpenAI API · Pydantic · JavaScript · Chrome Extensions**
 
-Use the existing project environment:
+## What it can do
+
+- Fill text fields, dropdowns, radio buttons and checkboxes.
+- Find textboxes outside standard forms, including search boxes and simple editable regions.
+- Ask before replacing an existing answer.
+- Check what it entered, move through supported sections, and stop when you ask.
+
+It works with Google Forms and ordinary web inputs. File uploads, CAPTCHA, protected fields
+and some custom controls still need manual input.
+
+## Try it
+
+From the project folder, set up the Python environment:
 
 ```bash
-cd ~/Projects/autonomous-browser-agent
+python3 -m venv .venv
 source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env.local
+```
+
+If you already have `.venv` and `.env.local`, keep them and skip the setup above.
+Add your OpenAI API key to `.env.local`, then start the service:
+
+```bash
 python -m extension_service.server
 ```
 
-Keep the terminal open. In Chrome, open `chrome://extensions`, enable Developer mode,
-choose **Load unpacked**, and select the repository's `extension/` folder. Open your form,
-click the extension icon, and connect using the code printed in the terminal. This code is
-not the API key. After restarting the service, enter its new code in the panel's Settings.
+1. Open `chrome://extensions`, enable **Developer mode**, and click **Load unpacked**.
+2. Select the `extension/` folder from this project.
+3. Open a form and click the extension icon.
+4. Paste the terminal's connection code into **Settings**, enter your instructions, and click **Fill form**.
 
-For the first test, open `http://127.0.0.1:8766/practice` and supply synthetic details:
+Keep the terminal running. To try it first, open the [practice form](http://127.0.0.1:8766/practice).
+Relevant form data goes to OpenAI, and live runs use API credits. The key stays in the local service.
 
-```text
-Name: Alex Example
-Email: alex@example.com
-Organization: Example University
-Session: Afternoon
-Attend Day 1 and Day 2.
-Dietary preference: Vegetarian.
-```
+## How it works
 
-Click **Fill form**. The practice page has two sections and disabled submission. Live
-planning uses the existing ignored `.env.local` OpenAI key and API credits. Full installation,
-privacy and compatibility details: [extension guide](docs/EXTENSION.md).
+**Observe → decide → validate → execute → verify**
 
-## Capabilities
+The extension reads the page's fields. A Python service uses LangGraph and structured model
+responses to decide what to fill. It checks each action before executing it, then reads the
+field back to verify the result. It doesn't execute model-generated JavaScript.
 
-- Detect text, search and paragraph inputs, native choices/dropdowns and simple editable
-  text regions across the page, including outside forms and across multiple forms.
-- Inspect open shadow roots and accessible same-origin frames; support Google Forms controls.
-- Ask for missing required information and permission to replace a conflicting existing answer.
-- Validate structured plans, execute fixed field operations, read values back and retry once
-  when eligible. Supported Next transitions can advance sections; Stop halts further work.
-- Leave submission and protected/unsupported questions for human review.
+## Testing
 
-Universal form compatibility is not claimed. Cross-origin/sandboxed frames, closed shadow
-roots, browser-protected pages, passwords, files, CAPTCHA and some custom controls are outside
-scope. A website may autosave when fields change. Relevant form data and instructions are
-sent to OpenAI; the API key stays in the Python service.
+This project started with BrowserGym/MiniWoB before becoming a browser extension.
+Across 20 tasks and three seeds per task:
 
-## Architecture
+| Approach | Successful runs |
+| --- | --- |
+| One-shot planning | 55/60 |
+| Iterative planning | 57/60 |
 
-```mermaid
-flowchart LR
-    U[Instructions] --> P[Chrome side panel]
-    P <--> S[Authenticated local Python service]
-    S <--> G[LangGraph and Pydantic planner]
-    S <--> C[Packaged DOM adapter]
-    C <--> W[Current browser page]
-```
-
-The shared workflow is **observe → decide → validate → execute → verify**. Model-generated
-JavaScript is never executed. Product limits include 24 model calls, 60 counted interactions,
-40 observed questions, eight sections and a ten-minute deadline. These are resource controls,
-not hard monetary billing caps.
-
-## Validation
-
-- Finalization: 340 offline tests passed, including four cleanup checks; seven targeted local
-  Chromium checks passed separately. Browser checks use simulated model responses and temporary profiles, with no
-  paid API requests or real form submissions.
-- Earlier frozen MiniWoB research: iterative **57/60 (95.0%)**, one-shot **55/60 (91.7%)**
-  across 20 tasks and three reserved seeds per task.
-- Controlled timeout recovery: **6/6 enabled versus 0/6 disabled** across matched induced faults.
-
-The benchmark score belongs to the earlier MiniWoB agent, not real-website form filling.
-The extension's live-model success rate on real websites has not been measured.
-[Audited benchmark report](docs/FINAL-BENCHMARK-REPORT.md) · [project details](docs/PROJECT-DETAILS.md)
+These are local benchmark results, not success rates on real websites. The project also has
+340 regression tests and seven targeted browser checks using simulated model responses.
 
 ```bash
 python -m pytest tests -q
 RUN_BROWSER_TESTS=1 python -m pytest tests/test_browser_extension.py -q
-python scripts/check_benchmark_plan.py
 ```
 
-## Repository
-
-| Path | Purpose |
-| --- | --- |
-| `extension/` | Current Chrome interface and DOM adapter |
-| `extension_service/` | Local authenticated browser/model bridge |
-| `form_assistant/` | Shared planner, validation, workflow and practice form |
-| `browser_agent/` | Frozen MiniWoB research implementation |
-| `app/`, `website_trial/` | Earlier demos; some shared dependencies remain in use |
-| `tests/`, `scripts/` | Verification, audit and cleanup tools |
-| `docs/benchmark/`, `docs/evidence/` | Frozen protocol and preserved experiment evidence |
-| `docs/history/` | Archived milestone instructions |
-| `vendor/`, `.venv/` | Local benchmark assets and Python environment; retain locally |
-
-New environment installs use `python -m pip install -r requirements.txt`. Direct dependency
-pins are provided; a clean-machine reproduction and transitive lock remain unverified.
-MiniWoB reproduction also needs the matching vendor assets and Chromium installation.
-Do not commit `.env.local`, `.venv/`, local `results/` or `vendor/`.
-
-[CV and interview notes](docs/PORTFOLIO.md) · [release status](docs/RELEASE-CHECKLIST.md)
+[Setup and supported forms](docs/EXTENSION.md) · [Benchmark report](docs/FINAL-BENCHMARK-REPORT.md)
