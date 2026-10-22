@@ -32,4 +32,4 @@ Test more real forms, check installation on a fresh machine, and make the local 
 easier to start. Some custom controls, uploads and inaccessible embedded fields remain
 unsupported. The source is on GitHub; the extension isn't a Chrome Web Store release.
 
-[Using the extension](EXTENSION.md) · [Development history](history/README.md)
+[Using the extension](EXTENSION.md)
