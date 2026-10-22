@@ -1,55 +1,48 @@
-# Portfolio notes
+# CV and interview notes
 
-## Summary
+## Project listing
 
-Built a bounded browser agent for local BrowserGym/MiniWoB tasks with Python, Pydantic,
-OpenAI structured output and a LangGraph observe–decide–validate–execute–verify loop.
-Compared fixed one-shot plans with iterative decisions under a frozen 20-task, three-seed
-protocol, with matched controlled-recovery experiments and a local trace-viewing demo.
+**Autonomous Browser Agent — Form Assistant**  
+Python · LangGraph · OpenAI API · Pydantic · JavaScript · Chrome Extensions · Playwright
 
-## Resume bullets grounded in evidence
+Built a Chrome assistant that maps natural-language instructions and supplied details to
+visible website fields, executes validated actions, checks their results and leaves submission
+to the user. Developed and evaluated its underlying browser workflow on local MiniWoB tasks.
 
-- Built a LangGraph browser agent with Pydantic action validation, observed-target checks,
-  fixed Playwright templates, explicit resource budgets and bounded fill recovery.
-- Evaluated 120 planning episodes across 20 local MiniWoB task IDs: iterative completed
-  57/60 (95.0%) versus one-shot 55/60 (91.7%), using 114 versus 60 reported API calls.
-- Audited 132 episode records with source/version fingerprints and matched initial states;
-  controlled timeout recovery completed 6/6 enabled versus 0/6 disabled, retaining failures
-  and one incomplete-usage flag in the evidence report.
+## Suggested CV bullets
 
-Do not call the small difference statistically significant or describe induced-fault recovery
-as production reliability. A fresh live demo is separate from frozen benchmark evidence.
+- Built a Chrome form-filling assistant with a Python/LangGraph backend, structured action
+  validation, DOM observation, inline clarification, overwrite confirmation and cancellation.
+- Extended field discovery across standalone inputs, editable text regions, multiple forms,
+  open shadow roots and accessible same-origin frames; verified browser flows with seven
+  local Chromium checks using simulated model responses.
+- Evaluated one-shot versus iterative planning over 120 MiniWoB episodes: iterative achieved
+  57/60 successes (95.0%) versus 55/60 (91.7%); preserved a separate matched controlled-recovery
+  study and audited 132 episode records.
+
+Use two or three bullets depending on available space. Keep the words “MiniWoB” and “local”
+when citing the benchmark; 95% is not a real-website form success rate. Do not claim the model
+was trained, production deployment, universal form support or real-world reliability.
 
 ## Interview explanation
 
-**Why a graph?** Each node has one responsibility: normalize observations, make a structured
-decision, validate legal actions and targets, execute a trusted template, then verify progress
-and completion. Conditional edges support another observation or an eligible fill recovery;
-terminal outcomes and budgets stop the loop.
+**Why use a browser agent?** It provides instruction-driven assistance on the page the user
+already has open. It can interact with supported fields without a separate integration for
+each form provider. A dedicated API can be more reliable when one known service is the entire
+product; browser operation is a deliberate interface/generalization tradeoff here.
 
-**Why validate targets?** Valid JSON can still choose a stale ID or the wrong element type.
-Schema checks and current observed-role membership address different failures. Fixed action
-templates avoid executing arbitrary model-generated code, but do not guarantee task success.
+**Why LangGraph?** It separates observation, structured decision, validation, execution and
+verification, with explicit edges for clarification, bounded retry and the next section.
 
-**What did iteration buy?** It completed three dynamic-discovery instances where one-shot
-plans failed. Overall it completed two more instances while using more requests, and also
-failed three instances one-shot completed. This is a task-dependent tradeoff, not a universal
-architecture ranking.
+**What is validated?** Plan shape, observed target/option membership, supplied-text provenance,
+field identity, current values, budgets and permission to overwrite. These do not independently
+prove every semantic mapping is correct; the user still reviews the form.
 
-**What did recovery prove?** One bounded retry after an induced first-fill timeout recovered
-six matched instances. This did not test spontaneous outages, partial side effects or every
-action type. Click errors still stop because their side effects may be ambiguous.
+**What did the experiments establish?** On a small frozen local benchmark, iteration completed
+two more instances overall while using more calls. One bounded retry recovered six induced
+fill timeouts. Neither experiment establishes universal architecture superiority or production
+reliability. Failures and an incomplete-usage flag were retained.
 
-**What would you improve?** Final exports lacked action histories and intermediate observations,
-limiting diagnosis. Add redacted per-step evidence and loop detection on development tasks in
-a new version. Validate against new instances rather than tuning to the final held-out data.
-
-**How did you manage spending?** Explicit action/call/output/input/deadline bounds, zero hidden
-SDK retries, small serial batches and usage flags. Final experiments reported 201 calls against
-a planned ceiling of 291. Request controls are not hard monetary billing caps.
-
-## Two-minute recording
-
-Show measured results and an included failure, explain the README architecture diagram,
-run a two-call development text-entry demo, then explain dynamic observations and controlled
-recovery. Report the actual live outcome; do not present saved evidence as live execution.
+**What would come next?** Measure live-model outcomes on explicitly supported public forms,
+record compatibility by control type, improve custom-editor handling, test installation on a
+fresh machine and package the local service for easier startup.

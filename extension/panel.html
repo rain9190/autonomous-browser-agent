@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Form Assistant</title><link rel="stylesheet" href="panel.css"></head>
+<body><main>
+<header><span id="site">Current page</span><button id="settings" class="secondary" aria-label="Connection settings">Settings</button></header>
+<section id="connection" hidden>
+ <h2>Connect to your computer</h2><p>Paste the connection code shown in your terminal.</p>
+ <label class="sr-only" for="code">Connection code</label><input id="code" type="password" placeholder="Connection code" autocomplete="off">
+ <button id="connect">Connect</button><p id="connection-message" role="status"></p>
+</section>
+
+<label class="heading" for="details">Instructions</label>
+<textarea id="details" maxlength="6000" placeholder="Tell me what to fill in."></textarea>
+
+<div class="buttons"><button id="fill" disabled>Fill form</button><button id="stop" class="secondary" disabled>Stop</button></div>
+<div class="status" role="status" aria-live="polite"><span id="dot" hidden></span><span id="status">Ready when you are</span></div>
+<section id="question" hidden>
+ <label id="question-label" for="answer"></label><p id="options" class="note"></p>
+ <textarea id="answer" maxlength="2000" rows="2" placeholder="Your answer"></textarea>
+ <div id="answer-buttons"><button id="continue">Continue</button></div>
+ <div id="overwrite-buttons" hidden><button id="replace">Replace</button><button id="keep" class="secondary">Keep existing</button></div>
+</section>
+<ul id="manual" hidden></ul>
+
+</main><script src="panel.js"></script></body></html>

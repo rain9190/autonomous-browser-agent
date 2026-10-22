@@ -144,13 +144,13 @@ class Handler(BaseHTTPRequestHandler):
             else:
                 return self.reply(404, {'error':'Not found'})
         except (ValueError, TypeError):
-            return self.reply(400, {'error':'Choose a supported instruction and seed 61 or 67; only one run can be active.'})
+            return self.reply(400, {'error':'Enter a supported instruction; only one run can be active.'})
         except OSError:
             return self.reply(500, {'error':'Could not start the local worker'})
         self.reply(200, {'ok':True})
 
 
-def main():
+def benchmark_main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--port',type=int,default=8765)
     args = parser.parse_args()
@@ -167,6 +167,19 @@ def main():
     finally:
         server.runs.cancel()
         server.server_close()
+
+
+def main():
+    if '--benchmark' in sys.argv:
+        sys.argv.remove('--benchmark')
+        benchmark_main()
+    else:
+        if '--wikipedia' in sys.argv:
+            sys.argv.remove('--wikipedia')
+            from .product import main as launch
+        else:
+            from form_assistant.server import main as launch
+        launch()
 
 
 if __name__=='__main__':

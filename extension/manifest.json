@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Form Assistant",
+  "version": "0.2.0",
+  "description": "Fill supported forms in the current tab, then review them yourself.",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "sidePanel",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8766/*"
+  ],
+  "action": {
+    "default_title": "Open Form Assistant"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "panel.html"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; connect-src http://127.0.0.1:8766"
+  }
+}

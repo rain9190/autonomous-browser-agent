@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Workshop registration · Practice</title><style>body{font:16px/1.5 system-ui;color:#26352d;background:#f1f4f0;max-width:680px;margin:35px auto;padding:20px}form{background:white;padding:30px;border-radius:12px}fieldset{border:0;padding:18px 0;border-bottom:1px solid #ddd}legend{font-weight:600;padding-top:15px}input[type=text],input[type=email],select,textarea{font:inherit;padding:9px;border:1px solid #aab9ac;border-radius:5px;width:95%}label{display:block;margin:8px 0}button{font:inherit;padding:10px 20px;margin-top:25px}small{color:#617466}[hidden]{display:none!important}</style><h1>Workshop registration</h1><p>This practice form stays in your browser. Submission is disabled.</p><form data-practice onsubmit="return false">
+<section id="s1"><small>Section 1 of 2</small>
+<fieldset data-field data-required="true"><legend>Name *</legend><input type="text" aria-label="Name" required></fieldset>
+<fieldset data-field data-required="true"><legend>Email *</legend><input type="email" aria-label="Email" required></fieldset>
+<fieldset data-field data-required="true"><legend>Organization *</legend><input type="text" aria-label="Organization" required></fieldset>
+<fieldset data-field data-required="true"><legend>Session *</legend><select aria-label="Session" required><option value="">Choose</option><option>Morning</option><option>Afternoon</option></select></fieldset>
+<button type="button" onclick="advance()">Next</button></section>
+<section id="s2" hidden><small>Section 2 of 2</small>
+<fieldset data-field data-required="true"><legend>What days will you attend? *</legend><label><input type="checkbox">Day 1</label><label><input type="checkbox">Day 2</label><label><input type="checkbox">Day 3</label></fieldset>
+<fieldset data-field data-required="true"><legend>Dietary restrictions *</legend><label><input type="radio" name="diet">None</label><label><input type="radio" name="diet">Vegetarian</label><label><input type="radio" name="diet">Vegan</label></fieldset>
+<fieldset data-field data-required="false"><legend>Additional comments</legend><textarea aria-label="Additional comments"></textarea></fieldset>
+<button type="button" onclick="document.getElementById('s2').hidden=true;document.getElementById('s1').hidden=false">Back</button><button type="button" disabled>Submit</button><p><small>Review your answers here. Practice submission is disabled.</small></p></section></form>
+<script>function advance(){for(let e of document.querySelectorAll('#s1 input,#s1 select'))if(!e.reportValidity())return;document.getElementById('s1').hidden=true;document.getElementById('s2').hidden=false;window.scrollTo(0,0);}</script></html>

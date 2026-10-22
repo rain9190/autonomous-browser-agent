@@ -6,3 +6,6 @@ __pycache__/
 .pytest_cache/
 results/
 .DS_Store
+
+# Local benchmark checkout; required locally, not staged with project code.
+vendor/
